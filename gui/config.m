@@ -1,5 +1,6 @@
-function set_status(handles, status, color)
-% This function set GUI's status
+% CONFIG
+% In this file some gui configuration are stored.
+%
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
 % This program is free software; you can redistribute it and/or
@@ -16,31 +17,7 @@ function set_status(handles, status, color)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Write message
-set(handles.status_console, 'string', status);
-
-% Change foreground color
-if ~exist('color','var')
-    % Default color
-    color = [0, 0, 0];
-else
-    switch(color)
-        case 'k'
-            color = [0, 0, 0]; % Black
-        case 'r'
-            color = [1, 0, 0]; % Red
-        case 'g'
-            color = [0, 1, 0]; % Green
-        case 'b'
-            color = [0, 0, 1]; % Blue
-        case 'm'
-            color = [1, 0, 1]; % Magenta
-        case 'y'
-            color = [1, 1, 0]; % Yellow
-        case 'c'
-            color = [0, 1, 1]; % Cyan
-    end
-end
-set(handles.status_console, 'ForegroundColor', color);
-
-end
+% Language selection
+%   1:  Spanish (Español)
+%   2:  English (United States)
+lang = 1; 
