@@ -39,9 +39,17 @@ for j=1:lang_entries
     list{j}=cell(1,lang_avaiable_languages);
 end
 
-% Add lang strings
+% ----Add lang strings
+% 
 list{1, 1}='Añadir nueva fila';
 list{1, 2}='Add new row';
+
+list{2, 1}='Eliminar última fila';
+list{2, 2}='Delete last row';
+
+list{3, 1}='Error: No se puede eliminar la fila.';
+list{3, 2}='Error: Last row cant be deleted.';
+% --------------------------------------------------------------------
 
 % Create list of choise
 langlist = cell(lang_entries,1);

@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 19-Jan-2017 14:46:30
+% Last Modified by GUIDE v2.5 19-Jan-2017 18:17:20
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -80,9 +80,11 @@ movegui(gcf,'center');
 
 % Import configurations
 config;
+setappdata(handles.root, 'lang', lang);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
+set_lang_string(handles.delete_last_row, lang{2}); %#ok<*USENS>
 
 % Update handles structure
 guidata(hObject, handles);
@@ -141,3 +143,12 @@ function initial_solution_CellEditCallback(hObject, eventdata, handles)
 %	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
 %	Error: error string when failed to convert EditData to appropriate value for Data
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function delete_last_row_Callback(hObject, eventdata, handles)
+% hObject    handle to delete_last_row (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+lang = getappdata(handles.root, 'lang');
+delete_last_row(handles, lang{3});

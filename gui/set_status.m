@@ -20,7 +20,7 @@ function set_status(handles, status, color)
 set(handles.status_console, 'string', status);
 
 % Change foreground color
-if ~exist('color','var')
+if ~ exist('color', 'var')
     % Default color
     color = [0, 0, 0];
 else
