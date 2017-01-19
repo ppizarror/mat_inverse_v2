@@ -27,18 +27,17 @@ nRows = size(old_table_data, 1);
 nColumns = size(old_table_data, 2);
 
 % Create new data cell
-new_table_data = cell(nRows+1, nColumns);
-new_table_data(1:nRows,:)=old_table_data;
+new_table_data = cell(nRows + 1, nColumns);
+new_table_data(1:nRows, :) = old_table_data;
 
 % Set new row name
-new_row_name = int2str(nRows+1);
-new_table_row_name = cell(nRows+1, 1);
-new_table_row_name(1:nRows,:)=old_table_row_names;
-new_table_row_name{nRows+1}=new_row_name;
+new_row_name = int2str(nRows + 1);
+new_table_row_name = cell(nRows + 1, 1);
+new_table_row_name(1:nRows, :) = old_table_row_names;
+new_table_row_name{nRows + 1} = new_row_name;
 
 % Set table
 set(handles.initial_solution, 'Data', new_table_data);
 set(handles.initial_solution, 'RowName', new_table_row_name);
 
 end
-

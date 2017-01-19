@@ -29,31 +29,31 @@ lang_entries = 20;
 lang_avaiable_languages = 2;
 
 % Check if langid is valid
-if ~(1<=langid && langid<=lang_avaiable_languages)
+if ~ (1 <= langid && langid <= lang_avaiable_languages)
     error('Invalid langid');
 end
 
 % Create a list of data
-list = cell(lang_entries,1);
-for j=1:lang_entries
-    list{j}=cell(1,lang_avaiable_languages);
+list = cell(lang_entries, 1);
+for j = 1:lang_entries
+    list{j} = cell(1, lang_avaiable_languages);
 end
 
 % ----Add lang strings
-% 
-list{1, 1}='Añadir nueva fila';
-list{1, 2}='Add new row';
+%
+list{1, 1} = 'Añadir nueva fila';
+list{1, 2} = 'Add new row';
 
-list{2, 1}='Eliminar última fila';
-list{2, 2}='Delete last row';
+list{2, 1} = 'Eliminar última fila';
+list{2, 2} = 'Delete last row';
 
-list{3, 1}='Error: No se puede eliminar la fila.';
-list{3, 2}='Error: Last row cant be deleted.';
+list{3, 1} = 'Error: No se puede eliminar la fila.';
+list{3, 2} = 'Error: Last row cant be deleted.';
 % --------------------------------------------------------------------
 
 % Create list of choise
-langlist = cell(lang_entries,1);
-for j=1:lang_entries
-    langlist{j}=list{j,langid};
+langlist = cell(lang_entries, 1);
+for j = 1:lang_entries
+    langlist{j} = list{j, langid};
 end
 end
