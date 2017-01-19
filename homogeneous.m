@@ -35,7 +35,7 @@ cr  = cvs*sqrt(x);
 % Determine which of the roots is correct using the estimated velocity (Achenbach, 1973)
 crest = cvs*((0.862+1.14*nu)/(1+nu));
 index = find(abs(cr-crest) == min(abs(cr-crest)));
-cvr = cr(index);
+cvr = cr(index); %#ok<*FNDSB>
 if isempty(cvr)
    error('No root found for homogeneous half space')
 end

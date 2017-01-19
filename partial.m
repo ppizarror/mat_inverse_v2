@@ -1,5 +1,4 @@
 function [I1,I2,I3,U,zdvrvs,zdvrvp,zdvrrho,dvrvs,dvrvp,dvrrho] = partial(freq,vr,z,r,dr,thk,dns,cvs,cvp)
-
 % This function calculates the partial derivatives of the phase velocity
 % with respect to the shear and compression wave velocities for each mode
 % at each frequency. Two forms of the partial derivatives are returned:
@@ -121,4 +120,3 @@ for j = 1:length(freq)
       end
    end
 end
-

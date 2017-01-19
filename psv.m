@@ -1,5 +1,4 @@
 function [e11,e12,e21,e22,du,mu,nus,nup] = psv(thk,dns,cvp,cvs,om,k)
-
 % This function calculates the E and Lambda matrices (up-going and 
 % down-going matrices) for the P-SV case. Note that a separate function,
 % updown, is provided for calculating the Lambda matrices for use in
@@ -62,7 +61,7 @@ else
    
    ks2 = om2./cvs2;
    nus = sqrt(k2-ks2);
-   index = find(imag(-i*nus) > 0);
+   index = find(imag(-i*nus) > 0); %#ok<*IJCL>
    nus(index) = -nus(index);
    gammas = nus/k;
    

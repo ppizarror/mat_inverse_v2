@@ -1,10 +1,9 @@
 function cr = modal(freq,thk,dns,cvp,cvs,crmin,crmax)
-
 % This function calculates the modal phase velocities in an elastic,
 % vertically heterogeneous medium using search techniques.
-
+%
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
-
+%
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
@@ -53,13 +52,13 @@ for j = 1:length(freq)
             f3 = secular(k3,om,thk,dns,cvp,cvs);
             
             % Determine if a minimum is bracketed
-            if (f2 < f1) & (f2 < f3)
+            if (f2 < f1) && (f2 < f3)
                 
                 % Use golden search/parabolic interpolation to refine minimun
                 [ktrial,ftrial] = fminbnd('secular',k3,k1,optimset('TolX',1e-12,'Display','off'),om,thk,dns,cvp,cvs);
                 
                 % Check to see if ktrial is a zero and different from the previous zero
-                if (ftrial < TOL & abs((ktrial-kold)/kold) > 1e-2)
+                if (ftrial < TOL && abs((ktrial-kold)/kold) > 1e-2)
                     numroot = numroot + 1;
                     cr(j,numroot) = om/ktrial;
                     kold = ktrial;

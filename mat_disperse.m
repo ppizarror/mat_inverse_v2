@@ -1,5 +1,4 @@
 function [vr,varargout] = mat_disperse(thk,dns,cvp,cvs,freq,varargin)
-
 % Usage:
 % 		vr = mat_disperse(thk,dns,cvp,cvs,freq)
 % 		[vr,z,r] = mat_disperse(thk,dns,cvp,cvs,freq)

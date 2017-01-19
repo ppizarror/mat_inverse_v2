@@ -1,9 +1,7 @@
 function [td,tu,rd,ru] = modrt(e11,e12,e21,e22,du)
-
 % This function calculates the modified R/T coefficients
-
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
-
+%
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
@@ -19,7 +17,7 @@ function [td,tu,rd,ru] = modrt(e11,e12,e21,e22,du)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Determine the number of layers, N, not including the half space
-[m n N] = size(du);
+[m n N] = size(du); %#ok<*ASGLU>
 
 % Initialize a 4x4xN matrix
 X = zeros(4,4,N);

@@ -1,9 +1,8 @@
 function [Td,Rd] = genrt(td,tu,rd,ru)
-
 % This function calculates the generalized R/T coefficients
-
+%
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
-
+%
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
@@ -18,7 +17,7 @@ function [Td,Rd] = genrt(td,tu,rd,ru)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-[m n N] = size(td);
+[m, n, N] = size(td); %#ok<*ASGLU>
 
 % Initialize 2x2xN matrices
 Td = zeros(2,2,N);

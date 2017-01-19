@@ -1,5 +1,4 @@
 function d = secular(k,om,thk,dns,cvp,cvs)
-
 % Modified by Yiran Ma.
 % 
 % This function calculates the absolute value of the secular function for
@@ -24,17 +23,16 @@ function d = secular(k,om,thk,dns,cvp,cvs)
 % Check to see if the trial phase velocity is equal to the shear wave velocity
 % or compression wave velocity of one of the layers
 epsilon = 0.0001;
-while any(abs(om/k-cvs)<epsilon) | any(abs(om/k-cvp)<epsilon)
+while any(abs(om/k-cvs)<epsilon) || any(abs(om/k-cvp)<epsilon)
    k = k * (1+epsilon);
 end   
 
 [e11,e12,e21,e22,du,mu,nus,nup] = psv(thk,dns,cvp,cvs,om,k);
 [td,tu,rd,ru] = modrt(e11,e12,e21,e22,du);
-[Td,Rd] = genrt(td,tu,rd,ru);
+[Td,Rd] = genrt(td,tu,rd,ru); %#ok<*ASGLU>
 
 % Note that the absolute value of the secular function is calculated
 d = abs(det(e21(:,:,1) + e22(:,:,1)*du(:,:,1)*Rd(:,:,1))/(nus(1)*nup(1)*mu(1)^2));
 %Ru_0 = -inv(e21(:,:,1))*e22(:,:,1)*du(:,:,1);
 %d2 = abs( det(eye(2)-Ru_0*Rd(:,:,1)) );
 %d = abs(det(e21(:,:,1) + e22(:,:,1)*du(:,:,1)*Rd(:,:,1))/det(e21(:,:,1)));
-

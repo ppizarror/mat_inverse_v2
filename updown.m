@@ -1,5 +1,4 @@
 function [lamd,lamu] = updown(thk,cvp,cvs,om,k,z,layer)
-
 % This function calculates the up-going and down-going matrices for the P-SV case
 % Note that the function psv also calculates up-going and down-going matrices
 % (called du) which are optimized for use in calculating the modified R/T
@@ -32,13 +31,13 @@ k2 = k^2; om2 = om^2;
    
 ks2 = om2/cvs2;
 nus = sqrt(k2-ks2);
-if imag(-i*nus) > 0;
+if imag(-i*nus) > 0 %#ok<*IJCL>
     nus = -nus;
 end   
    
 kp2 = om2/cvp2;
 nup = sqrt(k2-kp2);
-if imag(-i*nup) > 0;
+if imag(-i*nup) > 0
     nup = -nup;
 end   
    
