@@ -1,6 +1,9 @@
 # OSX.
 .DS_Store
 
+# ASV Matlab file
+*.asv
+
 # Pycharm.
 .idea/
 pycharm/
