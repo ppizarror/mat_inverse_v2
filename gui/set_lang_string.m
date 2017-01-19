@@ -1,5 +1,6 @@
-% CONFIG
-% In this file some gui configuration are stored.
+function set_lang_string(object, string)
+% SET LANG STRING
+% Set string of 'label' properties of GUI's objects
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,7 +18,6 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang = load_lang(1);
+set(object, 'label', string);
+
+end

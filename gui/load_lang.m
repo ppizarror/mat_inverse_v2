@@ -1,5 +1,5 @@
-% CONFIG
-% In this file some gui configuration are stored.
+% LOAD LANG
+% Set lang list of string entries
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,7 +17,35 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
+function langlist = load_lang(langid)
+% Return lang list related to an id of choise
+
+% Total of entries in list
+lang_entries = 20;
+
+% Total of avaiable languages
 %   1:  Spanish (Español)
 %   2:  English (United States)
-lang = load_lang(1);
+lang_avaiable_languages = 2;
+
+% Check if langid is valid
+if ~(1<=langid && langid<=lang_avaiable_languages)
+    error('Invalid langid');
+end
+
+% Create a list of data
+list = cell(lang_entries,1);
+for j=1:lang_entries
+    list{j}=cell(1,lang_avaiable_languages);
+end
+
+% Add lang strings
+list{1, 1}='Añadir nueva fila';
+list{1, 2}='Add new row';
+
+% Create list of choise
+langlist = cell(lang_entries,1);
+for j=1:lang_entries
+    langlist{j}=list{j,langid};
+end
+end

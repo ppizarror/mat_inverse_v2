@@ -78,6 +78,12 @@ addpath(path_gui);
 % Center window
 movegui(gcf,'center');
 
+% Import configurations
+config;
+
+% Set GUI Strings from lang
+set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
+
 % Update handles structure
 guidata(hObject, handles);
 
