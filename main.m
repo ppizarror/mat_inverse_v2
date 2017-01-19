@@ -128,7 +128,7 @@ function table_add_row_Callback(hObject, eventdata, handles)
 % hObject    handle to table_add_row (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set_status(handles, 'hola')
+add_row(handles);
 
 
 % --- Executes when entered data in editable cell(s) in initial_solution.
