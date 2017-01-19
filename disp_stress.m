@@ -64,7 +64,7 @@ for j = 1:length(freq)
         end
      
         % Calculate the PSV element matrices for each layer and generalized R/T matrices
-        [e11, e12, e21, e22, du, mu, nus, nup] = psv(thk, dns, cvp, cvs, om(j), k);
+        [e11, e12, e21, e22, du, ~, ~, ~] = psv(thk, dns, cvp, cvs, om(j), k);
         [td, tu, rd, ru] = modrt(e11, e12, e21, e22, du);
         [Td, Rd] = genrt(td, tu, rd, ru);
      
@@ -73,7 +73,7 @@ for j = 1:length(freq)
         cu = zeros(2, 1, N + 1);
      
         % Calculate Cd for the first layer
-        [lamd, lamu] = updown(thk, cvp, cvs, om(j), k, 0, 1); % #ok<*ASGLU>
+        % [lamd, lamu] = updown(thk, cvp, cvs, om(j), k, 0, 1); % #ok<*ASGLU>
      
         % cd(:,:,1) = (e21(:,:,1) + e22(:,:,1)*lamu*Rd(:,:,1))\delqz;
         % Ru_0 = -inv(e21(:,:,1))*e22(:,:,1)*du(:,:,1);
