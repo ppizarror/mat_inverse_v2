@@ -115,7 +115,7 @@ for j = 1:length(freq)
             [lamd zeros(2); zeros(2) lamu] * [cd(:, :, layer); cu(:, :, layer)];
         end
         r1_try = abs(squeeze(r(j, m, n_try, 1)));
-        id = max(find(abs(diff(r1_try)) > 1e-6));
+        id = find(abs(diff(r1_try)) > 1e-6, 1, 'last' );
      
         for n = 1:n_try(id)
             % Determine the layer corresponding to the current depth
