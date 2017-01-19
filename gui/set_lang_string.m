@@ -1,4 +1,4 @@
-function set_lang_string(object, string)
+function set_lang_string(object, string, param)
 % SET LANG STRING
 % Set string of 'label' properties of GUI's objects
 %
@@ -18,6 +18,11 @@ function set_lang_string(object, string)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-set(object, 'label', string);
+% Get param of object
+if ~ exist('param', 'var')
+    param = 'label';
+end
+    
+set(object, param, string);
 
 end

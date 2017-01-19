@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 19-Jan-2017 18:17:20
+% Last Modified by GUIDE v2.5 19-Jan-2017 20:09:14
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -84,7 +84,20 @@ setappdata(handles.root, 'lang', lang);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
-set_lang_string(handles.delete_last_row, lang{2}); %#ok<*USENS>
+set_lang_string(handles.delete_last_row, lang{2});
+set_lang_string(handles.table_import_from_excel, lang{4});
+set_lang_string(handles.initial_solution_table_title, lang{15}, 'string');
+set_lang_string(handles.menu_file, lang{11});
+set_lang_string(handles.menu_file_new, lang{12});
+set_lang_string(handles.menu_file_load, lang{13});
+set_lang_string(handles.menu_edition, lang{16});
+set_lang_string(handles.menu_edition_cleantable, lang{14});
+set_lang_string(handles.menu_help, lang{17});
+set_lang_string(handles.menu_about, lang{19});
+set_lang_string(handles.menu_view_help, lang{18});
+set_lang_string(handles.menu_file_save, lang{20});
+set_lang_string(handles.menu_file_save_as, lang{21});
+set_lang_string(handles.menu_file_close, lang{22});
 
 % Update handles structure
 guidata(hObject, handles);
@@ -152,3 +165,89 @@ function delete_last_row_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 lang = getappdata(handles.root, 'lang');
 delete_last_row(handles, lang{3});
+
+
+% --------------------------------------------------------------------
+function table_import_from_excel_Callback(hObject, eventdata, handles)
+% hObject    handle to table_import_from_excel (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+import_initialtable_excel(handles, getappdata(handles.root, 'lang'));
+
+
+% --------------------------------------------------------------------
+function menu_edition_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_edition (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_edition_cleantable_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_edition_cleantable (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_file_new_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_file_new (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_file_load_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_file_load (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function initial_solution_table_title_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to initial_solution_table_title (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --------------------------------------------------------------------
+function menu_help_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_help (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_view_help_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_view_help (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_about_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_about (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_file_save_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_file_save (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_file_save_as_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_file_save_as (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_file_close_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_file_close (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close all;
