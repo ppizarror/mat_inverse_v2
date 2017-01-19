@@ -19,11 +19,25 @@ function varargout = main(varargin)
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
-
-% Edit the above text to modify the response to help main
-
-% Last Modified by GUIDE v2.5 19-Jan-2017 13:36:52
-
+%
+% Author: Pablo Pizarro @ppizarror.com, 2017.
+%
+% This program is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public License
+% as published by the Free Software Foundation; either version 2
+% of the License, or (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+%
+% Last Modified by GUIDE v2.5 19-Jan-2017 14:46:30
+%
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
@@ -55,12 +69,17 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for main
 handles.output = hObject;
 
+% Add bin, and gui to path
+path_bin = cd(cd('bin'));
+path_gui = cd(cd('gui'));
+addpath(path_bin);
+addpath(path_gui);
+
 % Center window
 movegui(gcf,'center');
 
 % Update handles structure
 guidata(hObject, handles);
-
 
 % UIWAIT makes main wait for user response (see UIRESUME)
 % uiwait(handles.root);
@@ -75,3 +94,43 @@ function varargout = main_OutputFcn(hObject, eventdata, handles)  %#ok<*INUSL>
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+
+
+% --------------------------------------------------------------------
+function menu_file_Callback(hObject, eventdata, handles) %#ok<*DEFNU,*INUSD>
+% hObject    handle to menu_file (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function initial_solution_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to initial_solution (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --------------------------------------------------------------------
+function table_menu_Callback(hObject, eventdata, handles)
+% hObject    handle to table_menu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function table_add_row_Callback(hObject, eventdata, handles)
+% hObject    handle to table_add_row (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes when entered data in editable cell(s) in initial_solution.
+function initial_solution_CellEditCallback(hObject, eventdata, handles)
+% hObject    handle to initial_solution (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.TABLE)
+%	Indices: row and column indices of the cell(s) edited
+%	PreviousData: previous data for the cell(s) edited
+%	EditData: string(s) entered by the user
+%	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
+%	Error: error string when failed to convert EditData to appropriate value for Data
+% handles    structure with handles and user data (see GUIDATA)

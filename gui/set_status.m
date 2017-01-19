@@ -1,9 +1,6 @@
-function initialize_path
-% This function initialize path, adding the following folders:
-%   (1) Parent folder
-%   (2) bin: It contains principal functions of mat_inverse (except GUI
-%   related files)
-% Author: Pablo Pizarro @ppizarror.com.
+function set_status(handles, status)
+% This function set GUI's status
+% Author: Pablo Pizarro @ppizarror.com, 2017.
 %
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
@@ -19,9 +16,6 @@ function initialize_path
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-path_parent = cd(cd('..'));
-path_bin = cd(cd('bin/'));
-addpath(path_parent);
-addpath(path_bin);
+set(handles.status_console, 'string', status);
 
 end
