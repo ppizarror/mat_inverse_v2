@@ -20,15 +20,24 @@ function import_initialtable_excel(handles, lang)
 
 % Request file
 set_status(handles, lang{5});
-filename = uigetfile({' *.xlsx'; '*.xls'});
+[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'});
 
 % If filename is valid
-if filename ~= 0
+if baseName ~= 0
 
     % Open file
     set_status(handles, lang{8}, 'r');
-    excel_data = xlsread(filename);
+    try
+        excel_data = xlsread(strcat(folder, baseName));
+    catch
+        set_status(handles, lang{25}, 'r');
+        errordlg(lang{24},lang{23})
+    end
+        
     [nRow, nColumn] = size(excel_data);
+    
+    % Constant import
+    constants;
     
     % Check if nColumn is 4
     if nColumn == 4
@@ -37,7 +46,7 @@ if filename ~= 0
         if ~all(ismember(num2str(excel_data(nRow, 1)), '0123456789+-.eE'))
             
             % New table row size
-            n_row = max(20, nRow);
+            n_row = max(min_rowsize_initialtable, nRow);
             
             % New table is created
             new_table = cell(n_row, 4);
@@ -74,7 +83,5 @@ if filename ~= 0
     
 % If filename is invalid
 else
-    
     set_status(handles, lang{6}, 'r');
-    
 end

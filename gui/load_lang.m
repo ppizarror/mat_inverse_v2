@@ -1,3 +1,4 @@
+function langlist = load_lang(langid)
 % LOAD LANG
 % Set lang list of string entries
 %
@@ -17,16 +18,8 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-function langlist = load_lang(langid)
-% Return lang list related to an id of choise
-
-% Total of entries in list
-lang_entries = 40;
-
-% Total of avaiable languages
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang_avaiable_languages = 2;
+% Constant import
+constants;
 
 % Check if langid is valid
 if ~ (1 <= langid && langid <= lang_avaiable_languages)
@@ -106,6 +99,16 @@ list{21, 2} = 'Save as...';
 
 list{22, 1} = 'Salir';
 list{22, 2} = 'Exit';
+
+list{23, 1} = 'Error';
+list{23, 2} = 'Error';
+
+list{24, 1} = 'Ha ocurrido un error al cargar el archivo, compruebe que posee los privilegios de adminsitrador o el archivo no esté corrupto.';
+list{24, 2} = 'An error has occurred while opening the file, check your administrator privileges or check if file is not corrupt.';
+
+list{25, 1} = 'Error: No se pudo cargar el archivo';
+list{25, 2} = 'Error: File could not be loaded';
+
 % --------------------------------------------------------------------
 
 % Create list of choise
