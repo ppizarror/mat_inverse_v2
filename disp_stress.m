@@ -139,7 +139,7 @@ for j = 1:length(freq)
      
         % Calculate the numerical derivative of the displacement-stress vectors
         % Note that only dr1 and dr2 are needed later. dr3 and dr4 are not calculated.
-        [temp, dr(j, m, :, :)] = gradient(squeeze(r(j, m, :, 1:2)), 1, z(:, j));
+        [~, dr(j, m, :, :)] = gradient(squeeze(r(j, m, :, 1:2)), 1, z(:, j));
      
     end
 end
