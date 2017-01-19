@@ -1,9 +1,8 @@
 function cvr = homogeneous(cvp,cvs)
-
 % This function calculates the Rayleigh phase velocity in a homogeneous half space
-
+%
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
-
+%
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
