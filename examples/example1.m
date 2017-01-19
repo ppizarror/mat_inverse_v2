@@ -58,7 +58,7 @@ vs1 = [350 350 350 350]';
 vp1 = [700 700 700 700]';
 
 % Invertion
-[niter,vr_iter,vp_iter,vs_iter,dns_iter] = mat_inverse(freq,vr_exp,sigma,thk1,vp1,vs1,dns1,maxiter,mu,tol_vs);
+[niter,vr_iter,vp_iter,vs_iter,dns_iter] = mat_inverse(freq,vr_exp,sigma,thk1,vp1,vs1,dns1,maxiter,mu,tol_vs); %#ok<*ASGLU>
 
 % Theorical vs Experimental dispertion curve
 h2 = figure('Name','Curva de Dispersión Teórica v/s Experimental','NumberTitle','off');
