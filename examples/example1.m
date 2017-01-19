@@ -16,9 +16,8 @@
 
 function example1
 
-% Parent folder added to path
-parentpath = cd(cd('..'));
-addpath(parentpath);
+% Initialize path
+initialize_path();
 
 % New theorical model created
 thk = [5.0 10.0 10.0]';

@@ -4,9 +4,9 @@ function [lamd, lamu] = updown(thk, cvp, cvs, om, k, z, layer)
 % (called du) which are optimized for use in calculating the modified R/T
 % coefficients. The matrices calculated in this function are used in calculating
 % the displacement-stress vectors.
-
+%
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
-
+%
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
