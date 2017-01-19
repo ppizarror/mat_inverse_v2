@@ -31,13 +31,13 @@ k2 = k ^ 2; om2 = om ^ 2;
 
 ks2 = om2 / cvs2;
 nus = sqrt(k2 - ks2);
-if imag(- i * nus) > 0 % #ok<*IJCL>
+if imag(- 1i * nus) > 0 % #ok<*IJCL>
     nus = - nus;
 end
 
 kp2 = om2 / cvp2;
 nup = sqrt(k2 - kp2);
-if imag(- i * nup) > 0
+if imag(- 1i * nup) > 0
     nup = - nup;
 end
 
