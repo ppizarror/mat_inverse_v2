@@ -175,14 +175,14 @@ list{46, 2} = 'Error: Parameter %s cannot be empty.';
 list{47, 1} = 'Error: El parámetro %s debe ser un número.';
 list{47, 2} = 'Error: Parameter %s must be a number.';
 
-list{48, 1} = '';
-list{48, 2} = '';
+list{48, 1} = 'Info: Iniciando inversión ...';
+list{48, 2} = 'Info: Starting inversion ...';
 
-list{49, 1} = '';
-list{49, 2} = '';
+list{49, 1} = 'Info: Comprobando validez del input.';
+list{49, 2} = 'Info: Validating input.';
 
-list{50, 1} = '';
-list{50, 2} = '';
+list{50, 1} = 'Error: La curva de dispersión no ha sido cargada aún, imposible continuar.';
+list{50, 2} = 'Error: Dispersion curve has not been loaded yet, cant continue.';
 
 list{51, 1} = '';
 list{51, 2} = '';

@@ -32,6 +32,7 @@ if baseName ~= 0
     catch
         set_status(handles, lang{25}, 'r');
         errordlg(lang{24}, lang{23})
+        return
     end
  
     [nRow, nColumn] = size(excel_data);
@@ -76,14 +77,18 @@ if baseName ~= 0
         else
             set_status(handles, sprintf(lang{9}, num2str(excel_data(nRow, 1))), 'r');
             errordlg(sprintf(lang{9}, num2str(excel_data(nRow, 1))), lang{23});
+            return
         end
      
     else
         set_status(handles, sprintf(lang{7}, nColumn), 'r');
         errordlg(sprintf(lang{7}, nColumn), lang{23});
+        return
     end
  
-    % If filename is invalid
+% If filename is invalid
 else
     set_status(handles, lang{6}, 'r');
+    errordlg(lang{6}, lang{23});
+    return
 end

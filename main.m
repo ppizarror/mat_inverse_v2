@@ -113,6 +113,7 @@ set_lang_string(handles.inv_entry_panel, lang{45}, 'Title');
 % Set main variables
 setappdata(handles.root, 'disp_freq', []);
 setappdata(handles.root, 'disp_vrexp', []);
+setappdata(handles.root, 'dispertion_ok', false);
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', inv_sigma);
@@ -408,7 +409,7 @@ function start_button_Callback(hObject, eventdata, handles)
 % hObject    handle to start_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
+start_inversion(handles, getappdata(handles.root, 'lang'));
 
 
 function param_inv_sigma_Callback(hObject, eventdata, handles)

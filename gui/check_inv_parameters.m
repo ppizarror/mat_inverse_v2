@@ -1,4 +1,4 @@
-function check_inv_parameters(handles, lang, edition)
+function status = check_inv_parameters(handles, lang, edition)
 % CHECK INVERSE PARAMETERS
 % This function checks that all inverse parameters (mu, sigma, max_iter
 % and tol_vs) are numbers, if not then a popup is displayed on screen.
@@ -18,6 +18,9 @@ function check_inv_parameters(handles, lang, edition)
 % You should have received a copy of the GNU General Public License
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+% Initialize status
+status = false;
 
 % Get data
 inv_sigma = get(handles.param_inv_sigma, 'string');
@@ -41,6 +44,7 @@ if ~ all(ismember(inv_sigma, '0123456789+-.eE'))
     if del_invalid
         set(handles.param_inv_sigma, 'string', '');
     end
+    return
 end
 
 % Check mu
@@ -56,6 +60,7 @@ if ~ all(ismember(inv_mu, '0123456789+-.eE'))
     if del_invalid
         set(handles.param_inv_mu, 'string', '');
     end
+    return
 end
 
 % Check max_iter
@@ -71,6 +76,7 @@ if ~ all(ismember(inv_maxiter, '0123456789+-.eE'))
     if del_invalid
         set(handles.param_maxiter, 'string', '');
     end
+    return
 end
 
 % Check tol_vs
@@ -86,6 +92,10 @@ if ~ all(ismember(inv_tol_vs, '0123456789+-.eE'))
     if del_invalid
         set(handles.param_tolvs, 'string', '');
     end
+    return
 end
+
+% All checks passed
+status = true;
 
 end

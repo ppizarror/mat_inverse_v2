@@ -32,6 +32,7 @@ if baseName ~= 0
     catch
         set_status(handles, lang{25}, 'r');
         errordlg(lang{24}, lang{23})
+        return
     end
  
     % Get size of excel loaded data
@@ -64,7 +65,7 @@ if baseName ~= 0
         if length(filename) > size_filename_dispertion_str
             filename = filename(length(filename) - size_filename_dispertion_str:end);
             filename = strcat('...', filename);
-          end
+        end
         set(handles.status_direction_file, 'string', filename);
      
         % Enable view larger plot context menu
@@ -72,15 +73,18 @@ if baseName ~= 0
      
         % Set status
         set_status(handles, lang{35}, 'k');
+        setappdata(handles.root, 'dispertion_ok', true);
      
     else
         set_status(handles, lang{34}, 'r');
         errordlg(lang{34}, lang{23});
+        return
     end
  
-    % If filename is invalid
+% If filename is invalid
 else
     set_status(handles, lang{33}, 'r');
     errordlg(lang{33}, lang{23});
+    return
 end
 end

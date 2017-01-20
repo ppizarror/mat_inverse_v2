@@ -30,6 +30,7 @@ nColumns = size(old_table_data, 2);
 if nRows == 1
     set_status(handles, lang{3}, 'r');
     errordlg(lang{3},lang{23});
+    return
 else
  
     % Create new data cell
