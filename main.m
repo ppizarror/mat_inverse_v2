@@ -85,6 +85,11 @@ setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize
 setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
 setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
 setappdata(handles.root, 'gui_sound', gui_sound_enabled);
+setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispertion_fontsize);
+setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispertion_experimental_style);
+setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispertion_solution_style);
+setappdata(handles.root, 'plt_dispertion_showlegend', plt_dispertion_show_legend);
+setappdata(handles.root, 'plt_dispertion_solution_showlegend', solution_plt_dispertion_show_legend);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>

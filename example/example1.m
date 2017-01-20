@@ -60,7 +60,7 @@ vp1 = [700 700 700 700]';
 
 % Theorical vs Experimental dispertion curve
 h2 = figure('Name', 'Curva de Dispersión Teórica v/s Experimental', 'NumberTitle', 'off'); %#ok<*NASGU>
-errorbar(freq, vr_exp, sigma, 'ro');
+errorbar(freq, vr_exp, sigma, 'ro--');
 hold on;
 final_iteration = niter;
 plot(freq, vr_iter(:, final_iteration));

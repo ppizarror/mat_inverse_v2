@@ -25,14 +25,18 @@ vr_exp = getappdata(handles.root, 'disp_vrexp');
 % Get plot style
 plt_style = getappdata(handles.root, 'plt_dispertion_style');
 plt_labelsize = getappdata(handles.root, 'plt_disp_labl_fontsize');
+plt_showlegend = getappdata(handles.root, 'plt_dispertion_showlegend');
 
 % Get unit from vr
 vr_units = get(handles.unit_vr, 'String');
 unit_vr = vr_units{get(handles.unit_vr, 'Value')};
 
 % Create figure
-h = figure('Name', lang{38}, 'NumberTitle', 'off'); % #ok<*NASGU>
+h = figure('Name', lang{38}, 'NumberTitle', 'off'); %#ok<*NASGU>
 plot(freq, vr_exp, plt_style);
 xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', plt_labelsize);
 ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', plt_labelsize);
+if plt_showlegend
+    legend(lang{67});
+end
 end

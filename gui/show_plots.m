@@ -43,6 +43,12 @@ maxiter = get(handles.param_maxiter, 'string');
 tol_vs = get(handles.param_tolvs, 'string');
 table_data = get(handles.initial_solution, 'Data');
 
+% Convert data to source
+sigma = str2double(sigma) + zeros(length(freq), 1);
+mu = str2double(mu);
+maxiter = str2double(maxiter);
+tol_vs = str2double(tol_vs);
+
 % Create thk, vp, vs and dns vectors
 nrow = getappdata(handles.root, 'initial_table_validsize');
 thk = [table_data{1:nrow-1, 1}]';
@@ -50,15 +56,29 @@ vs = [table_data{1:nrow, 2}]';
 vp = [table_data{1:nrow, 3}]';
 dns = [table_data{1:nrow, 4}]';
 
+% Get plot config
+disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
+disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
+disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
+showlegend_dispertion = getappdata(handles.root, 'plt_dispertion_solution_showlegend');
+
+% Get plot units
+vr_units = get(handles.unit_vr, 'String');
+unit_vr = vr_units{get(handles.unit_vr, 'Value')};
+
 % Calculated vs Experimental dispertion curve
 h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
-errorbar(freq, vr_exp, sigma, 'ro');
 hold on;
-final_iteration = niter;
-plot(freq, vr_iter(:, final_iteration));
-xlabel('Frequency $(Hz)$', 'Interpreter', 'latex');
-ylabel('Velocidad de Fase $(m/s)$', 'Interpreter', 'latex');
+errorbar(freq, vr_exp, sigma, disp_style_err);
+plot(freq, vr_iter(:, niter), disp_style_sol);
+xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
+ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', disp_fontsize);
 hold off;
+if showlegend_dispertion % Show legend
+    legend(lang{67}, lang{68});
+end
+
+return
 
 % Shear velocity on depth plot
 vsfinal = vs_iter(:, niter)';

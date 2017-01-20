@@ -236,11 +236,11 @@ list{65, 2} = 'Error: Solution not solved yet!';
 list{66, 1} = 'Curva de Dispersión Calculada v/s Experimental';
 list{66, 2} = 'Calculated Dispertion v/s Experimental Curve';
 
-list{67, 1} = '';
-list{67, 2} = '';
+list{67, 1} = 'Curva de dispersión experimental';
+list{67, 2} = 'Experimental dispertion curve';
 
-list{68, 1} = '';
-list{68, 2} = '';
+list{68, 1} = 'Curva de dispersión inversa';
+list{68, 2} = 'Inverse dispersion curve';
 
 list{69, 1} = '';
 list{69, 2} = '';
