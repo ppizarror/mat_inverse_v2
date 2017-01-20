@@ -22,7 +22,7 @@ function show_plots(handles, lang)
 solution_status = getappdata(handles.root, 'solution_ok');
 
 % Check if solution is ok
-if ~solution_status
+if ~ solution_status
     disp_error(handles, lang, 65);
     return
 end
@@ -51,7 +51,7 @@ tol_vs = str2double(tol_vs);
 
 % Create thk, vp, vs and dns vectors
 nrow = getappdata(handles.root, 'initial_table_validsize');
-thk = [table_data{1:nrow-1, 1}]';
+thk = [table_data{1:nrow - 1, 1}]';
 vs = [table_data{1:nrow, 2}]';
 vp = [table_data{1:nrow, 3}]';
 dns = [table_data{1:nrow, 4}]';
@@ -61,10 +61,17 @@ disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
 disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
 disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
 showlegend_dispertion = getappdata(handles.root, 'plt_dispertion_solution_showlegend');
+showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
+shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
 
 % Get plot units
 vr_units = get(handles.unit_vr, 'String');
+vs_units = get(handles.unit_vsvp, 'String');
+h_units = get(handles.unit_h, 'String');
+
 unit_vr = vr_units{get(handles.unit_vr, 'Value')};
+unit_vs = vs_units{get(handles.unit_vsvp, 'Value')};
+unit_h = h_units{get(handles.unit_h, 'Value')};
 
 % Calculated vs Experimental dispertion curve
 h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
@@ -78,30 +85,30 @@ if showlegend_dispertion % Show legend
     legend(lang{67}, lang{68});
 end
 
-return
-
 % Shear velocity on depth plot
 vsfinal = vs_iter(:, niter)';
 vsinitial = vs';
 thk = thk';
 if ~ isempty(vsfinal)
-    cumthk = [0 cumsum(thk)]; depth = 0; velocity = vsfinal(1); mdl_vel = vsinitial(1);
+    cumthk = [0 cumsum(thk)];
+    depth = 0;
+    velocity = vsfinal(1);
     for j = 1:length(thk)
         depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
         velocity = [velocity vsfinal(j) vsfinal(j + 1)];
-        mdl_vel = [mdl_vel vsinitial(j) vsinitial(j + 1)];
     end
     depth = [depth sum(thk) + thk(length(thk))];
     velocity = [velocity vsfinal(length(vsfinal))];
-    mdl_vel = [mdl_vel vsinitial(length(vsinitial))];
  
-    h3 = figure('Name', 'Perfil de Velocidad de Corte', 'NumberTitle', 'off'); % #ok<*NASGU>
-    plot(velocity, depth, 'b', mdl_vel, depth, 'k--');
+    h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
+    plot(velocity, depth, 'b');
     set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
     set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-    xlabel('Velocidad de onda de corte $V_s$ $(m/sec)$', 'Interpreter', 'latex');
-    ylabel('Profundidad $(m)$', 'Interpreter', 'latex');
-    legend('Modelo inverso', 'Valor real');
+    xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
+    ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
+ 
+    if showlegend_shear
+        legend(lang{72});
+    end
 end
-
 end

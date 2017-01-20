@@ -242,11 +242,41 @@ list{67, 2} = 'Experimental dispertion curve';
 list{68, 1} = 'Curva de dispersión inversa';
 list{68, 2} = 'Inverse dispersion curve';
 
-list{69, 1} = '';
-list{69, 2} = '';
+list{69, 1} = 'Perfil de Velocidad de Corte';
+list{69, 2} = 'Shear Wave Velocity Profile';
 
-list{70, 1} = '';
-list{70, 2} = '';
+list{70, 1} = 'Velocidad de onda de corte $V_s$ $(%s)$';
+list{70, 2} = 'Shear Wave Velocity $V_s$ $(%s)$';
+
+list{71, 1} = 'Profundidad $(%s)$';
+list{71, 2} = 'Depth $(%s)$';
+
+list{72, 1} = 'Valor inverso';
+list{72, 2} = 'Inverse value';
+
+list{73, 1} = '';
+list{73, 2} = '';
+
+list{74, 1} = '';
+list{74, 2} = '';
+
+list{75, 1} = '';
+list{75, 2} = '';
+
+list{76, 1} = '';
+list{76, 2} = '';
+
+list{77, 1} = '';
+list{77, 2} = '';
+
+list{78, 1} = '';
+list{78, 2} = '';
+
+list{79, 1} = '';
+list{79, 2} = '';
+
+list{80, 1} = '';
+list{80, 2} = '';
 
 % --------------------------------------------------------------------
 

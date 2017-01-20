@@ -90,6 +90,8 @@ setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispertion_exper
 setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispertion_solution_style);
 setappdata(handles.root, 'plt_dispertion_showlegend', plt_dispertion_show_legend);
 setappdata(handles.root, 'plt_dispertion_solution_showlegend', solution_plt_dispertion_show_legend);
+setappdata(handles.root, 'sol_plot_shear_showlegend', solution_plt_shear_show_legend);
+setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
