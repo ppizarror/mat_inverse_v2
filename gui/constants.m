@@ -30,3 +30,6 @@ lang_avaiable_languages = 2;
 
 % Number of columns in dispertion Excel file
 columns_dispertiondata = 2;
+
+% Size of dispertion file string on GUI
+size_filename_dispertion_str = 32;

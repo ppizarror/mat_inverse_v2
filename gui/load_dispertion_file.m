@@ -26,17 +26,55 @@ if baseName ~= 0
 
     % Open file
     set_status(handles, lang{8}, 'k');
+    filename = strcat(folder, baseName);
     try
-        excel_data = xlsread(strcat(folder, baseName));
+        excel_data = xlsread(filename);
     catch
         set_status(handles, lang{25}, 'r');
         errordlg(lang{24},lang{23})
     end
         
-    [nRow, nColumn] = size(excel_data);
+    [~, nColumn] = size(excel_data);
     
     % Constant import
     constants;
+    
+   	% Check if number of columns are valid
+    if nColumn == columns_dispertiondata
+        
+        % Save freq and vr_exp
+        freq = excel_data(:,1);
+        vr_exp = excel_data(:,2);
+        
+        % Store vectors on app
+        setappdata(handles.root, 'disp_freq', excel_data(:,1));
+        setappdata(handles.root, 'disp_vrexp', excel_data(:,2));
+        
+        % Set status
+        set_status(handles, lang{35}, 'k');
+        
+        % --- Plot data
+        axes(handles.plt_dispertion_file);
+        
+        % Get plot style
+        plt_style = getappdata(handles.root, 'plt_dispertion_style');
+        
+        % Plot curve
+        plot(freq, vr_exp, plt_style);
+        
+        % Set filename on gui
+        if length(filename)>size_filename_dispertion_str
+            filename = filename(length(filename)-size_filename_dispertion_str:end);
+            filename = strcat('...',filename);
+        end
+        set(handles.status_direction_file, 'string', filename);
+        
+        % Enable view larger plot context menu
+        set(handles.disp_plt_viewlarger, 'Enable', 'on');
+        
+    else
+       set_status(handles, lang{34}, 'r');
+    end
     
 % If filename is invalid
 else

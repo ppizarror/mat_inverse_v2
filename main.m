@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 19-Jan-2017 22:22:43
+% Last Modified by GUIDE v2.5 19-Jan-2017 23:11:11
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -81,6 +81,8 @@ movegui(gcf,'center');
 % Import configurations
 config;
 setappdata(handles.root, 'lang', lang);
+setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize);
+setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
@@ -100,6 +102,7 @@ set_lang_string(handles.menu_file_save_as, lang{21});
 set_lang_string(handles.menu_file_close, lang{22});
 set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
 set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
+set_lang_string(handles.disp_plt_viewlarger, lang{36});
 
 % Set main variables
 setappdata(handles.root, 'disp_freq', []);
@@ -365,3 +368,25 @@ function unit_rho_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on mouse press over axes background.
+function plt_dispertion_file_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to plt_dispertion_file (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function disp_plt_viewlarger_Callback(hObject, eventdata, handles)
+% hObject    handle to disp_plt_viewlarger (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+plot_large_dispertioncurve(handles, getappdata(handles.root, 'lang'));
+
+
+% --------------------------------------------------------------------
+function dispertion_curve_menu_Callback(hObject, eventdata, handles)
+% hObject    handle to dispertion_curve_menu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)

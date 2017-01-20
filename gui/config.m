@@ -33,3 +33,9 @@ inv_tol_vs = 0.01;
 
 % Sigma, mat_inverse
 inv_sigma = 0.03;
+
+% Dispertion plot label fontsize
+plt_dispertion_label_fontsize = 10;
+
+% Dispertion plot style
+plt_dispertion_style = 'ro-';

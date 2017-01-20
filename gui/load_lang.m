@@ -133,23 +133,23 @@ list{32, 2} = 'Open (Excel)';
 list{33, 1} = 'Info: Carga de la curva de dispersión desde Excel cancelada.';
 list{33, 2} = 'Info: Excel dispertion curve data import cancelled by user.';
 
-list{34, 1} = '';
-list{34, 2} = '';
+list{34, 1} = 'Error: El archivo de dispersión debe tener sólo 2 columnas (frecuencia y velocidad de fase).';
+list{34, 2} = 'Error: Dispertion file must have only 2 columns (frecuency and phase velocity).';
 
-list{35, 1} = '';
-list{35, 2} = '';
+list{35, 1} = 'Info: Curva de dispersión cargada de forma exitosa.';
+list{35, 2} = 'Info: Dispertion curve loaded successfuly.';
 
-list{36, 1} = '';
-list{36, 2} = '';
+list{36, 1} = 'Ampliar gráfico';
+list{36, 2} = 'View bigger plot';
 
-list{37, 1} = '';
-list{37, 2} = '';
+list{37, 1} = 'Frecuencia $(Hz)$';
+list{37, 2} = 'Frequency $(Hz)$';
 
-list{38, 1} = '';
-list{38, 2} = '';
+list{38, 1} = 'Curva de Dispersión Experimental';
+list{38, 2} = 'Experimental Dipertion Curve';
 
-list{39, 1} = '';
-list{39, 2} = '';
+list{39, 1} = 'Velocidad de Fase $(%s)$';
+list{39, 2} = 'Phase Velocity $(%s)$';
 
 list{40, 1} = '';
 list{40, 2} = '';
