@@ -1,5 +1,6 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+function disp_error(handles, lang, errnumber, repl)
+% DISP ERROR
+% This function displays an error on a pop-up.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,28 +18,22 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang = load_lang(1);
+% Message error on status bar
+msg_err = lang{errnumber};
 
-% Maximum number of iterations, used by mat_inverse
-inv_maxiter = 10;
+% Message error on pop-up
+msg_ppup = strrep(msg_err, lang{53}, '');
+msg_ppup = strrep(msg_ppup, lang{54}, '');
 
-% Mu coefficient, mat_inverse
-inv_mu = 10;
+% No sprintf method
+if ~ exist('repl', 'var')
+    set_status(handles, msg_err, 'r');
+    errordlg(msg_ppup, lang{23});
+    
+% Sprintf method
+else
+    set_status(handles, sprintf(msg_err, repl), 'r');
+    errordlg(sprintf(msg_ppup, repl), lang{23});
+end
 
-% Vs tolerance error, mat_inverse
-inv_tol_vs = 0.01;
-
-% Sigma, mat_inverse
-inv_sigma = 0.03;
-
-% Dispertion plot label fontsize
-plt_dispertion_label_fontsize = 10;
-
-% Dispertion plot style
-plt_dispertion_style = 'ro-';
-
-% Deletes entry if invalid
-delete_entry_if_invalid = false;
+end

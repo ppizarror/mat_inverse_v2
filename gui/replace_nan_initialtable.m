@@ -1,5 +1,6 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+function replace_nan_initialtable(handles, lang)
+% REPLACE NAN INITIALTABLE
+% This function replace al NaN's from initial solution table
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,28 +18,26 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang = load_lang(1);
+% Get data table
+table_data = get(handles.initial_solution, 'Data');
 
-% Maximum number of iterations, used by mat_inverse
-inv_maxiter = 10;
+% Get number of rows
+[nRows, ~] = size(table_data);
 
-% Mu coefficient, mat_inverse
-inv_mu = 10;
+% Replace all NaN's
+replzd = false;
+for i=1:nRows
+    for j=1:4
+        if isnan(table_data{i,j})
+            table_data{i,j}=[];
+            replzd = true;
+        end
+    end
+end
 
-% Vs tolerance error, mat_inverse
-inv_tol_vs = 0.01;
+% Store table if a change has ocurred
+if replzd
+    set(handles.initial_solution, 'Data', table_data);
+end
 
-% Sigma, mat_inverse
-inv_sigma = 0.03;
-
-% Dispertion plot label fontsize
-plt_dispertion_label_fontsize = 10;
-
-% Dispertion plot style
-plt_dispertion_style = 'ro-';
-
-% Deletes entry if invalid
-delete_entry_if_invalid = false;
+end

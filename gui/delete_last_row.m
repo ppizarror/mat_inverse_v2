@@ -23,13 +23,11 @@ old_table_data = get(handles.initial_solution, 'Data');
 old_table_row_names = get(handles.initial_solution, 'RowName');
 
 % Get number of rows
-nRows = size(old_table_data, 1);
-nColumns = size(old_table_data, 2);
+[nRows, nColumns] = size(old_table_data);
 
 % Check if nRows is greather than 1
 if nRows == 1
-    set_status(handles, lang{3}, 'r');
-    errordlg(lang{3},lang{23});
+    disp_error(handles, lang, 3);
     return
 else
  

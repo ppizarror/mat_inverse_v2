@@ -75,20 +75,17 @@ if baseName ~= 0
             set_status(handles, lang{10});
          
         else
-            set_status(handles, sprintf(lang{9}, num2str(excel_data(nRow, 1))), 'r');
-            errordlg(sprintf(lang{9}, num2str(excel_data(nRow, 1))), lang{23});
+            disp_error(handles, lang, 9, num2str(excel_data(nRow, 1)));
             return
         end
      
     else
-        set_status(handles, sprintf(lang{7}, nColumn), 'r');
-        errordlg(sprintf(lang{7}, nColumn), lang{23});
+        disp_error(handles, lang, 7, nColumn);
         return
     end
  
 % If filename is invalid
 else
-    set_status(handles, lang{6}, 'r');
-    errordlg(lang{6}, lang{23});
+    disp_error(handles, lang, 6);
     return
 end

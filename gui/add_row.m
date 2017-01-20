@@ -23,8 +23,7 @@ old_table_data = get(handles.initial_solution, 'Data');
 old_table_row_names = get(handles.initial_solution, 'RowName');
 
 % Get number of rows
-nRows = size(old_table_data, 1);
-nColumns = size(old_table_data, 2);
+[nRows, nColumns] = size(old_table_data);
 
 % Create new data cell
 new_table_data = cell(nRows + 1, nColumns);

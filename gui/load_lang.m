@@ -187,20 +187,24 @@ list{50, 2} = 'Error: Dispersion curve has not been loaded yet, cant continue.';
 list{51, 1} = 'Error: La tabla de solución inicial no es válida, imposible continuar.';
 list{51, 2} = 'Error: Initial solution table is not valid, cant continue.';
 
-list{52, 1} = '';
-list{52, 2} = '';
+list{52, 1} = 'Error: La segunda, tercera y cuarta columna de la tabla de solución inicial deben tener igual número de datos.';
+list{52, 2} = 'Error: Second, Third and Fourth columns from initial solution table must have same size.';
 
-list{53, 1} = '';
-list{53, 2} = '';
+% This entry contains head of error messages, used to replace most of error
+% string to be displayed on pop-ups
+list{53, 1} = 'Error: ';
+list{53, 2} = 'Error: ';
 
-list{54, 1} = '';
-list{54, 2} = '';
+% This entry contains head of info messages, used to replace most of info
+% string to be displayed on pop-ups
+list{54, 1} = 'Info: ';
+list{54, 2} = 'Info: ';
 
-list{55, 1} = '';
-list{55, 2} = '';
+list{55, 1} = 'Error: La tabla de solución inicial está vacía.';
+list{55, 2} = 'Error: Initial solution table is empty.';
 
-list{56, 1} = '';
-list{56, 2} = '';
+list{56, 1} = 'Error: La tabla de solución inicial no puede tener sólo 1 fila.';
+list{56, 2} = 'Error: Initial solution table cant have only 1 row.';
 
 list{57, 1} = '';
 list{57, 2} = '';

@@ -33,16 +33,14 @@ end
 % Check if initial table is valid
 initial_table_status = check_initial_table(handles, lang);
 if ~ initial_table_status
-    set_status(handles, lang{51}, 'r');
-    errordlg(lang{51}, lang{23});
+    % disp_error(handles, lang, 51);
     return
 end
 
 % Check if dispertion properly loaded
 dispertion_status = getappdata(handles.root, 'dispertion_ok');
 if ~ dispertion_status
-    set_status(handles, lang{50}, 'r');
-    errordlg(lang{50}, lang{23});
+    disp_error(handles, lang, 50);
     return
 end
 

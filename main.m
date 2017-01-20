@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 20-Jan-2017 01:06:14
+% Last Modified by GUIDE v2.5 20-Jan-2017 12:07:51
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -178,6 +178,7 @@ function initial_solution_CellEditCallback(hObject, eventdata, handles)
 %	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
 %	Error: error string when failed to convert EditData to appropriate value for Data
 % handles    structure with handles and user data (see GUIDATA)
+replace_nan_initialtable(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
@@ -605,4 +606,12 @@ function btn_opendispertion_KeyPressFcn(hObject, eventdata, handles)
 %	Key: name of the key that was pressed, in lower case
 %	Character: character interpretation of the key(s) that was pressed
 %	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes when selected cell(s) is changed in initial_solution.
+function initial_solution_CellSelectionCallback(hObject, eventdata, handles)
+% hObject    handle to initial_solution (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.TABLE)
+%	Indices: row and column indices of the cell(s) currently selecteds
 % handles    structure with handles and user data (see GUIDATA)

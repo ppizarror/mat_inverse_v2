@@ -33,12 +33,10 @@ del_invalid = getappdata(handles.root, 'delete_entry_if_invalid');
 
 % Check sigma
 if isempty(inv_sigma) && ~ edition
-    set_status(handles, sprintf(lang{46}, 'sigma'), 'r');
-    errordlg(sprintf(lang{46}, 'sigma'), lang{23});
+    disp_error(handles, lang, 46, 'sigma');
 end
 if ~ all(ismember(inv_sigma, '0123456789+-.eE'))
-    set_status(handles, sprintf(lang{47}, 'sigma'), 'r');
-    errordlg(sprintf(lang{47}, 'sigma'), lang{23});
+    disp_error(handles, lang, 47, 'sigma');
     
     % Set sigma to empty
     if del_invalid
@@ -49,12 +47,10 @@ end
 
 % Check mu
 if isempty(inv_mu) && ~ edition
-    set_status(handles, sprintf(lang{46}, 'mu'), 'r');
-    errordlg(sprintf(lang{46}, 'mu'), lang{23});
+    disp_error(handles, lang, 46, 'mu');
 end
 if ~ all(ismember(inv_mu, '0123456789+-.eE'))
-    set_status(handles, sprintf(lang{47}, 'mu'), 'r');
-    errordlg(sprintf(lang{47}, 'mu'), lang{23});
+    disp_error(handles, lang, 47, 'mu');
     
     % Set mu to empty
     if del_invalid
@@ -65,12 +61,10 @@ end
 
 % Check max_iter
 if isempty(inv_maxiter) && ~ edition
-    set_status(handles, sprintf(lang{46}, 'max_iter'), 'r');
-    errordlg(sprintf(lang{46}, 'max_iter'), lang{23});
+    disp_error(handles, lang, 46, 'max_iter');
 end
 if ~ all(ismember(inv_maxiter, '0123456789+-.eE'))
-    set_status(handles, sprintf(lang{47}, 'max_iter'), 'r');
-    errordlg(sprintf(lang{47}, 'max_iter'), lang{23});
+    disp_error(handles, lang, 47, 'max_iter');
     
     % Set max_iter to empty
     if del_invalid
@@ -81,12 +75,10 @@ end
 
 % Check tol_vs
 if isempty(inv_tol_vs) && ~ edition
-    set_status(handles, sprintf(lang{46}, 'tol_vs'), 'r');
-    errordlg(sprintf(lang{46}, 'tol_vs'), lang{23});
+    disp_error(handles, lang, 46, 'tol_vs');
 end
 if ~ all(ismember(inv_tol_vs, '0123456789+-.eE'))
-    set_status(handles, sprintf(lang{47}, 'tol_vs'), 'r');
-    errordlg(sprintf(lang{47}, 'tol_vs'), lang{23});
+    disp_error(handles, lang, 47, 'tol_vs');
     
     % Set tol_vs to empty
     if del_invalid

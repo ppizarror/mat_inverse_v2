@@ -76,15 +76,13 @@ if baseName ~= 0
         setappdata(handles.root, 'dispertion_ok', true);
      
     else
-        set_status(handles, lang{34}, 'r');
-        errordlg(lang{34}, lang{23});
+        disp_error(handles, lang, 34);
         return
     end
  
 % If filename is invalid
 else
-    set_status(handles, lang{33}, 'r');
-    errordlg(lang{33}, lang{23});
+    disp_error(handles, lang, 33);
     return
 end
 end
