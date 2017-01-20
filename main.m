@@ -104,6 +104,10 @@ set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
 set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
 set_lang_string(handles.disp_plt_viewlarger, lang{36});
 set_lang_string(handles.panel_units, lang{40}, 'Title');
+set_lang_string(handles.start_button, lang{42}, 'string');
+set_lang_string(handles.view_sol_plot, lang{43}, 'string');
+set_lang_string(handles.export_results, lang{44}, 'string');
+set_lang_string(handles.inv_entry_panel, lang{45}, 'Title');
 
 % Set main variables
 setappdata(handles.root, 'disp_freq', []);
@@ -405,7 +409,6 @@ function start_button_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
-
 function param_inv_sigma_Callback(hObject, eventdata, handles)
 % hObject    handle to param_inv_sigma (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -426,7 +429,6 @@ function param_inv_sigma_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function param_inv_mu_Callback(hObject, eventdata, handles)
@@ -451,7 +453,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-
 function param_maxiter_Callback(hObject, eventdata, handles)
 % hObject    handle to param_maxiter (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -472,7 +473,6 @@ function param_maxiter_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function param_tolvs_Callback(hObject, eventdata, handles)

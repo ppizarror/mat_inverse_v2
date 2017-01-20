@@ -1,6 +1,6 @@
 function langlist = load_lang(langid)
 % LOAD LANG
-% Set lang list of string entries
+% Set lang list of string entries.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -157,17 +157,17 @@ list{40, 2} = 'Units';
 list{41, 1} = 'Version del Software: %s';
 list{41, 2} = 'Software version: %s';
 
-list{42, 1} = '';
-list{42, 2} = '';
+list{42, 1} = 'Iniciar';
+list{42, 2} = 'Start';
 
-list{43, 1} = '';
-list{43, 2} = '';
+list{43, 1} = 'Ver gráficos';
+list{43, 2} = 'See plots';
 
-list{44, 1} = '';
-list{44, 2} = '';
+list{44, 1} = 'Exportar resultados';
+list{44, 2} = 'Export results';
 
-list{45, 1} = '';
-list{45, 2} = '';
+list{45, 1} = 'Parámetros para la inversión';
+list{45, 2} = 'Inversion parameters';
 
 list{46, 1} = '';
 list{46, 2} = '';
