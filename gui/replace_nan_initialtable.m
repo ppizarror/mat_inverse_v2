@@ -26,10 +26,10 @@ table_data = get(handles.initial_solution, 'Data');
 
 % Replace all NaN's
 replzd = false;
-for i=1:nRows
-    for j=1:4
-        if isnan(table_data{i,j})
-            table_data{i,j}=[];
+for i = 1:nRows
+    for j = 1:4
+        if isnan(table_data{i, j})
+            table_data{i, j} = [];
             replzd = true;
         end
     end

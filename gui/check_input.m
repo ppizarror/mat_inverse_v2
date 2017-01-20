@@ -1,6 +1,6 @@
-function start_inversion(handles, lang)
-% START INVERSION
-% Starts the inversion calculus.
+function status = check_input(handles, lang)
+% CHECK INPUT
+% This function check and validates all input.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -18,18 +18,29 @@ function start_inversion(handles, lang)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Set status
-set_status(handles, lang{48}, 'k');
+% Set status to false
+status = false;
 
-% --- Input validation
-set_status(handles, lang{49}, 'k');
-valid = check_input(handles, lang);
-
-% Return if not valid input
-if ~valid
+% Check if inversion parameters are OK
+inv_status = check_inv_parameters(handles, lang, true);
+if ~ inv_status
     return
 end
 
-% -- STARTS INVERSION
+% Check if initial table is valid
+initial_table_status = check_initial_table(handles, lang);
+if ~ initial_table_status
+    % disp_error(handles, lang, 51);
+    return
+end
 
+% Check if dispertion properly loaded
+dispertion_status = getappdata(handles.root, 'dispertion_ok');
+if ~ dispertion_status
+    disp_error(handles, lang, 50);
+    return
+end
+
+% Set status to correct
+status = true;
 end
