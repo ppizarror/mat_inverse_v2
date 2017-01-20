@@ -46,8 +46,8 @@ list{3, 2} = 'Error: Last row cant be deleted.';
 list{4, 1} = 'Importar tabla desde Excel';
 list{4, 2} = 'Import table from Excel';
 
-list{5, 1} = 'Escoja un archivo desde Excel.';
-list{5, 2} = 'Please select an Excel file.';
+list{5, 1} = 'Escoja un archivo Excel';
+list{5, 2} = 'Please select an Excel file';
 
 list{6, 1} = 'Info: Importación desde Excel cancelada.';
 list{6, 2} = 'Info: Excel import cancelled by user.';
@@ -221,14 +221,14 @@ list{60, 2} = 'An Exception has ocurred while running mat_inverse';
 list{61, 1} = 'Error fatal!';
 list{61, 2} = 'Fatal error!';
 
-list{62, 1} = 'Espere';
+list{62, 1} = 'Espere ...';
 list{62, 2} = 'Please wait';
 
-list{63, 1} = '';
-list{63, 2} = '';
+list{63, 1} = 'Proceso terminado';
+list{63, 2} = 'Process completed';
 
-list{64, 1} = '';
-list{64, 2} = '';
+list{64, 1} = 'El proceso de inversión ha sido completado de forma exitosa.';
+list{64, 2} = 'Inversion process has been completed successfully.';
 
 list{65, 1} = '';
 list{65, 2} = '';

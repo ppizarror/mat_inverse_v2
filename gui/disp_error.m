@@ -36,4 +36,9 @@ else
     errordlg(sprintf(msg_ppup, repl), lang{23});
 end
 
+% Trigger error sound if enabled by app configuration
+if getappdata(handles.root, 'gui_sound')
+    beep();
+end
+    
 end

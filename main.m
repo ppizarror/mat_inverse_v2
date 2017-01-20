@@ -84,6 +84,7 @@ setappdata(handles.root, 'lang', lang);
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize);
 setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
 setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
+setappdata(handles.root, 'gui_sound', gui_sound_enabled);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>

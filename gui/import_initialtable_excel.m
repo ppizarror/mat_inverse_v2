@@ -20,7 +20,7 @@ function import_initialtable_excel(handles, lang)
 
 % Request file
 set_status(handles, lang{5});
-[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'});
+[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'}, lang{5});
 
 % If filename is valid
 if baseName ~= 0

@@ -56,10 +56,10 @@ dns = [table_data{1:nrow, 4}]';
 
 % Set statuses
 set_status(handles, lang{57}, 'k');
-guidata(hObject, handles);
 set(handles.root, 'pointer', 'watch');
 set_lang_string(handles.start_button, lang{62}, 'string');
 set(handles.start_button, 'Enable', 'off');
+guidata(hObject, handles);
 pause(0.01);
 
 % Starts mat_inverse
@@ -86,6 +86,8 @@ end
 set_status(handles, lang{59}, 'k');
 set(handles.root, 'pointer', 'arrow');
 set_lang_string(handles.start_button, lang{42}, 'string');
+msgbox(lang{64}, lang{63}, 'help');
+beep();
 
 % Enable buttons
 set(handles.view_sol_plot, 'Enable', 'on');

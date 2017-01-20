@@ -42,3 +42,6 @@ plt_dispertion_style = 'ro-';
 
 % Deletes entry if invalid
 delete_entry_if_invalid = false;
+
+% Enable GUI sounds
+gui_sound_enabled = true;

@@ -19,7 +19,7 @@ function load_dispertion_file(handles, lang)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 set_status(handles, lang{5});
-[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'});
+[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'}, lang{5});
 
 % If filename is valid
 if baseName ~= 0
