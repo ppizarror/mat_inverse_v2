@@ -57,22 +57,40 @@ dns = [table_data{1:nrow, 4}]';
 % Set statuses
 set_status(handles, lang{57}, 'k');
 guidata(hObject, handles);
-set(handles.root, 'pointer', 'watch') 
+set(handles.root, 'pointer', 'watch');
+set_lang_string(handles.start_button, lang{62}, 'string');
+set(handles.start_button, 'Enable', 'off');
 pause(0.01);
 
 % Starts mat_inverse
 try
+    
     [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, vp, vs, dns, maxiter, mu, tol_vs, true, handles.status_iteration, lang{58}); %#ok<*ASGLU>
 
 % Some error has occurred
 catch Exception
-    msg_error = getReport(exception);
     
-end
+    msg_error = getReport(Exception);
+    pause(0.01);
+    set_status(handles, lang{60}, 'r');
+    errordlg(msg_error, lang{61});
+    set(handles.root, 'pointer', 'arrow');
+    set_lang_string(handles.start_button, lang{42}, 'string');
+    set(handles.start_button, 'Enable', 'on');
+    return
     
-set_status(handles, lang{57}, 'k');
-set(handles.root, 'pointer', 'pointer') 
+end 
 % --------------------------------------------------------------------
+
+% Set completed status
+set_status(handles, lang{59}, 'k');
+set(handles.root, 'pointer', 'arrow');
+set_lang_string(handles.start_button, lang{42}, 'string');
+
+% Enable buttons
+set(handles.view_sol_plot, 'Enable', 'on');
+set(handles.export_results, 'Enable', 'on');
+set(handles.start_button, 'Enable', 'on');
 
 % Theorical vs Experimental dispertion curve
 h2 = figure('Name', 'Curva de Dispersión Teórica v/s Experimental', 'NumberTitle', 'off'); %#ok<*NASGU>

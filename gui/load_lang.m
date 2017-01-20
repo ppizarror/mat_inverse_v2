@@ -218,8 +218,35 @@ list{59, 2} = 'Info: Process completed successfully';
 list{60, 1} = 'Ocurrió una excepción al ejecutar mat_inverse';
 list{60, 2} = 'An Exception has ocurred while running mat_inverse';
 
-list{61, 1} = '';
-list{61, 2} = '';
+list{61, 1} = 'Error fatal!';
+list{61, 2} = 'Fatal error!';
+
+list{62, 1} = 'Espere';
+list{62, 2} = 'Please wait';
+
+list{63, 1} = '';
+list{63, 2} = '';
+
+list{64, 1} = '';
+list{64, 2} = '';
+
+list{65, 1} = '';
+list{65, 2} = '';
+
+list{66, 1} = '';
+list{66, 2} = '';
+
+list{67, 1} = '';
+list{67, 2} = '';
+
+list{68, 1} = '';
+list{68, 2} = '';
+
+list{69, 1} = '';
+list{69, 2} = '';
+
+list{70, 1} = '';
+list{70, 2} = '';
 
 % --------------------------------------------------------------------
 
