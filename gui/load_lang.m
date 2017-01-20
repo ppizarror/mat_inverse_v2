@@ -109,6 +109,51 @@ list{24, 2} = 'An error has occurred while opening the file, check your administ
 list{25, 1} = 'Error: No se pudo cargar el archivo';
 list{25, 2} = 'Error: File could not be loaded';
 
+list{26, 1} = 'Info: Ha sido borrada la tabla de solución inicial.';
+list{26, 2} = 'Info: Initial table has been succesfully cleaned.';
+
+list{27, 1} = 'Autor: Pablo Pizarro @ppizarror.com, 2017.';
+list{27, 2} = 'Author: Pablo Pizarro @ppizarror.com, 2017.';
+
+list{28, 1} = 'Agradecimientos a: Felipe Ochoa.';
+list{28, 2} = 'Acknowledgments to: Felipe Ochoa.';
+
+list{29, 1} = 'Código en Matlab para la inversión de la velocidad de fase de una onda Raylegh. Construido inicialmente a partir de las librerias mat_inverse y mat_disperse.';
+list{29, 2} = 'Matlab code for inversion of Rayleigh phase velocity. Initially built from mat_inverse and mat_disperse matlab libraries.';
+
+list{30, 1} = 'Sitio web: https://github.com/ppizarror/mat_inverse_v2';
+list{30, 2} = 'Website: https://github.com/ppizarror/mat_inverse_v2';
+
+list{31, 1} = '';
+list{31, 2} = '';
+
+list{32, 1} = '';
+list{32, 2} = '';
+
+list{33, 1} = '';
+list{33, 2} = '';
+
+list{34, 1} = '';
+list{34, 2} = '';
+
+list{35, 1} = '';
+list{35, 2} = '';
+
+list{36, 1} = '';
+list{36, 2} = '';
+
+list{37, 1} = '';
+list{37, 2} = '';
+
+list{38, 1} = '';
+list{38, 2} = '';
+
+list{39, 1} = '';
+list{39, 2} = '';
+
+list{40, 1} = '';
+list{40, 2} = '';
+
 % --------------------------------------------------------------------
 
 % Create list of choise

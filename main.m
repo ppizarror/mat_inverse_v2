@@ -187,6 +187,7 @@ function menu_edition_cleantable_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_edition_cleantable (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+clear_initialtable(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
@@ -229,6 +230,7 @@ function menu_about_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_about (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+about(getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
