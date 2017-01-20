@@ -184,8 +184,8 @@ list{49, 2} = 'Info: Validating input.';
 list{50, 1} = 'Error: La curva de dispersión no ha sido cargada aún, imposible continuar.';
 list{50, 2} = 'Error: Dispersion curve has not been loaded yet, cant continue.';
 
-list{51, 1} = '';
-list{51, 2} = '';
+list{51, 1} = 'Error: La tabla de solución inicial no es válida, imposible continuar.';
+list{51, 2} = 'Error: Initial solution table is not valid, cant continue.';
 
 list{52, 1} = '';
 list{52, 2} = '';

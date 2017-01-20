@@ -1,5 +1,7 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+function status = check_initial_table(handles, lang)
+% CHECK INITIAL TABLE
+% This function checks that initial solution for solving inverse problem
+% is valid.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,28 +19,7 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang = load_lang(2);
+% Initialize status
+status = false;
 
-% Maximum number of iterations, used by mat_inverse
-inv_maxiter = 10;
-
-% Mu coefficient, mat_inverse
-inv_mu = 10;
-
-% Vs tolerance error, mat_inverse
-inv_tol_vs = 0.01;
-
-% Sigma, mat_inverse
-inv_sigma = 0.03;
-
-% Dispertion plot label fontsize
-plt_dispertion_label_fontsize = 10;
-
-% Dispertion plot style
-plt_dispertion_style = 'ro-';
-
-% Deletes entry if invalid
-delete_entry_if_invalid = false;
+end
