@@ -121,6 +121,7 @@ setappdata(handles.root, 'vr_iter', []);
 setappdata(handles.root, 'vp_iter', []);
 setappdata(handles.root, 'vs_iter', []);
 setappdata(handles.root, 'dns_iter', []);
+setappdata(handles.root, 'solution_ok', false);
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', inv_sigma);
@@ -513,6 +514,7 @@ function view_sol_plot_Callback(hObject, eventdata, handles)
 % hObject    handle to view_sol_plot (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+show_plots(handles, getappdata(handles.root, 'lang'));
 
 
 % --- Executes on button press in export_results.

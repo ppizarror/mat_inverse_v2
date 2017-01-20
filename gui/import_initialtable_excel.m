@@ -31,7 +31,7 @@ if baseName ~= 0
         excel_data = xlsread(strcat(folder, baseName));
     catch
         set_status(handles, lang{25}, 'r');
-        errordlg(lang{24}, lang{23})
+        errordlg(lang{24}, lang{23});
         return
     end
  

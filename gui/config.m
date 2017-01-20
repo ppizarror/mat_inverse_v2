@@ -17,10 +17,24 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+% --------------------------------------------------------------------
+% GUI APP CONFIGURATION
+
 % Language selection
 %   1:  Spanish (Español)
 %   2:  English (United States)
 lang = load_lang(1);
+
+% Deletes entry if invalid
+delete_entry_if_invalid = false;
+
+% Enable GUI sounds
+gui_sound_enabled = true;
+% --------------------------------------------------------------------
+
+
+% --------------------------------------------------------------------
+% INVERSE MATLAB CONFIGURATION
 
 % Maximum number of iterations, used by mat_inverse
 inv_maxiter = 10;
@@ -33,15 +47,21 @@ inv_tol_vs = 0.01;
 
 % Sigma, mat_inverse
 inv_sigma = 0.03;
+% --------------------------------------------------------------------
 
-% Dispertion plot label fontsize
-plt_dispertion_label_fontsize = 10;
+
+% --------------------------------------------------------------------
+% PLOT CONFIGURATION
 
 % Dispertion plot style
 plt_dispertion_style = 'ro-';
 
-% Deletes entry if invalid
-delete_entry_if_invalid = false;
+% Dispertion plot label fontsize
+plt_dispertion_label_fontsize = 10;
 
-% Enable GUI sounds
-gui_sound_enabled = true;
+% Solution dispertion curve plot style
+soltion_plt_dispertion_style = 'ro--';
+
+% Solution plot label fontsize
+solution_plt_dispertion_fontsize = 10;
+% --------------------------------------------------------------------

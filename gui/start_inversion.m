@@ -70,13 +70,25 @@ try
 % Some error has occurred
 catch Exception
     
+    % Get Exception message
     msg_error = getReport(Exception);
     pause(0.01);
+    
+    % Display errors / set statuses
     set_status(handles, lang{60}, 'r');
     errordlg(msg_error, lang{61});
-    set(handles.root, 'pointer', 'arrow');
     set_lang_string(handles.start_button, lang{42}, 'string');
+    
+    % Disable/Enable buttons
     set(handles.start_button, 'Enable', 'on');
+    set(handles.view_sol_plot, 'Enable', 'off');
+    set(handles.export_results, 'Enable', 'off');
+    
+    % Change app cursor
+    set(handles.root, 'pointer', 'arrow');
+    
+    % Set solution status to ERROR
+    setappdata(handles.root, 'solution_ok', false);
     return
     
 end 
@@ -100,5 +112,8 @@ setappdata(handles.root, 'vr_iter', vr_iter);
 setappdata(handles.root, 'vp_iter', vp_iter);
 setappdata(handles.root, 'vs_iter', vs_iter);
 setappdata(handles.root, 'dns_iter', dns_iter);
+
+% Set solution status to OK
+setappdata(handles.root, 'solution_ok', true);
 
 end

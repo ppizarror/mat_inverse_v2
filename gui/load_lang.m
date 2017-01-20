@@ -230,11 +230,11 @@ list{63, 2} = 'Process completed';
 list{64, 1} = 'El proceso de inversión ha sido completado de forma exitosa.';
 list{64, 2} = 'Inversion process has been completed successfully.';
 
-list{65, 1} = '';
-list{65, 2} = '';
+list{65, 1} = 'Error: Solución no calculada aún!';
+list{65, 2} = 'Error: Solution not solved yet!';
 
-list{66, 1} = '';
-list{66, 2} = '';
+list{66, 1} = 'Curva de Dispersión Calculada v/s Experimental';
+list{66, 2} = 'Calculated Dispertion v/s Experimental Curve';
 
 list{67, 1} = '';
 list{67, 2} = '';
