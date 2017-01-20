@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 19-Jan-2017 23:11:11
+% Last Modified by GUIDE v2.5 20-Jan-2017 00:07:59
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -103,10 +103,17 @@ set_lang_string(handles.menu_file_close, lang{22});
 set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
 set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
 set_lang_string(handles.disp_plt_viewlarger, lang{36});
+set_lang_string(handles.panel_units, lang{40}, 'Title');
 
 % Set main variables
 setappdata(handles.root, 'disp_freq', []);
 setappdata(handles.root, 'disp_vrexp', []);
+
+% Update inv entry (from config.m)
+set(handles.param_inv_sigma, 'string', inv_sigma);
+set(handles.param_inv_mu, 'string', inv_mu);
+set(handles.param_maxiter, 'string', inv_maxiter);
+set(handles.param_tolvs, 'string', inv_tol_vs);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -389,4 +396,127 @@ plot_large_dispertioncurve(handles, getappdata(handles.root, 'lang'));
 function dispertion_curve_menu_Callback(hObject, eventdata, handles)
 % hObject    handle to dispertion_curve_menu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in start_button.
+function start_button_Callback(hObject, eventdata, handles)
+% hObject    handle to start_button (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function param_inv_sigma_Callback(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of param_inv_sigma as text
+%        str2double(get(hObject,'String')) returns contents of param_inv_sigma as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function param_inv_sigma_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function param_inv_mu_Callback(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of param_inv_mu as text
+%        str2double(get(hObject,'String')) returns contents of param_inv_mu as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function param_inv_mu_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function param_maxiter_Callback(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of param_maxiter as text
+%        str2double(get(hObject,'String')) returns contents of param_maxiter as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function param_maxiter_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function param_tolvs_Callback(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of param_tolvs as text
+%        str2double(get(hObject,'String')) returns contents of param_tolvs as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function param_tolvs_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in view_sol_plot.
+function view_sol_plot_Callback(hObject, eventdata, handles)
+% hObject    handle to view_sol_plot (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in export_results.
+function export_results_Callback(hObject, eventdata, handles)
+% hObject    handle to export_results (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on param_inv_sigma and none of its controls.
+function param_inv_sigma_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
 % handles    structure with handles and user data (see GUIDATA)

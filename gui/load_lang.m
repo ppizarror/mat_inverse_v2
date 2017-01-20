@@ -151,8 +151,68 @@ list{38, 2} = 'Experimental Dipertion Curve';
 list{39, 1} = 'Velocidad de Fase $(%s)$';
 list{39, 2} = 'Phase Velocity $(%s)$';
 
-list{40, 1} = '';
-list{40, 2} = '';
+list{40, 1} = 'Unidades';
+list{40, 2} = 'Units';
+
+list{41, 1} = 'Version del Software: %s';
+list{41, 2} = 'Software version: %s';
+
+list{42, 1} = '';
+list{42, 2} = '';
+
+list{43, 1} = '';
+list{43, 2} = '';
+
+list{44, 1} = '';
+list{44, 2} = '';
+
+list{45, 1} = '';
+list{45, 2} = '';
+
+list{46, 1} = '';
+list{46, 2} = '';
+
+list{47, 1} = '';
+list{47, 2} = '';
+
+list{48, 1} = '';
+list{48, 2} = '';
+
+list{49, 1} = '';
+list{49, 2} = '';
+
+list{50, 1} = '';
+list{50, 2} = '';
+
+list{51, 1} = '';
+list{51, 2} = '';
+
+list{52, 1} = '';
+list{52, 2} = '';
+
+list{53, 1} = '';
+list{53, 2} = '';
+
+list{54, 1} = '';
+list{54, 2} = '';
+
+list{55, 1} = '';
+list{55, 2} = '';
+
+list{56, 1} = '';
+list{56, 2} = '';
+
+list{57, 1} = '';
+list{57, 2} = '';
+
+list{58, 1} = '';
+list{58, 2} = '';
+
+list{59, 1} = '';
+list{59, 2} = '';
+
+list{60, 1} = '';
+list{60, 2} = '';
 
 % --------------------------------------------------------------------
 

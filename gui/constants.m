@@ -17,11 +17,14 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+% Version
+software_version = '2.1';
+
 % Minimum size of the initial table
-min_rowsize_initialtable = 20;
+min_rowsize_initialtable = 30;
 
 % Total of entries in lang list
-lang_entries = 40;
+lang_entries = 60;
 
 % Total of avaiable languages
 %   1:  Spanish (Español)

@@ -50,9 +50,6 @@ if baseName ~= 0
         setappdata(handles.root, 'disp_freq', excel_data(:,1));
         setappdata(handles.root, 'disp_vrexp', excel_data(:,2));
         
-        % Set status
-        set_status(handles, lang{35}, 'k');
-        
         % --- Plot data
         axes(handles.plt_dispertion_file);
         
@@ -71,6 +68,9 @@ if baseName ~= 0
         
         % Enable view larger plot context menu
         set(handles.disp_plt_viewlarger, 'Enable', 'on');
+        
+        % Set status
+        set_status(handles, lang{35}, 'k');
         
     else
        set_status(handles, lang{34}, 'r');

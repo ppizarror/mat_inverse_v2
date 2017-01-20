@@ -18,7 +18,11 @@ function about(lang)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-msgbox({'Mat inverse V2';lang{29};'';lang{27};lang{28};lang{30}}, lang{19}, 'help');
+% Constants import
+constants;
+
+% Display message box
+msgbox({'Mat inverse V2';lang{29};'';lang{27};lang{28};lang{30};'';sprintf(lang{41}, software_version)}, lang{19}, 'help');
 
 end
 
