@@ -26,8 +26,8 @@ new_table = cell(min_rowsize_initialtable, 4);
 
 % Create new table row names
 table_row_name = cell(min_rowsize_initialtable, 1);
-for i=1:min_rowsize_initialtable
-    table_row_name{i}=num2str(i);
+for i = 1:min_rowsize_initialtable
+    table_row_name{i} = num2str(i);
 end
 
 % Store table

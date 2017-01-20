@@ -31,7 +31,7 @@ vr_units = get(handles.unit_vr, 'String');
 unit_vr = vr_units{get(handles.unit_vr, 'Value')};
 
 % Create figure
-h = figure('Name', lang{38}, 'NumberTitle', 'off'); %#ok<*NASGU>
+h = figure('Name', lang{38}, 'NumberTitle', 'off'); % #ok<*NASGU>
 plot(freq, vr_exp, plt_style);
 xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', plt_labelsize);
 ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', plt_labelsize);
