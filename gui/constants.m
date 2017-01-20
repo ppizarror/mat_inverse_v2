@@ -18,7 +18,7 @@
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Version
-software_version = '2.1';
+software_version = '2.3';
 
 % Minimum size of the initial table
 min_rowsize_initialtable = 30;
