@@ -24,7 +24,7 @@ software_version = '2.1';
 min_rowsize_initialtable = 30;
 
 % Total of entries in lang list
-lang_entries = 60;
+lang_entries = 80;
 
 % Total of avaiable languages
 %   1:  Spanish (Español)

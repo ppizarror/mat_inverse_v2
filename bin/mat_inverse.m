@@ -1,4 +1,4 @@
-function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, vp, vs, dns, maxiter, mu, tol_vs)
+function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, vp, vs, dns, maxiter, mu, tol_vs, gui, object, msg)
 % input:
 %   1. dispersion curve
 %       freq, vr_exp, sigma
@@ -6,6 +6,8 @@ function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp
 %       thk, vp, vs, dns
 %   3. parameters control the inversion
 %       maxiter, mu, tol_vs (change in vs)
+%   4. GUI parameters
+%       gui (true/false), object, label, msg (message to show, as %d/%d)
 % Modification history:
 % 01/19/2017: Pablo Pizarro (UChile)
 %               (1) Deleted files related to Love wave
@@ -33,7 +35,18 @@ vs_iter = zeros(nl + 1, maxiter);
 dns_iter = zeros(nl + 1, maxiter);
 vr_iter = zeros(length(freq), maxiter);
 
+% Check if gui parameters is defined
+if ~ exist('gui', 'var')
+    gui = false;
+end
+
 for i = 1:maxiter
+    
+    % If GUI
+    if gui
+        pause(0.01);
+        set(object, 'string', sprintf(msg, i, maxiter));
+    end
  
     % Calculate theoretical phase velocity and partial derivatives
     % warning: presently the code only handle 1 type of dispersion!

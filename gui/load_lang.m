@@ -206,17 +206,20 @@ list{55, 2} = 'Error: Initial solution table is empty.';
 list{56, 1} = 'Error: La tabla de solución inicial no puede tener sólo 1 fila.';
 list{56, 2} = 'Error: Initial solution table cant have only 1 row.';
 
-list{57, 1} = '';
-list{57, 2} = '';
+list{57, 1} = 'Calculando ...';
+list{57, 2} = 'Processing ...';
 
-list{58, 1} = '';
-list{58, 2} = '';
+list{58, 1} = 'Iteración %d/%d';
+list{58, 2} = 'Iteration %d/%d';
 
-list{59, 1} = '';
-list{59, 2} = '';
+list{59, 1} = 'Info: Proceso terminado exitosamente!';
+list{59, 2} = 'Info: Process completed successfully';
 
-list{60, 1} = '';
-list{60, 2} = '';
+list{60, 1} = 'Ocurrió una excepción al ejecutar mat_inverse';
+list{60, 2} = 'An Exception has ocurred while running mat_inverse';
+
+list{61, 1} = '';
+list{61, 2} = '';
 
 % --------------------------------------------------------------------
 
