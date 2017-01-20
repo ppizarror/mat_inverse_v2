@@ -33,7 +33,8 @@ if baseName ~= 0
         set_status(handles, lang{25}, 'r');
         errordlg(lang{24},lang{23})
     end
-        
+    
+    % Get size of excel loaded data
     [~, nColumn] = size(excel_data);
     
     % Constant import
@@ -74,10 +75,12 @@ if baseName ~= 0
         
     else
        set_status(handles, lang{34}, 'r');
+       errordlg(lang{34},lang{23});
     end
     
 % If filename is invalid
 else
     set_status(handles, lang{33}, 'r');
+    errordlg(lang{33},lang{23});
 end
 end

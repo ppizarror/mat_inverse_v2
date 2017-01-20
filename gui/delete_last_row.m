@@ -1,4 +1,4 @@
-function delete_last_row(handles, str_err1)
+function delete_last_row(handles, lang)
 % DELETE LAST ROW
 % Delete the last row from initial solution table
 %
@@ -28,7 +28,8 @@ nColumns = size(old_table_data, 2);
 
 % Check if nRows is greather than 1
 if nRows == 1
-    set_status(handles, str_err1, 'r');
+    set_status(handles, lang{3}, 'r');
+    errordlg(lang{3},lang{23});
 else
  
     % Create new data cell

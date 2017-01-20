@@ -179,8 +179,7 @@ function delete_last_row_Callback(hObject, eventdata, handles)
 % hObject    handle to delete_last_row (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-lang = getappdata(handles.root, 'lang');
-delete_last_row(handles, lang{3});
+delete_last_row(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------

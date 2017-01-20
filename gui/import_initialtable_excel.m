@@ -75,10 +75,12 @@ if baseName ~= 0
             
         else
             set_status(handles, sprintf(lang{9}, num2str(excel_data(nRow, 1))), 'r');
+            errordlg(sprintf(lang{9}, num2str(excel_data(nRow, 1))),lang{23});
         end
         
     else
         set_status(handles, sprintf(lang{7}, nColumn), 'r');
+        errordlg(sprintf(lang{7}, nColumn),lang{23});
     end
     
 % If filename is invalid
