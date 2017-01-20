@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 19-Jan-2017 20:09:14
+% Last Modified by GUIDE v2.5 19-Jan-2017 22:22:43
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -98,6 +98,8 @@ set_lang_string(handles.menu_view_help, lang{18});
 set_lang_string(handles.menu_file_save, lang{20});
 set_lang_string(handles.menu_file_save_as, lang{21});
 set_lang_string(handles.menu_file_close, lang{22});
+set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
+set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
 
 % Update handles structure
 guidata(hObject, handles);
@@ -253,3 +255,132 @@ function menu_file_close_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 close all;
+
+
+% --- Executes on button press in btn_opendispertion.
+function btn_opendispertion_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_opendispertion (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function panel_dispertion_file_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to panel_dispertion_file (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on selection change in popupmenu1.
+function popupmenu1_Callback(hObject, eventdata, handles)
+% hObject    handle to popupmenu1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu1 contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popupmenu1
+
+
+% --- Executes during object creation, after setting all properties.
+function popupmenu1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popupmenu1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on selection change in unit_h.
+function unit_h_Callback(hObject, eventdata, handles)
+% hObject    handle to unit_h (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns unit_h contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from unit_h
+
+
+% --- Executes during object creation, after setting all properties.
+function unit_h_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to unit_h (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on selection change in unit_vsvp.
+function unit_vsvp_Callback(hObject, eventdata, handles)
+% hObject    handle to unit_vsvp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns unit_vsvp contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from unit_vsvp
+
+
+% --- Executes during object creation, after setting all properties.
+function unit_vsvp_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to unit_vsvp (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on selection change in unit_vr.
+function unit_vr_Callback(hObject, eventdata, handles)
+% hObject    handle to unit_vr (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns unit_vr contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from unit_vr
+
+
+% --- Executes during object creation, after setting all properties.
+function unit_vr_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to unit_vr (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on selection change in unit_rho.
+function unit_rho_Callback(hObject, eventdata, handles)
+% hObject    handle to unit_rho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns unit_rho contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from unit_rho
+
+
+% --- Executes during object creation, after setting all properties.
+function unit_rho_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to unit_rho (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end

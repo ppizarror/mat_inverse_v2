@@ -124,11 +124,11 @@ list{29, 2} = 'Matlab code for inversion of Rayleigh phase velocity. Initially b
 list{30, 1} = 'Sitio web: https://github.com/ppizarror/mat_inverse_v2';
 list{30, 2} = 'Website: https://github.com/ppizarror/mat_inverse_v2';
 
-list{31, 1} = '';
-list{31, 2} = '';
+list{31, 1} = 'Archivo de dispersión (Vr vs f)';
+list{31, 2} = 'Dispertion file (Vr vs f)';
 
-list{32, 1} = '';
-list{32, 2} = '';
+list{32, 1} = 'Abrir';
+list{32, 2} = 'Open';
 
 list{33, 1} = '';
 list{33, 2} = '';
