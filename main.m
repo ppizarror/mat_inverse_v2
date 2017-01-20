@@ -116,6 +116,11 @@ setappdata(handles.root, 'disp_freq', []);
 setappdata(handles.root, 'disp_vrexp', []);
 setappdata(handles.root, 'dispertion_ok', false);
 setappdata(handles.root, 'initial_table_validsize', 0);
+setappdata(handles.root, 'n_iter', []);
+setappdata(handles.root, 'vr_iter', []);
+setappdata(handles.root, 'vp_iter', []);
+setappdata(handles.root, 'vs_iter', []);
+setappdata(handles.root, 'dns_iter', []);
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', inv_sigma);

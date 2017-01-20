@@ -94,38 +94,11 @@ set(handles.view_sol_plot, 'Enable', 'on');
 set(handles.export_results, 'Enable', 'on');
 set(handles.start_button, 'Enable', 'on');
 
-% Theorical vs Experimental dispertion curve
-h2 = figure('Name', 'Curva de Dispersión Teórica v/s Experimental', 'NumberTitle', 'off'); %#ok<*NASGU>
-errorbar(freq, vr_exp, sigma, 'ro');
-hold on;
-final_iteration = niter;
-plot(freq, vr_iter(:, final_iteration));
-xlabel('Frequency $(Hz)$', 'Interpreter', 'latex');
-ylabel('Velocidad de Fase $(m/s)$', 'Interpreter', 'latex');
-hold off;
-
-% Shear velocity on depth plot
-vsfinal = vs_iter(:, niter)';
-vsinitial = vs';
-thk = thk';
-if ~ isempty(vsfinal)
-    cumthk = [0 cumsum(thk)]; depth = 0; velocity = vsfinal(1); mdl_vel = vsinitial(1);
-    for j = 1:length(thk)
-        depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-        velocity = [velocity vsfinal(j) vsfinal(j + 1)];
-        mdl_vel = [mdl_vel vsinitial(j) vsinitial(j + 1)];
-    end
-    depth = [depth sum(thk) + thk(length(thk))];
-    velocity = [velocity vsfinal(length(vsfinal))];
-    mdl_vel = [mdl_vel vsinitial(length(vsinitial))];
- 
-    h3 = figure('Name', 'Perfil de Velocidad de Corte', 'NumberTitle', 'off'); % #ok<*NASGU>
-    plot(velocity, depth, 'b', mdl_vel, depth, 'k--');
-    set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-    set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-    xlabel('Velocidad de onda de corte $V_s$ $(m/sec)$', 'Interpreter', 'latex');
-    ylabel('Profundidad $(m)$', 'Interpreter', 'latex');
-    legend('Modelo inverso', 'Valor real');
-end
+% Store data
+setappdata(handles.root, 'n_iter', niter);
+setappdata(handles.root, 'vr_iter', vr_iter);
+setappdata(handles.root, 'vp_iter', vp_iter);
+setappdata(handles.root, 'vs_iter', vs_iter);
+setappdata(handles.root, 'dns_iter', dns_iter);
 
 end

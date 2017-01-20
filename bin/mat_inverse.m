@@ -11,6 +11,10 @@ function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp
 % Modification history:
 % 01/19/2017: Pablo Pizarro (UChile)
 %               (1) Deleted files related to Love wave
+% 01/20/2017: Pablo Pizarro (UChile)
+%               (1) Add GUI support
+%               (2) Iteration number is displayed on GUI
+%               (3) Some statuses are displayed on GUI
 
 % Number of layers
 nl = length(thk);
