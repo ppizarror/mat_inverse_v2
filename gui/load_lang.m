@@ -169,11 +169,11 @@ list{44, 2} = 'Export results';
 list{45, 1} = 'Parámetros para la inversión';
 list{45, 2} = 'Inversion parameters';
 
-list{46, 1} = '';
-list{46, 2} = '';
+list{46, 1} = 'Error: El parámetro %s no puede estar vacío.';
+list{46, 2} = 'Error: Parameter %s cannot be empty.';
 
-list{47, 1} = '';
-list{47, 2} = '';
+list{47, 1} = 'Error: El parámetro %s debe ser un número.';
+list{47, 2} = 'Error: Parameter %s must be a number.';
 
 list{48, 1} = '';
 list{48, 2} = '';

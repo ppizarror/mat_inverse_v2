@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 20-Jan-2017 00:07:59
+% Last Modified by GUIDE v2.5 20-Jan-2017 01:06:14
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -83,6 +83,7 @@ config;
 setappdata(handles.root, 'lang', lang);
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize);
 setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
+setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
@@ -407,6 +408,7 @@ function start_button_Callback(hObject, eventdata, handles)
 % hObject    handle to start_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
 
 
 function param_inv_sigma_Callback(hObject, eventdata, handles)
@@ -514,6 +516,90 @@ function export_results_Callback(hObject, eventdata, handles)
 % --- Executes on key press with focus on param_inv_sigma and none of its controls.
 function param_inv_sigma_KeyPressFcn(hObject, eventdata, handles)
 % hObject    handle to param_inv_sigma (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over param_inv_sigma.
+function param_inv_sigma_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over param_inv_mu.
+function param_inv_mu_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on param_inv_mu and none of its controls.
+function param_inv_mu_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+% check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over param_maxiter.
+function param_maxiter_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on param_maxiter and none of its controls.
+function param_maxiter_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+% check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over param_tolvs.
+function param_tolvs_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on param_tolvs and none of its controls.
+function param_tolvs_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+% check_inv_parameters(handles, getappdata(handles.root, 'lang'), true);
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over btn_opendispertion.
+function btn_opendispertion_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to btn_opendispertion (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on btn_opendispertion and none of its controls.
+function btn_opendispertion_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to btn_opendispertion (see GCBO)
 % eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
 %	Key: name of the key that was pressed, in lower case
 %	Character: character interpretation of the key(s) that was pressed

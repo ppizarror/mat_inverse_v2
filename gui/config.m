@@ -39,3 +39,6 @@ plt_dispertion_label_fontsize = 10;
 
 % Dispertion plot style
 plt_dispertion_style = 'ro-';
+
+% Deletes entry if invalid
+delete_entry_if_invalid = false;
