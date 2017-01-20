@@ -23,13 +23,13 @@
 lang = load_lang(1);
 
 % Maximum number of iterations, used by mat_inverse
-maxiter = 10;
+inv_maxiter = 10;
 
 % Mu coefficient, mat_inverse
-mu = 10;
+inv_mu = 10;
 
 % Vs tolerance error, mat_inverse
-tol_vs = 0.01;
+inv_tol_vs = 0.01;
 
 % Sigma, mat_inverse
 inv_sigma = 0.03;

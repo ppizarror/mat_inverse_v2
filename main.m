@@ -101,6 +101,10 @@ set_lang_string(handles.menu_file_close, lang{22});
 set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
 set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
 
+% Set main variables
+setappdata(handles.root, 'disp_freq', []);
+setappdata(handles.root, 'disp_vrexp', []);
+
 % Update handles structure
 guidata(hObject, handles);
 
@@ -262,7 +266,7 @@ function btn_opendispertion_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_opendispertion (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+load_dispertion_file(handles, getappdata(handles.root, 'lang'));
 
 % --------------------------------------------------------------------
 function panel_dispertion_file_ButtonDownFcn(hObject, eventdata, handles)

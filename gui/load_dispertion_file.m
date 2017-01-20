@@ -1,5 +1,6 @@
-% CONSTANTS
-% Set some constants
+function load_dispertion_file(handles, lang)
+% LOAD DISPERTION FILE
+% Load dispertion file from Excel, then plot it on GUI.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,16 +18,28 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Minimum size of the initial table
-min_rowsize_initialtable = 20;
+set_status(handles, lang{5});
+[baseName, folder] = uigetfile({' *.xlsx'; '*.xls'});
 
-% Total of entries in lang list
-lang_entries = 40;
+% If filename is valid
+if baseName ~= 0
 
-% Total of avaiable languages
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang_avaiable_languages = 2;
-
-% Number of columns in dispertion Excel file
-columns_dispertiondata = 2;
+    % Open file
+    set_status(handles, lang{8}, 'k');
+    try
+        excel_data = xlsread(strcat(folder, baseName));
+    catch
+        set_status(handles, lang{25}, 'r');
+        errordlg(lang{24},lang{23})
+    end
+        
+    [nRow, nColumn] = size(excel_data);
+    
+    % Constant import
+    constants;
+    
+% If filename is invalid
+else
+    set_status(handles, lang{33}, 'r');
+end
+end

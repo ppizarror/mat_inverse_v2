@@ -26,7 +26,7 @@ set_status(handles, lang{5});
 if baseName ~= 0
 
     % Open file
-    set_status(handles, lang{8}, 'r');
+    set_status(handles, lang{8}, 'k');
     try
         excel_data = xlsread(strcat(folder, baseName));
     catch

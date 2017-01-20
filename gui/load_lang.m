@@ -50,7 +50,7 @@ list{5, 1} = 'Escoja un archivo desde Excel.';
 list{5, 2} = 'Please select an Excel file.';
 
 list{6, 1} = 'Info: Importación desde Excel cancelada.';
-list{6, 2} = 'Info: Excel importing cancelled by user.';
+list{6, 2} = 'Info: Excel import cancelled by user.';
 
 list{7, 1} = 'Error: Archivo inválido, sólo deben existir 4 columnas (encontradas %d).';
 list{7, 2} = 'Error: Invalid file, only 4 columns should exist (%d found).';
@@ -127,11 +127,11 @@ list{30, 2} = 'Website: https://github.com/ppizarror/mat_inverse_v2';
 list{31, 1} = 'Archivo de dispersión (Vr vs f)';
 list{31, 2} = 'Dispertion file (Vr vs f)';
 
-list{32, 1} = 'Abrir';
-list{32, 2} = 'Open';
+list{32, 1} = 'Abrir (Excel)';
+list{32, 2} = 'Open (Excel)';
 
-list{33, 1} = '';
-list{33, 2} = '';
+list{33, 1} = 'Info: Carga de la curva de dispersión desde Excel cancelada.';
+list{33, 2} = 'Info: Excel dispertion curve data import cancelled by user.';
 
 list{34, 1} = '';
 list{34, 2} = '';
