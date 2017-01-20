@@ -1,5 +1,5 @@
 % CONFIG
-% In this file some gui configuration are stored.
+% GUI Configuration and mat_inverse configurations are stored in this file.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -21,3 +21,15 @@
 %   1:  Spanish (Español)
 %   2:  English (United States)
 lang = load_lang(1);
+
+% Maximum number of iterations, used by mat_inverse
+maxiter = 10;
+
+% Mu coefficient, mat_inverse
+mu = 10;
+
+% Vs tolerance error, mat_inverse
+tol_vs = 0.01;
+
+% Sigma, mat_inverse
+inv_sigma = 0.03;
