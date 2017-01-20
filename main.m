@@ -80,7 +80,13 @@ movegui(gcf,'center');
 
 % Import configurations
 config;
+
+% Set app config
 setappdata(handles.root, 'lang', lang);
+setappdata(handles.root, 'cgf_sigma', inv_sigma);
+setappdata(handles.root, 'cgf_mu', inv_mu);
+setappdata(handles.root, 'cgf_maxiter', inv_maxiter);
+setappdata(handles.root, 'cgf_tolvs', inv_tol_vs);
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize);
 setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
 setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
@@ -118,23 +124,8 @@ set_lang_string(handles.view_sol_plot, lang{43}, 'string');
 set_lang_string(handles.export_results, lang{44}, 'string');
 set_lang_string(handles.inv_entry_panel, lang{45}, 'Title');
 
-% Set main variables
-setappdata(handles.root, 'disp_freq', []);
-setappdata(handles.root, 'disp_vrexp', []);
-setappdata(handles.root, 'dispertion_ok', false);
-setappdata(handles.root, 'initial_table_validsize', 0);
-setappdata(handles.root, 'n_iter', []);
-setappdata(handles.root, 'vr_iter', []);
-setappdata(handles.root, 'vp_iter', []);
-setappdata(handles.root, 'vs_iter', []);
-setappdata(handles.root, 'dns_iter', []);
-setappdata(handles.root, 'solution_ok', false);
-
-% Update inv entry (from config.m)
-set(handles.param_inv_sigma, 'string', inv_sigma);
-set(handles.param_inv_mu, 'string', inv_mu);
-set(handles.param_maxiter, 'string', inv_maxiter);
-set(handles.param_tolvs, 'string', inv_tol_vs);
+% Set new file
+new_file(handles, lang, false);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -232,6 +223,7 @@ function menu_file_new_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_file_new (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+new_file(handles, getappdata(handles.root, 'lang'), true);
 
 
 % --------------------------------------------------------------------

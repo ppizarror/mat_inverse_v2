@@ -254,17 +254,17 @@ list{71, 2} = 'Depth $(%s)$';
 list{72, 1} = 'Valor inverso';
 list{72, 2} = 'Inverse value';
 
-list{73, 1} = '';
-list{73, 2} = '';
+list{73, 1} = 'Crear un nuevo proyecto?';
+list{73, 2} = 'Do create a new project?';
 
-list{74, 1} = '';
-list{74, 2} = '';
+list{74, 1} = 'Si';
+list{74, 2} = 'Yes';
 
-list{75, 1} = '';
-list{75, 2} = '';
+list{75, 1} = 'No';
+list{75, 2} = 'No';
 
-list{76, 1} = '';
-list{76, 2} = '';
+list{76, 1} = 'Crear un nuevo proyecto';
+list{76, 2} = 'Create a new proyect';
 
 list{77, 1} = '';
 list{77, 2} = '';

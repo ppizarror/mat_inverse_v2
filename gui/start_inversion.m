@@ -112,6 +112,10 @@ setappdata(handles.root, 'vr_iter', vr_iter);
 setappdata(handles.root, 'vp_iter', vp_iter);
 setappdata(handles.root, 'vs_iter', vs_iter);
 setappdata(handles.root, 'dns_iter', dns_iter);
+setappdata(handles.root, 'thk_sol', thk);
+setappdata(handles.root, 'vs_sol', vs);
+setappdata(handles.root, 'vp_sol', vp);
+setappdata(handles.root, 'dns_sol', dns);
 
 % Set solution status to OK
 setappdata(handles.root, 'solution_ok', true);

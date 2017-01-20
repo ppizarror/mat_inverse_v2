@@ -22,7 +22,7 @@ function show_plots(handles, lang)
 solution_status = getappdata(handles.root, 'solution_ok');
 
 % Check if solution is ok
-if ~ solution_status
+if ~solution_status
     disp_error(handles, lang, 65);
     return
 end
@@ -41,7 +41,6 @@ sigma = get(handles.param_inv_sigma, 'string');
 mu = get(handles.param_inv_mu, 'string');
 maxiter = get(handles.param_maxiter, 'string');
 tol_vs = get(handles.param_tolvs, 'string');
-table_data = get(handles.initial_solution, 'Data');
 
 % Convert data to source
 sigma = str2double(sigma) + zeros(length(freq), 1);
@@ -50,11 +49,10 @@ maxiter = str2double(maxiter);
 tol_vs = str2double(tol_vs);
 
 % Create thk, vp, vs and dns vectors
-nrow = getappdata(handles.root, 'initial_table_validsize');
-thk = [table_data{1:nrow - 1, 1}]';
-vs = [table_data{1:nrow, 2}]';
-vp = [table_data{1:nrow, 3}]';
-dns = [table_data{1:nrow, 4}]';
+thk = getappdata(handles.root, 'thk_sol');
+vs = getappdata(handles.root, 'vs_sol');
+vp = getappdata(handles.root, 'vp_sol');
+dns = getappdata(handles.root, 'dns_sol');
 
 % Get plot config
 disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
@@ -106,7 +104,7 @@ if ~ isempty(vsfinal)
     set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
     xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
     ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
- 
+    
     if showlegend_shear
         legend(lang{72});
     end
