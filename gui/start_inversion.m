@@ -65,8 +65,10 @@ pause(0.01);
 % Starts mat_inverse
 try
     
+    tic;
     [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, vp, vs, dns, maxiter, mu, tol_vs, true, handles.status_iteration, lang{58}); %#ok<*ASGLU>
-
+    exec_time = toc;
+    
 % Some error has occurred
 catch Exception
     
@@ -95,10 +97,10 @@ end
 % --------------------------------------------------------------------
 
 % Set completed status
-set_status(handles, lang{59}, 'k');
+set_status(handles, sprintf(lang{59}, exec_time), 'k');
 set(handles.root, 'pointer', 'arrow');
 set_lang_string(handles.start_button, lang{42}, 'string');
-msgbox(lang{64}, lang{63}, 'help');
+msgbox({lang{64}; sprintf(lang{92}, exec_time)}, lang{63}, 'help');
 beep();
 
 % Enable buttons

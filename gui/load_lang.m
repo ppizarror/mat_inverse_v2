@@ -212,8 +212,8 @@ list{57, 2} = 'Processing ...';
 list{58, 1} = 'Iteración %d/%d';
 list{58, 2} = 'Iteration %d/%d';
 
-list{59, 1} = 'Info: Proceso terminado exitosamente!';
-list{59, 2} = 'Info: Process completed successfully';
+list{59, 1} = 'Info: Proceso terminado exitosamente, tiempo de ejecución: %.1fs.';
+list{59, 2} = 'Info: Process completed successfully, execution time: %.1fs.';
 
 list{60, 1} = 'Ocurrió una excepción al ejecutar mat_inverse';
 list{60, 2} = 'An Exception has ocurred while running mat_inverse';
@@ -313,8 +313,8 @@ list{90, 2} = '%s - Mat inverse v2';
 list{91, 1} = 'proyecto1';
 list{91, 2} = 'project1';
 
-list{92, 1} = '';
-list{92, 2} = '';
+list{92, 1} = 'Tiempo total de ejecución: %.1fs';
+list{92, 2} = 'Total execution time: %.1fs';
 
 list{93, 1} = '';
 list{93, 2} = '';
