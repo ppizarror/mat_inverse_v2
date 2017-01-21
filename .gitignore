@@ -1,6 +1,9 @@
 # OSX.
 .DS_Store
 
+# Inverse project savefile
+*.invprj
+
 # ASV Matlab file
 *.asv
 
