@@ -287,23 +287,23 @@ list{82, 2} = 'Load project';
 list{83, 1} = 'Error: No se ha cargado el proyecto';
 list{83, 2} = 'Error: Project has not been loaded';
 
-list{84, 1} = 'Ocurrió una excepción al cargar el proyecto';
-list{84, 2} = 'An Exception has ocurred while loading the project';
+list{84, 1} = 'Info: Ocurrió una excepción al cargar el proyecto.';
+list{84, 2} = 'Info: An Exception has ocurred while loading the project.';
 
 list{85, 1} = 'Archivos Excel (*.xlsx, *.xls)';
 list{85, 2} = 'Excel files (*.xlsx, *.xls)';
 
-list{86, 1} = '';
-list{86, 2} = '';
+list{86, 1} = 'Cargando proyecto...';
+list{86, 2} = 'Loading project...';
 
-list{87, 1} = '';
-list{87, 2} = '';
+list{87, 1} = 'Info: El proyecto ha sido cargado exitosamente.';
+list{87, 2} = 'Info: Project has been loaded successfully.';
 
-list{88, 1} = '';
-list{88, 2} = '';
+list{88, 1} = 'Info: Ocurrió una exepción al guardar el actual proyecto.';
+list{88, 2} = 'Info: An Exception has ocurred while saving the actual project.';
 
-list{89, 1} = '';
-list{89, 2} = '';
+list{89, 1} = 'Info: Proyecto guardado exitosamente.';
+list{89, 2} = 'Info: Project saved successfully.';
 
 list{90, 1} = '';
 list{90, 2} = '';

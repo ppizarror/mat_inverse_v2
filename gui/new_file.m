@@ -46,6 +46,7 @@ setappdata(handles.root, 'vp_sol', []);
 setappdata(handles.root, 'dns_sol', []);
 setappdata(handles.root, 'project_loaded', false);
 setappdata(handles.root, 'project_savefile', '');
+setappdata(handles.root, 'dispertion_file_short', '');
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', getappdata(handles.root, 'cgf_sigma'));
@@ -70,5 +71,8 @@ clear_initialtable(handles, lang);
 
 % Clear status
 set_status(handles, '');
+
+% Set cursor
+set(handles.root, 'pointer', 'arrow');
 
 end

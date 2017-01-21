@@ -72,7 +72,7 @@ catch Exception
     
     % Get Exception message
     msg_error = getReport(Exception);
-    pause(0.01);
+    beep();
     
     % Display errors / set statuses
     set_status(handles, lang{60}, 'r');

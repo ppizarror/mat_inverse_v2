@@ -40,12 +40,59 @@ else
     savefile = getappdata(handles.root, 'project_savefile');
 end
 
-%  --- Saves state
-state.initial_table = get(handles.initial_solution, 'Data');
-state.initial_table_rowname = get(handles.initial_solution, 'RowName');
+try
+
+    % --------------------------------------------------------------------
+    % Save table
+    state.initial_table = get(handles.initial_solution, 'Data');
+    state.initial_table_rowname = get(handles.initial_solution, 'RowName');
+
+    % Save main variables - same order as new_file.m
+    state.disp_freq = getappdata(handles.root, 'disp_freq');
+    state.disp_vrexp = getappdata(handles.root, 'disp_vrexp');
+    state.dispertion_ok = getappdata(handles.root, 'dispertion_ok');
+    state.dispertion_file = getappdata(handles.root, 'dispertion_file');
+    state.initial_table_validsize = getappdata(handles.root, 'initial_table_validsize');
+    state.n_iter = getappdata(handles.root, 'n_iter');
+    state.vr_iter = getappdata(handles.root, 'vr_iter');
+    state.vp_iter = getappdata(handles.root, 'vp_iter');
+    state.vs_iter = getappdata(handles.root, 'vs_iter');
+    state.dns_iter = getappdata(handles.root, 'dns_iter');
+    state.solution_ok = getappdata(handles.root, 'solution_ok');
+    state.thk_sol = getappdata(handles.root, 'thk_sol');
+    state.vs_sol = getappdata(handles.root, 'vs_sol');
+    state.vp_sol = getappdata(handles.root, 'vp_sol');
+    state.dns_sol = getappdata(handles.root, 'dns_sol');
+    state.project_loaded = getappdata(handles.root, 'project_loaded');
+    state.project_savefile = getappdata(handles.root, 'project_savefile');
+    state.dispertion_file_short = getappdata(handles.root, 'dispertion_file_short');
+    
+    % Save inv entry
+    state.inv_entry_sigma = get(handles.param_inv_sigma, 'string');
+    state.inv_entry_mu = get(handles.param_inv_mu, 'string');
+    state.inv_entry_maxiter = get(handles.param_maxiter, 'string');
+    state.inv_entry_tolvs = get(handles.param_tolvs, 'string');
+    
+catch Exception
+    
+    % Get Exception report
+    msg_error = getReport(Exception);
+    if getappdata(handles.root, 'gui_sound')
+        beep();
+    end
+
+    % Display errors / set statuses
+    set_status(handles, lang{88}, 'r');
+    errordlg(msg_error, lang{61});
+    return
+end
+% --------------------------------------------------------------------
 
 % Saves file
 save(savefile, 'state');
 
 % Unlock entry on menu
 set(handles.menu_file_save, 'Enable', 'on');
+
+% Set status
+set_status(handles, lang{89});

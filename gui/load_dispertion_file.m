@@ -70,6 +70,7 @@ if baseName ~= 0
             filename = strcat('...', filename);
         end
         set(handles.status_direction_file, 'string', filename);
+        setappdata(handles.root, 'dispertion_file_short', filename);
      
         % Enable view larger plot context menu
         set(handles.disp_plt_viewlarger, 'Enable', 'on');
