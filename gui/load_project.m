@@ -58,10 +58,10 @@ if baseName ~= 0
         setappdata(handles.root, 'vp_sol', state.vp_sol);
         setappdata(handles.root, 'dns_sol', state.dns_sol);
         setappdata(handles.root, 'project_loaded', state.project_loaded);
-        setappdata(handles.root, 'project_savefile', state.project_savefile);
+        setappdata(handles.root, 'project_savefile', strcat(folder, baseName));
         setappdata(handles.root, 'dispertion_file_short', state.dispertion_file_short);
         setappdata(handles.root, 'project_savefile_short', state.project_savefile_short);
-        
+
         % Load inv entry
         set(handles.param_inv_sigma, 'string', state.inv_entry_sigma);
         set(handles.param_inv_mu, 'string', state.inv_entry_mu);
