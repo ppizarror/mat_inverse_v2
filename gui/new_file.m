@@ -47,12 +47,19 @@ setappdata(handles.root, 'dns_sol', []);
 setappdata(handles.root, 'project_loaded', false);
 setappdata(handles.root, 'project_savefile', '');
 setappdata(handles.root, 'dispertion_file_short', '');
+setappdata(handles.root, 'project_savefile_short', '');
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', getappdata(handles.root, 'cgf_sigma'));
 set(handles.param_inv_mu, 'string', getappdata(handles.root, 'cgf_mu'));
 set(handles.param_maxiter, 'string', getappdata(handles.root, 'cgf_maxiter'));
 set(handles.param_tolvs, 'string', getappdata(handles.root, 'cgf_tolvs'));
+
+% Set first units
+set(handles.unit_vr, 'Value', 1);  
+set(handles.unit_vsvp, 'Value', 1);
+set(handles.unit_h, 'Value', 1);
+set(handles.unit_rho, 'Value', 1);
 
 % Disable / Enable buttons
 set(handles.start_button, 'Enable', 'on');
@@ -74,5 +81,8 @@ set_status(handles, '');
 
 % Set cursor
 set(handles.root, 'pointer', 'arrow');
+
+% Set title of the app
+set_app_title(handles, lang);
 
 end

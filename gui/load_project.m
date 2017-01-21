@@ -18,8 +18,13 @@ function load_project(handles, lang)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+% Constant import
+constants;
+savefile_extension = strcat('*', savefile_extension); %#ok<NODEF>
+
+% Set loading status and request file
 set_status(handles, lang{81});
-[baseName, folder] = uigetfile({'*.invprj', lang{78}}, lang{82}); %#ok<*ASGLU>
+[baseName, folder] = uigetfile({savefile_extension, lang{78}}, lang{82}); %#ok<*ASGLU>
 
 % If filename is valid
 if baseName ~= 0
@@ -55,12 +60,23 @@ if baseName ~= 0
         setappdata(handles.root, 'project_loaded', state.project_loaded);
         setappdata(handles.root, 'project_savefile', state.project_savefile);
         setappdata(handles.root, 'dispertion_file_short', state.dispertion_file_short);
+        setappdata(handles.root, 'project_savefile_short', state.project_savefile_short);
         
         % Load inv entry
         set(handles.param_inv_sigma, 'string', state.inv_entry_sigma);
         set(handles.param_inv_mu, 'string', state.inv_entry_mu);
         set(handles.param_maxiter, 'string', state.inv_entry_maxiter);
         set(handles.param_tolvs, 'string', state.inv_entry_tolvs);
+        
+        % Load units
+        set(handles.unit_vr, 'String', state.vr_units);
+        set(handles.unit_vr, 'Value', state.unit_vr);  
+        set(handles.unit_vsvp, 'String', state.vsvp_units);
+        set(handles.unit_vsvp, 'Value', state.unit_vsvp);
+        set(handles.unit_h, 'String', state.h_units);
+        set(handles.unit_h, 'Value', state.unit_h);
+        set(handles.unit_rho, 'String', state.rho_units);
+        set(handles.unit_rho, 'Value', state.unit_rho);
         
         % Plot dispertion curve if loaded
         if state.dispertion_ok
@@ -71,20 +87,34 @@ if baseName ~= 0
             plt_style = getappdata(handles.root, 'plt_dispertion_style');
             plot(state.disp_freq, state.disp_vrexp, plt_style);
             
+            % Enable view larger plot context menu
+            set(handles.disp_plt_viewlarger, 'Enable', 'on');
+            
         end
         
         % Set normal cursor
         set(handles.root, 'pointer', 'arrow');
         
-        % Disable / Enable buttons
-        set(handles.start_button, 'Enable', 'on');
+        % Disable / Enable menu entries
         set(handles.menu_file_save, 'Enable', 'on');
+        
+        % Enable / Disable buttons
+        set(handles.start_button, 'Enable', 'on');
 
         % Set button strings
         set_lang_string(handles.start_button, lang{42}, 'string');
         
         % Project loaded successfully
         set_status(handles, lang{87});
+        
+        % Enable view plot if solution is loaded
+        if state.solution_ok
+            set(handles.export_results, 'Enable', 'on');
+            set(handles.view_sol_plot, 'Enable', 'on');
+        end
+        
+        % Set title of the app
+        set_app_title(handles, lang);
         
     catch Exception
         

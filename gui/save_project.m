@@ -18,11 +18,19 @@ function save_project(handles, lang, saveas)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+% Constant import
+constants;
+savefile_extension = strcat('*', savefile_extension); %#ok<NODEF>
+
 % If saveas then select file to save (or savefile is empty)
 if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
     set_status(handles, lang{80}, 'k');
-    [file,path] = uiputfile({'*.invprj', lang{78}}, lang{77});
+    if strcmp(getappdata(handles.root, 'project_savefile'), '')
+        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, lang{91});
+    else
+        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, getappdata(handles.root, 'project_savefile'));
+    end
     
     % Check if filename is valid
     if length(file)==1 && length(path)==1
@@ -34,6 +42,7 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
     % Filename is stored
     setappdata(handles.root, 'project_savefile', savefile);
+    setappdata(handles.root, 'project_savefile_short', file);
     
 % If not then load savefile from GUI
 else
@@ -66,12 +75,23 @@ try
     state.project_loaded = getappdata(handles.root, 'project_loaded');
     state.project_savefile = getappdata(handles.root, 'project_savefile');
     state.dispertion_file_short = getappdata(handles.root, 'dispertion_file_short');
+    state.project_savefile_short = getappdata(handles.root, 'project_savefile_short');
     
     % Save inv entry
     state.inv_entry_sigma = get(handles.param_inv_sigma, 'string');
     state.inv_entry_mu = get(handles.param_inv_mu, 'string');
     state.inv_entry_maxiter = get(handles.param_maxiter, 'string');
     state.inv_entry_tolvs = get(handles.param_tolvs, 'string');
+    
+    % Save units
+    state.vr_units = get(handles.unit_vr, 'String');
+    state.unit_vr = get(handles.unit_vr, 'Value');  
+    state.vsvp_units = get(handles.unit_vsvp, 'String');
+    state.unit_vsvp = get(handles.unit_vsvp, 'Value');
+    state.h_units = get(handles.unit_h, 'String');
+    state.unit_h = get(handles.unit_h, 'Value');
+    state.rho_units = get(handles.unit_rho, 'String');
+    state.unit_rho = get(handles.unit_rho, 'Value');
     
 catch Exception
     
@@ -96,3 +116,6 @@ set(handles.menu_file_save, 'Enable', 'on');
 
 % Set status
 set_status(handles, lang{89});
+
+% Set title of the app
+set_app_title(handles, lang);

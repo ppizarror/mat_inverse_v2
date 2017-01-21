@@ -305,11 +305,13 @@ list{88, 2} = 'Info: An Exception has ocurred while saving the actual project.';
 list{89, 1} = 'Info: Proyecto guardado exitosamente.';
 list{89, 2} = 'Info: Project saved successfully.';
 
-list{90, 1} = '';
-list{90, 2} = '';
+% Title of app
+list{90, 1} = '%s - Mat inverse v2';
+list{90, 2} = '%s - Mat inverse v2';
 
-list{91, 1} = '';
-list{91, 2} = '';
+% Default name of project files
+list{91, 1} = 'proyecto1';
+list{91, 2} = 'project1';
 
 list{92, 1} = '';
 list{92, 2} = '';

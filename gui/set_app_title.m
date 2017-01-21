@@ -1,5 +1,6 @@
-% CONSTANTS
-% Set some constants
+function set_app_title(handles, lang)
+% SET APP TITLE
+% This function set the app title with the actual project name
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,25 +18,21 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Savefile extension
-savefile_extension = '.invprj';
+% Constant import
+constants;
 
-% Version
-software_version = '2.3';
+% If project not saved then default name is used
+if strcmp(getappdata(handles.root, 'project_savefile_short'), '')
+    appname = lang{91};
+else
+    appname = getappdata(handles.root, 'project_savefile_short');
+end
 
-% Minimum size of the initial table
-min_rowsize_initialtable = 30;
+% Removes extension from appname
+savefile_extension
+appname = strrep(appname, savefile_extension, '');
 
-% Total of entries in lang list
-lang_entries = 100;
+set(handles.root, 'Name', sprintf(lang{90}, appname));
 
-% Total of avaiable languages
-%   1:  Spanish (Español)
-%   2:  English (United States)
-lang_avaiable_languages = 2;
+end
 
-% Number of columns in dispertion Excel file
-columns_dispertiondata = 2;
-
-% Size of dispertion file string on GUI
-size_filename_dispertion_str = 32;
