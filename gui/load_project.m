@@ -19,10 +19,25 @@ function load_project(handles, lang)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 set_status(handles, lang{81});
-[baseName, folder] = uigetfile({'*.invprjt', lang{78}}, lang{82});
+[baseName, folder] = uigetfile({'*.invprj', lang{78}}, lang{82}); %#ok<*ASGLU>
 
 % If filename is valid
 if baseName ~= 0
+    try
+        a
+    catch Exception
+        
+        % Get Exception message
+        msg_error = getReport(Exception);
+
+        % Display errors / set statuses
+        set_status(handles, lang{84}, 'r');
+        errordlg(msg_error, lang{61});
+        
+        % Set new file
+        new_file(handles, lang, false);
+        
+    end
 else
     disp_error(handles, lang, 83);
 end

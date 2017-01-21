@@ -269,8 +269,8 @@ list{76, 2} = 'Create a new proyect';
 list{77, 1} = 'Guardar proyecto como';
 list{77, 2} = 'Save project as';
 
-list{78, 1} = 'Proyecto de mat_inverse (*.invprjt)';
-list{78, 2} = 'Mat_inverse project (*.invprjt)';
+list{78, 1} = 'Proyecto de mat_inverse (*.invprj)';
+list{78, 2} = 'Mat_inverse project (*.invprj)';
 
 list{79, 1} = 'Error: El proyecto no ha sido guardado.';
 list{79, 2} = 'Error: Project has not been saved.';
@@ -287,11 +287,11 @@ list{82, 2} = 'Load project';
 list{83, 1} = 'Error: No se ha cargado el proyecto';
 list{83, 2} = 'Error: Project has not been loaded';
 
-list{84, 1} = '';
-list{84, 2} = '';
+list{84, 1} = 'Ocurrió una excepción al cargar el proyecto';
+list{84, 2} = 'An Exception has ocurred while loading the project';
 
-list{85, 1} = '';
-list{85, 2} = '';
+list{85, 1} = 'Archivos Excel (*.xlsx, *.xls)';
+list{85, 2} = 'Excel files (*.xlsx, *.xls)';
 
 list{86, 1} = '';
 list{86, 2} = '';

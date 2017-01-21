@@ -22,7 +22,7 @@ function save_project(handles, lang, saveas)
 if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
     set_status(handles, lang{80}, 'k');
-    [file,path] = uiputfile({'*.invprjt', lang{78}}, lang{77});
+    [file,path] = uiputfile({'*.invprj', lang{78}}, lang{77});
     
     % Check if filename is valid
     if length(file)==1 && length(path)==1
