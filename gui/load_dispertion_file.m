@@ -60,6 +60,9 @@ if baseName ~= 0
      
         % Plot curve
         plot(freq, vr_exp, plt_style);
+        
+        % Save filename
+        setappdata(handles.root, 'dispertion_file', filename);
      
         % Set filename on gui
         if length(filename) > size_filename_dispertion_str

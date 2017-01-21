@@ -231,6 +231,7 @@ function menu_file_load_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_file_load (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+load_project(handles, getappdata(handles.root, 'lang'), true);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -267,6 +268,7 @@ function menu_file_save_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_file_save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+save_project(handles, getappdata(handles.root, 'lang'), false);
 
 
 % --------------------------------------------------------------------
@@ -274,6 +276,7 @@ function menu_file_save_as_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_file_save_as (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+save_project(handles, getappdata(handles.root, 'lang'), true);
 
 
 % --------------------------------------------------------------------

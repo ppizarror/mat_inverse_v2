@@ -32,6 +32,7 @@ end
 setappdata(handles.root, 'disp_freq', []);
 setappdata(handles.root, 'disp_vrexp', []);
 setappdata(handles.root, 'dispertion_ok', false);
+setappdata(handles.root, 'dispertion_file', '');
 setappdata(handles.root, 'initial_table_validsize', 0);
 setappdata(handles.root, 'n_iter', []);
 setappdata(handles.root, 'vr_iter', []);
@@ -43,6 +44,8 @@ setappdata(handles.root, 'thk_sol', []);
 setappdata(handles.root, 'vs_sol', []);
 setappdata(handles.root, 'vp_sol', []);
 setappdata(handles.root, 'dns_sol', []);
+setappdata(handles.root, 'project_loaded', false);
+setappdata(handles.root, 'project_savefile', '');
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', getappdata(handles.root, 'cgf_sigma'));
@@ -52,6 +55,7 @@ set(handles.param_tolvs, 'string', getappdata(handles.root, 'cgf_tolvs'));
 
 % Disable / Enable buttons
 set(handles.start_button, 'Enable', 'on');
+set(handles.menu_file_save, 'Enable', 'off');
 
 % Set button strings
 set_lang_string(handles.start_button, lang{42}, 'string');

@@ -266,17 +266,77 @@ list{75, 2} = 'No';
 list{76, 1} = 'Crear un nuevo proyecto';
 list{76, 2} = 'Create a new proyect';
 
-list{77, 1} = '';
-list{77, 2} = '';
+list{77, 1} = 'Guardar proyecto como';
+list{77, 2} = 'Save project as';
 
-list{78, 1} = '';
-list{78, 2} = '';
+list{78, 1} = 'Proyecto de mat_inverse (*.invprjt)';
+list{78, 2} = 'Mat_inverse project (*.invprjt)';
 
-list{79, 1} = '';
-list{79, 2} = '';
+list{79, 1} = 'Error: El proyecto no ha sido guardado.';
+list{79, 2} = 'Error: Project has not been saved.';
 
-list{80, 1} = '';
-list{80, 2} = '';
+list{80, 1} = 'Ingrese el nombre y la ubicación del nuevo proyecto';
+list{80, 2} = 'Choise name and disk location of the new project';
+
+list{81, 1} = '';
+list{81, 2} = '';
+
+list{82, 1} = '';
+list{82, 2} = '';
+
+list{83, 1} = '';
+list{83, 2} = '';
+
+list{84, 1} = '';
+list{84, 2} = '';
+
+list{85, 1} = '';
+list{85, 2} = '';
+
+list{86, 1} = '';
+list{86, 2} = '';
+
+list{87, 1} = '';
+list{87, 2} = '';
+
+list{88, 1} = '';
+list{88, 2} = '';
+
+list{89, 1} = '';
+list{89, 2} = '';
+
+list{90, 1} = '';
+list{90, 2} = '';
+
+list{91, 1} = '';
+list{91, 2} = '';
+
+list{92, 1} = '';
+list{92, 2} = '';
+
+list{93, 1} = '';
+list{93, 2} = '';
+
+list{94, 1} = '';
+list{94, 2} = '';
+
+list{95, 1} = '';
+list{95, 2} = '';
+
+list{96, 1} = '';
+list{96, 2} = '';
+
+list{97, 1} = '';
+list{97, 2} = '';
+
+list{98, 1} = '';
+list{98, 2} = '';
+
+list{99, 1} = '';
+list{99, 2} = '';
+
+list{100, 1} = '';
+list{100, 2} = '';
 
 % --------------------------------------------------------------------
 
