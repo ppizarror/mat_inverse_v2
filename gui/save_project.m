@@ -21,7 +21,7 @@ function save_project(handles, lang, saveas)
 % If saveas then select file to save (or savefile is empty)
 if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
-    
+    set_status(handles, lang{80}, 'k');
     [file,path] = uiputfile({'*.invprjt', lang{78}}, lang{77});
     
     % Check if filename is valid

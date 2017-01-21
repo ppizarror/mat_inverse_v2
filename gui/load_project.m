@@ -17,4 +17,13 @@ function load_project(handles, lang)
 % You should have received a copy of the GNU General Public License
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+set_status(handles, lang{81});
+[baseName, folder] = uigetfile({'*.invprjt', lang{78}}, lang{82});
+
+% If filename is valid
+if baseName ~= 0
+else
+    disp_error(handles, lang, 83);
+end
 end

@@ -278,14 +278,14 @@ list{79, 2} = 'Error: Project has not been saved.';
 list{80, 1} = 'Ingrese el nombre y la ubicación del nuevo proyecto';
 list{80, 2} = 'Choise name and disk location of the new project';
 
-list{81, 1} = '';
-list{81, 2} = '';
+list{81, 1} = 'Escoja el archivo del proyecto a cargar';
+list{81, 2} = 'Pick project file to load';
 
-list{82, 1} = '';
-list{82, 2} = '';
+list{82, 1} = 'Cargar proyecto';
+list{82, 2} = 'Load project';
 
-list{83, 1} = '';
-list{83, 2} = '';
+list{83, 1} = 'Error: No se ha cargado el proyecto';
+list{83, 2} = 'Error: Project has not been loaded';
 
 list{84, 1} = '';
 list{84, 2} = '';
