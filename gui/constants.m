@@ -21,7 +21,7 @@
 savefile_extension = '.invprj';
 
 % Version
-software_version = '2.3';
+software_version = '2.4';
 
 % Minimum size of the initial table
 min_rowsize_initialtable = 30;
