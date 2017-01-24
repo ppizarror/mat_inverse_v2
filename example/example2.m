@@ -22,6 +22,8 @@ function example2
 % Initialize path
 initialize_path();
 [ST, ~] = dbstack;
+verbose = true;
+status(verbose, 0, ST.name);
 
 % New theorical model created
 thk = [5.0 3.0]';
@@ -32,18 +34,21 @@ vp = [700 500 800]';
 % Frecuency set
 freq = linspace(5, 100, 40)';
 
-% New dispertion curve created
+% New dispersion curve
+status(verbose, 1);
 [vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq);
 
 % Store data on file
-save_data(ST.name, vr, freq, thk, vp, vs, dns, true);
+status(verbose, 2);
+save_data(ST.name, vr, freq, thk, vp, vs, dns, verbose);
 
 % Phase velocity plot
-h1 = figure('Name', 'Dispertion curve', 'NumberTitle', 'off'); 
+status(verbose, 4);
+h1 = figure('Name', 'Dispersion curve', 'NumberTitle', 'off'); 
 plot(freq, vr, 'ro-');
 xlabel('Frequency $({s}^{-1})$', 'Interpreter', 'latex');
 ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
-title('Dispertion curve');
+title('Dispersion curve');
 
 % Shear velocity on depth plot
 vsinitial = vs';

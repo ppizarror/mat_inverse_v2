@@ -22,6 +22,7 @@ function example1
 initialize_path();
 [ST, ~] = dbstack;
 verbose = true;
+status(verbose, 0, ST.name);
 
 % New theorical model created
 thk = [5.0 10.0 10.0]';
@@ -33,18 +34,20 @@ vp = [400 600 800 1000]';
 freq = linspace(5, 100, 20)';
 nfreq = length(freq);
 
-% New dispertion curve created
-[vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq, true);
+% New dispersion curve
+status(verbose, 1);
+[vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq);
 
 % Store data on file
-save_data(ST.name, vr, freq, thk, vp, vs, dns);
+status(verbose, 2);
+save_data(ST.name, vr, freq, thk, vp, vs, dns, verbose);
 
 % Phase velocity plot
-h1 = figure('Name', 'Dispertion curve', 'NumberTitle', 'off'); 
+h1 = figure('Name', 'Dispersion curve', 'NumberTitle', 'off'); 
 plot(freq, vr, 'ro-');
 xlabel('Frequency $({s}^{-1})$', 'Interpreter', 'latex');
 ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
-title('Dispertion curve');
+title('Dispersion curve');
 
 % Added some noise to data
 sigma = 0.02 + zeros(nfreq, 1);
@@ -63,10 +66,12 @@ vs1 = [350 350 350 350]';
 vp1 = [700 700 700 700]';
 
 % Inversion
+status(verbose, 3);
 [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
 
-% Theorical vs Experimental dispertion curve
-h2 = figure('Name', 'Theorical v/s Experimental Dispertion Curve', 'NumberTitle', 'off'); %#ok<*NASGU>
+% Theorical vs Experimental dispersion curve
+status(verbose, 4);
+h2 = figure('Name', 'Theorical v/s Experimental Dispersion Curve', 'NumberTitle', 'off'); %#ok<*NASGU>
 hold on;
 errorbar(freq, vr_exp, sigma, 'ro--');
 final_iteration = niter;

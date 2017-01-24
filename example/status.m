@@ -1,4 +1,4 @@
-function status(verbose, numstatus)
+function status(verbose, numstatus, strdata)
 % STATUS
 % This functions prints status on console
 %
@@ -17,4 +17,21 @@ function status(verbose, numstatus)
 % You should have received a copy of the GNU General Public License
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+if verbose
+    
+    switch numstatus
+        case 0
+            fprintf('Starting %s\n', strdata);
+        case 1
+            fprintf('\tCreating dispersion curve\n');
+        case 2
+            fprintf('\tExporting data to excel files\n');
+        case 3
+            fprintf('\tInversion started\n');
+        case 4
+            fprintf('\tPlotting results\n');
+    end
+    
+end
 end

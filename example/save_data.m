@@ -66,7 +66,7 @@ end
 
 % Save initial guess file
 if verbose
-    fprintf('Creating initial guess file ''%s''\n', initial_filename);
+    fprintf('\t\tCreating initial guess file ''%s''\n', initial_filename);
 end
 xlswrite(initial_filename, thk2, 1, 'A');
 xlswrite(initial_filename, vs2, 1, 'B');
@@ -75,7 +75,7 @@ xlswrite(initial_filename, dns2, 1, 'D');
 
 % Save dispertion file
 if verbose
-    fprintf('Creating dispertion file ''%s''\n', disperse_filename);
+    fprintf('\t\tCreating dispertion file ''%s''\n', disperse_filename);
 end
 xlswrite(disperse_filename, freq2, 1, 'A');
 xlswrite(disperse_filename, vr2, 1, 'B');
