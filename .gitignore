@@ -7,6 +7,10 @@
 # ASV Matlab file
 *.asv
 
+# Excel files
+*.xls
+*.xlsx
+
 # Pycharm.
 .idea/
 pycharm/
