@@ -1,9 +1,6 @@
-function initialize_path
-% INITIALIZE PATH
-% This function initialize path, adding the following folders:
-%   (1) Parent folder
-%   (2) bin: It contains principal functions of mat_inverse (except GUI
-%   related files
+function status(verbose, numstatus)
+% STATUS
+% This functions prints status on console
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -20,14 +17,4 @@ function initialize_path
 % You should have received a copy of the GNU General Public License
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-
-% Try first bin mode
-try
-    path_bin = cd(cd('../bin/'));
-    addpath(path_bin);
-    return
-catch
-    error('Error while setting path')
-end
-
 end

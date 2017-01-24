@@ -1,4 +1,8 @@
-% Example file, author: Pablo Pizarro @ppizarror.com.
+function example1
+% EXAMPLE 1
+% Example file created to test data, set disperse and inverse examples.
+%
+% Author: Pablo Pizarro @ppizarror.com, 2017.
 %
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
@@ -14,10 +18,10 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-function example1
-
-% Initialize path
+% Initialize path and variables
 initialize_path();
+[ST, ~] = dbstack;
+verbose = true;
 
 % New theorical model created
 thk = [5.0 10.0 10.0]';
@@ -30,14 +34,17 @@ freq = linspace(5, 100, 20)';
 nfreq = length(freq);
 
 % New dispertion curve created
-[vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq);
+[vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq, true);
+
+% Store data on file
+save_data(ST.name, vr, freq, thk, vp, vs, dns);
 
 % Phase velocity plot
-figure(1);
+h1 = figure('Name', 'Dispertion curve', 'NumberTitle', 'off'); 
 plot(freq, vr, 'ro-');
-xlabel('Frecuencia [${s}^{-1}]$', 'Interpreter', 'latex');
-ylabel('Velocidad de Fase $(m/s)$', 'Interpreter', 'latex');
-title('Curva de dispersión');
+xlabel('Frequency $({s}^{-1})$', 'Interpreter', 'latex');
+ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
+title('Dispertion curve');
 
 % Added some noise to data
 sigma = 0.02 + zeros(nfreq, 1);
@@ -59,13 +66,13 @@ vp1 = [700 700 700 700]';
 [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
 
 % Theorical vs Experimental dispertion curve
-h2 = figure('Name', 'Curva de Dispersión Teórica v/s Experimental', 'NumberTitle', 'off'); %#ok<*NASGU>
-errorbar(freq, vr_exp, sigma, 'ro--');
+h2 = figure('Name', 'Theorical v/s Experimental Dispertion Curve', 'NumberTitle', 'off'); %#ok<*NASGU>
 hold on;
+errorbar(freq, vr_exp, sigma, 'ro--');
 final_iteration = niter;
 plot(freq, vr_iter(:, final_iteration));
 xlabel('Frequency $(Hz)$', 'Interpreter', 'latex');
-ylabel('Velocidad de Fase $(m/s)$', 'Interpreter', 'latex');
+ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
 hold off;
 
 % Shear velocity on depth plot
@@ -83,12 +90,12 @@ if ~ isempty(vsfinal)
     velocity = [velocity vsfinal(length(vsfinal))];
     mdl_vel = [mdl_vel vsinitial(length(vsinitial))];
  
-    h3 = figure('Name', 'Perfil de Velocidad de Corte', 'NumberTitle', 'off'); % #ok<*NASGU>
+    h3 = figure('Name', 'Shear Velocity Profile', 'NumberTitle', 'off'); % #ok<*NASGU>
     plot(velocity, depth, 'b', mdl_vel, depth, 'k--');
     set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
     set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-    xlabel('Velocidad de onda de corte $V_s$ $(m/sec)$', 'Interpreter', 'latex');
-    ylabel('Profundidad $(m)$', 'Interpreter', 'latex');
-    legend('Modelo inverso', 'Valor real');
+    xlabel('Shear wave velocity $V_s$ $(m/sec)$', 'Interpreter', 'latex');
+    ylabel('Depth $(m)$', 'Interpreter', 'latex');
+    legend('Inverse model', 'Real value');
 end
 end
