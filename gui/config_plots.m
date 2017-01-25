@@ -24,16 +24,34 @@
 plt_dispersion_style = 'ro-';
 
 % Solution dispersion curve plot style - experimental curve errorbar
-soltion_plt_dispersion_experimental_style = 'ro--';
+solution_plt_dispersion_experimental_style = 'ro--';
 
-% Solution dispersion curve plot style - solution curve
-soltion_plt_dispersion_solution_style = 'b-';
+% Solution dispersion curve plot style - solution
+solution_plt_dispersion_solution_style = 'b-';
+
+% Solution shear plot curve style
+solution_plt_shear_curve_style = 'r';
 
 % Dispersion curve vs iteration plot style
-dispersion_iteration_style = '-';
+dispersion_iteration_style = '--';
 
 % Dispersion curve vs iteration plot color (r, g, b, k)
-dispersion_iteration_color = 'r';
+dispersion_iteration_color = 'b';
+
+% Dispersion curve vs iteration plot linewidth
+dispersion_iteration_linewidth = 1;
+
+% Dispersion plot linewidth
+plt_dispersion_linewidth = 1;
+
+% Solution dispersion curve plot - experimental curve linewidth
+solution_plt_dispersion_experimental_linewidth = 1;
+
+% Solution plot dispersion curve plot linewidth
+solution_plt_dispersion_linewidth = 1;
+
+% Shear curve plot linewidth
+solution_plot_shear_linewidth = 1.2;
 % --------------------------------------------------------------------
 
 

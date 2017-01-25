@@ -119,8 +119,8 @@ setappdata(handles.root, 'cgf_tolvs', inv_tol_vs);
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispersion_label_fontsize);
 setappdata(handles.root, 'plt_dispersion_style', plt_dispersion_style);
 setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispersion_fontsize);
-setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispersion_experimental_style);
-setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispersion_solution_style);
+setappdata(handles.root, 'sol_plot_disp_style_exp', solution_plt_dispersion_experimental_style);
+setappdata(handles.root, 'sol_plot_disp_style_sol', solution_plt_dispersion_solution_style);
 setappdata(handles.root, 'plt_dispersion_showlegend', plt_dispersion_show_legend);
 setappdata(handles.root, 'plt_dispersion_solution_showlegend', solution_plt_dispersion_show_legend);
 setappdata(handles.root, 'sol_plot_shear_showlegend', solution_plt_shear_show_legend);
@@ -129,6 +129,12 @@ setappdata(handles.root, 'dispersion_iteration_style', dispersion_iteration_styl
 setappdata(handles.root, 'dispersion_iteration_fontsize', dispersion_iteration_fontsize);
 setappdata(handles.root, 'dispersion_iteration_color', dispersion_iteration_color);
 setappdata(handles.root, 'dispersion_iteration_show_legend', dispersion_iteration_show_legend);
+setappdata(handles.root, 'solution_plt_shear_curve_style', solution_plt_shear_curve_style);
+setappdata(handles.root, 'dispersion_iteration_linewidth', dispersion_iteration_linewidth);
+setappdata(handles.root, 'plt_dispersion_linewidth', plt_dispersion_linewidth);
+setappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth', solution_plt_dispersion_experimental_linewidth);
+setappdata(handles.root, 'solution_plt_dispersion_linewidth', solution_plt_dispersion_linewidth);
+setappdata(handles.root, 'solution_plot_shear_linewidth', solution_plot_shear_linewidth);
 
 % Set solution configuration
 setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);

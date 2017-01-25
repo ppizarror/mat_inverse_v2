@@ -81,6 +81,9 @@ if baseName ~= 0
         set_status(handles, lang{35}, 'k');
         setappdata(handles.root, 'dispersion_ok', true);
         set(handles.root, 'pointer', 'arrow');
+        
+        % Disable solution buttons
+        disable_sol(handles, lang);
      
     else
         disp_error(handles, lang, 34);

@@ -40,4 +40,7 @@ if replzd
     set(handles.initial_solution, 'Data', table_data);
 end
 
+% Disable solution buttons
+disable_sol(handles, lang);
+
 end

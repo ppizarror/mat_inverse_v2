@@ -67,6 +67,12 @@ dispersion_iteration_style = getappdata(handles.root, 'dispersion_iteration_styl
 dispersion_iteration_fontsize = getappdata(handles.root, 'dispersion_iteration_fontsize');
 dispersion_iteration_show_legend = getappdata(handles.root, 'dispersion_iteration_show_legend');
 dispersion_iteration_color = getappdata(handles.root, 'dispersion_iteration_color');
+solution_plt_shear_curve_style = getappdata(handles.root, 'solution_plt_shear_curve_style');
+dispersion_iteration_linewidth = getappdata(handles.root, 'dispersion_iteration_linewidth');
+solution_plt_dispersion_experimental_linewidth = getappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth');
+solution_plt_dispersion_linewidth = getappdata(handles.root, 'solution_plt_dispersion_linewidth');
+solution_plot_shear_linewidth = getappdata(handles.root, 'solution_plot_shear_linewidth');
+
 
 % Get solution config
 show_dispersion_comparision = getappdata(handles.root, 'show_dispersion_comparision');
@@ -87,8 +93,8 @@ if show_dispersion_comparision
     try
         h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
         hold on;
-        errorbar(freq, vr_exp, sigma, disp_style_err);
-        plot(freq, vr_iter(:, niter), disp_style_sol);
+        errorbar(freq, vr_exp, sigma, disp_style_err, 'Linewidth', solution_plt_dispersion_experimental_linewidth);
+        plot(freq, vr_iter(:, niter), disp_style_sol, 'Linewidth', solution_plt_dispersion_linewidth);
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
         ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', disp_fontsize);
         hold off;
@@ -119,7 +125,7 @@ if show_shear_velocity_plot
             velocity = [velocity vsfinal(length(vsfinal))];
 
             h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
-            plot(velocity, depth, 'b');
+            plot(velocity, depth, solution_plt_shear_curve_style, 'Linewidth', solution_plot_shear_linewidth);
             set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
             set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
             xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
@@ -155,8 +161,9 @@ if show_dispersion_iterations
     try
         h3 = figure('Name', lang{102}, 'NumberTitle', 'off'); %#ok<*NASGU>
         hold on;
+        errorbar(freq, vr_exp, sigma, disp_style_err, 'Linewidth', solution_plt_dispersion_experimental_linewidth);
         for i=1:niter
-            plot(freq, vr_iter(:, i), 'Color', plt_color.*(i/niter), 'Linewidth', 6);
+            plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', plt_color.*(i/niter), 'Linewidth', dispersion_iteration_linewidth);
         end
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize',dispersion_iteration_fontsize);
         ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
@@ -164,9 +171,10 @@ if show_dispersion_iterations
         
         % Show legend
         if dispersion_iteration_show_legend
-            legnd = cell(niter, 1);
+            legnd = cell(niter+1, 1);
+            legnd{1}=lang{67};
             for i=1:niter
-                legnd{i}=sprintf(lang{104}, i);
+                legnd{i+1}=sprintf(lang{104}, i);
             end
             legend(legnd);
         end
