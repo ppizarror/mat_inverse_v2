@@ -27,6 +27,8 @@ if baseName ~= 0
     % Open file
     set_status(handles, lang{8}, 'k');
     filename = strcat(folder, baseName);
+    set(handles.root, 'pointer', 'watch');
+    
     try
         excel_data = xlsread(filename);
     catch
@@ -78,6 +80,7 @@ if baseName ~= 0
         % Set status
         set_status(handles, lang{35}, 'k');
         setappdata(handles.root, 'dispersion_ok', true);
+        set(handles.root, 'pointer', 'arrow');
      
     else
         disp_error(handles, lang, 34);

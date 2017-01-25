@@ -1,7 +1,7 @@
 function example2
-% EXAMPLE 1
+% EXAMPLE 2
 % Example file created to test data, from Sebastiano Foti's B-example on
-% Chapter 5. Only dispertion is tested
+% Chapter 5. Only dispersion is tested.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
