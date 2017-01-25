@@ -104,16 +104,20 @@ movegui(gcf,'center');
 % Import configurations
 config;
 
-% Set app config
+% Set gui-app config
 setappdata(handles.root, 'lang', lang);
+setappdata(handles.root, 'gui_sound', gui_sound_enabled);
+setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
+
+% Set inversion config
 setappdata(handles.root, 'cgf_sigma', inv_sigma);
 setappdata(handles.root, 'cgf_mu', inv_mu);
 setappdata(handles.root, 'cgf_maxiter', inv_maxiter);
 setappdata(handles.root, 'cgf_tolvs', inv_tol_vs);
+
+% Set plot configuration
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispersion_label_fontsize);
 setappdata(handles.root, 'plt_dispersion_style', plt_dispersion_style);
-setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
-setappdata(handles.root, 'gui_sound', gui_sound_enabled);
 setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispersion_fontsize);
 setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispersion_experimental_style);
 setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispersion_solution_style);
@@ -121,6 +125,11 @@ setappdata(handles.root, 'plt_dispersion_showlegend', plt_dispersion_show_legend
 setappdata(handles.root, 'plt_dispersion_solution_showlegend', solution_plt_dispersion_show_legend);
 setappdata(handles.root, 'sol_plot_shear_showlegend', solution_plt_shear_show_legend);
 setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize);
+
+% Set solution configuration
+setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);
+setappdata(handles.root, 'show_shear_velocity_plot', show_shear_velocity_plot);
+setappdata(handles.root, 'show_dispertion_iterations', show_dispertion_iterations);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>

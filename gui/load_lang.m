@@ -421,21 +421,21 @@ list{95, 1} = 'Desea salir?';
 list{95, 2} = 'Do you want to close?';
 list{95, 3} = 'Voulez-vous fermer?';
 
-list{96, 1} = '';
-list{96, 2} = '';
-list{96, 3} = '';
+list{96, 1} = 'Creando gráficos...';
+list{96, 2} = 'Creating plots...';
+list{96, 3} = 'Graphiques générant...';
 
-list{97, 1} = '';
-list{97, 2} = '';
-list{97, 3} = '';
+list{97, 1} = 'Info: Gráficos creados correctamente.';
+list{97, 2} = 'Info: Plots created correctly.';
+list{97, 3} = 'Info: Graphics créées correctement.';
 
-list{98, 1} = '';
-list{98, 2} = '';
-list{98, 3} = '';
+list{98, 1} = 'Error: Ocurrió un error al generar la curva de dispersión experimental.';
+list{98, 2} = 'Error: An exception occurred while generating the experimental scatter curve.';
+list{98, 3} = 'Erreur: Une exception s''est produite lors de la génération de la courbe de dispersion expérimentale.';
 
-list{99, 1} = '';
-list{99, 2} = '';
-list{99, 3} = '';
+list{99, 1} = 'Error: Ocurrió un error al generar el perfil de la velocidad de corte.';
+list{99, 2} = 'Error: An exception occurred while generating shear velocity profile.';
+list{99, 3} = 'Erreur: Une exception s''est produite lors de la génération du profil de vitesse de cisaillement.';
 
 list{100, 1} = '';
 list{100, 2} = '';
