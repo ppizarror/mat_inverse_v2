@@ -85,7 +85,7 @@ try
     
     % Save units
     state.vr_units = get(handles.unit_vr, 'String');
-    state.unit_vr = get(handles.unit_vr, 'Value');  
+    state.unit_vr = get(handles.unit_vr, 'Value'); 
     state.vsvp_units = get(handles.unit_vsvp, 'String');
     state.unit_vsvp = get(handles.unit_vsvp, 'Value');
     state.h_units = get(handles.unit_h, 'String');

@@ -61,12 +61,14 @@ set(handles.unit_vsvp, 'Value', 1);
 set(handles.unit_h, 'Value', 1);
 set(handles.unit_rho, 'Value', 1);
 
+% Set button strings
+set_lang_string(handles.start_button, lang{42}, 'string');
+
 % Disable / Enable buttons
 set(handles.start_button, 'Enable', 'on');
 set(handles.menu_file_save, 'Enable', 'off');
-
-% Set button strings
-set_lang_string(handles.start_button, lang{42}, 'string');
+set(handles.view_sol_plot, 'Enable', 'off');
+set(handles.export_results, 'Enable', 'off');
 
 % Delete plot
 axes(handles.plt_dispersion_file);
@@ -84,5 +86,8 @@ set(handles.root, 'pointer', 'arrow');
 
 % Set title of the app
 set_app_title(handles, lang);
+
+% Clear iteration status
+set(handles.status_iteration, 'string', '');
 
 end

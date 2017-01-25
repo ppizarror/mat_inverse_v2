@@ -21,6 +21,29 @@ function clear_initialtable(handles, lang)
 % Constant importation
 constants;
 
+% Check if table has any content
+data = get(handles.initial_solution, 'Data');
+ndata = length(data);
+data_empty = true;
+for i=1:ndata
+    for j=1:4
+        if ~isempty(data{i,j})
+            data_empty = false;
+            break
+        end
+    end
+end
+
+% Ask user
+if ~data_empty
+    choice = questdlg(lang{100}, lang{101}, lang{74}, lang{75}, lang{74});
+    switch choice
+        case lang{74}
+        case lang{75} 
+            return
+    end
+end
+
 % New table is created
 new_table = cell(min_rowsize_initialtable, 4);
 

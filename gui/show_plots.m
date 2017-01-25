@@ -92,6 +92,7 @@ if show_dispersion_comparision
             legend(lang{67}, lang{68});
         end
     catch
+        close(h1);
         disp_error(handles, lang, 98);
     end
 end
@@ -125,6 +126,7 @@ if show_shear_velocity_plot
             end
         end
     catch
+        close(h2);
         disp_error(handles, lang, 99);
     end
 end

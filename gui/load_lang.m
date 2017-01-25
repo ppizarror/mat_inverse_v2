@@ -437,9 +437,49 @@ list{99, 1} = 'Error: Ocurrió un error al generar el perfil de la velocidad de c
 list{99, 2} = 'Error: An exception occurred while generating shear velocity profile.';
 list{99, 3} = 'Erreur: Une exception s''est produite lors de la génération du profil de vitesse de cisaillement.';
 
-list{100, 1} = '';
-list{100, 2} = '';
-list{100, 3} = '';
+list{100, 1} = 'Desea borrar la tabla de estimación inicial?';
+list{100, 2} = 'Do you want to clean initial guess table?';
+list{100, 3} = 'Voulez-vous nettoyer la table initiale?';
+
+list{101, 1} = 'Limpiar tabla';
+list{101, 2} = 'Clean table';
+list{101, 3} = 'Table propre';
+
+list{102, 1} = '';
+list{102, 2} = '';
+list{102, 3} = '';
+
+list{103, 1} = '';
+list{103, 2} = '';
+list{103, 3} = '';
+
+list{104, 1} = '';
+list{104, 2} = '';
+list{104, 3} = '';
+
+list{105, 1} = '';
+list{105, 2} = '';
+list{105, 3} = '';
+
+list{106, 1} = '';
+list{106, 2} = '';
+list{106, 3} = '';
+
+list{107, 1} = '';
+list{107, 2} = '';
+list{107, 3} = '';
+
+list{108, 1} = '';
+list{108, 2} = '';
+list{108, 3} = '';
+
+list{109, 1} = '';
+list{109, 2} = '';
+list{109, 3} = '';
+
+list{110, 1} = '';
+list{110, 2} = '';
+list{110, 3} = '';
 
 % --------------------------------------------------------------------
 
