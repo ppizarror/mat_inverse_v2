@@ -1,6 +1,6 @@
 function save_data(filename, vr, freq, thk, vp, vs, dns, verbose)
 % SAVE DATA
-% This function creates dispertion, theorical and initial solution
+% This function creates dispersion, theorical and initial solution
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -30,7 +30,7 @@ theo_filename = strcat(filename, '_theorical');
 
 % Set new cell data structure
 lns = length(dns)+1;  % Length of initial solution
-fns = length(freq)+1; % Length of dispertion solution
+fns = length(freq)+1; % Length of dispersion solution
 
 thk2 = cell(lns-1, 1);
 vs2 = cell(lns, 1);
@@ -99,9 +99,9 @@ xlswrite(theo_filename, vs2, 1, 'B');
 xlswrite(theo_filename, vp2, 1, 'C');
 xlswrite(theo_filename, dns2, 1, 'D');
 
-% Save dispertion file
+% Save dispersion file
 if verbose
-    fprintf('\t\tCreating dispertion file ''%s''\n', disperse_filename);
+    fprintf('\t\tCreating dispersion file ''%s''\n', disperse_filename);
 end
 xlswrite(disperse_filename, freq2, 1, 'A');
 xlswrite(disperse_filename, vr2, 1, 'B');

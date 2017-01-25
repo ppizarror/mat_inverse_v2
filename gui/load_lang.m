@@ -125,19 +125,19 @@ list{30, 1} = 'Sitio web: https://github.com/ppizarror/mat_inverse_v2';
 list{30, 2} = 'Website: https://github.com/ppizarror/mat_inverse_v2';
 
 list{31, 1} = 'Archivo de dispersión (Vr vs f)';
-list{31, 2} = 'Dispertion file (Vr vs f)';
+list{31, 2} = 'Dispersion file (Vr vs f)';
 
 list{32, 1} = 'Abrir (Excel)';
 list{32, 2} = 'Open (Excel)';
 
 list{33, 1} = 'Info: Carga de la curva de dispersión desde Excel cancelada.';
-list{33, 2} = 'Info: Excel dispertion curve data import cancelled by user.';
+list{33, 2} = 'Info: Excel dispersion curve data import cancelled by user.';
 
 list{34, 1} = 'Error: El archivo de dispersión debe tener sólo 2 columnas (frecuencia y velocidad de fase).';
-list{34, 2} = 'Error: Dispertion file must have only 2 columns (frecuency and phase velocity).';
+list{34, 2} = 'Error: Dispersion file must have only 2 columns (frecuency and phase velocity).';
 
 list{35, 1} = 'Info: Curva de dispersión cargada de forma exitosa.';
-list{35, 2} = 'Info: Dispertion curve loaded successfuly.';
+list{35, 2} = 'Info: Dispersion curve loaded successfuly.';
 
 list{36, 1} = 'Ampliar gráfico';
 list{36, 2} = 'View bigger plot';
@@ -234,10 +234,10 @@ list{65, 1} = 'Error: Solución no calculada aún!';
 list{65, 2} = 'Error: Solution not solved yet!';
 
 list{66, 1} = 'Curva de Dispersión Calculada v/s Experimental';
-list{66, 2} = 'Calculated Dispertion v/s Experimental Curve';
+list{66, 2} = 'Calculated Dispersion v/s Experimental Curve';
 
 list{67, 1} = 'Curva de dispersión experimental';
-list{67, 2} = 'Experimental dispertion curve';
+list{67, 2} = 'Experimental dispersion curve';
 
 list{68, 1} = 'Curva de dispersión inversa';
 list{68, 2} = 'Inverse dispersion curve';

@@ -58,7 +58,7 @@ dns = getappdata(handles.root, 'dns_sol');
 disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
 disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
 disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
-showlegend_dispertion = getappdata(handles.root, 'plt_dispertion_solution_showlegend');
+showlegend_dispersion = getappdata(handles.root, 'plt_dispersion_solution_showlegend');
 showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
 shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
 
@@ -71,7 +71,7 @@ unit_vr = vr_units{get(handles.unit_vr, 'Value')};
 unit_vs = vs_units{get(handles.unit_vsvp, 'Value')};
 unit_h = h_units{get(handles.unit_h, 'Value')};
 
-% Calculated vs Experimental dispertion curve
+% Calculated vs Experimental dispersion curve
 h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
 hold on;
 errorbar(freq, vr_exp, sigma, disp_style_err);
@@ -79,7 +79,7 @@ plot(freq, vr_iter(:, niter), disp_style_sol);
 xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
 ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', disp_fontsize);
 hold off;
-if showlegend_dispertion % Show legend
+if showlegend_dispersion % Show legend
     legend(lang{67}, lang{68});
 end
 

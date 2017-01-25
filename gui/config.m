@@ -33,6 +33,7 @@ gui_sound_enabled = true;
 % --------------------------------------------------------------------
 
 
+
 % --------------------------------------------------------------------
 % INVERSE MATLAB CONFIGURATION
 
@@ -50,33 +51,39 @@ inv_sigma = 0.03;
 % --------------------------------------------------------------------
 
 
+
 % --------------------------------------------------------------------
 % PLOT CONFIGURATION
 
-% Dispertion plot style
-plt_dispertion_style = 'ro-';
+% Dispersion plot style
+plt_dispersion_style = 'ro-';
 
-% Solution dispertion curve plot style - experimental curve errorbar
-soltion_plt_dispertion_experimental_style = 'ro--';
+% Solution dispersion curve plot style - experimental curve errorbar
+soltion_plt_dispersion_experimental_style = 'ro--';
 
-% Solution dispertion curve plot style - solution curve
-soltion_plt_dispertion_solution_style = 'b-';
+% Solution dispersion curve plot style - solution curve
+soltion_plt_dispersion_solution_style = 'b-';
 
-% Dispertion plot label fontsize
-plt_dispertion_label_fontsize = 10;
+% Dispersion plot label fontsize
+plt_dispersion_label_fontsize = 10;
 
 % Solution plot label fontsize
-solution_plt_dispertion_fontsize = 10;
+solution_plt_dispersion_fontsize = 10;
 
 % Solution shear plot fontsize
 solution_plt_shear_fontsize = 10;
 
-% Show legend on experimental dispertion curve
-plt_dispertion_show_legend = true;
+% Show legend on experimental dispersion curve
+plt_dispersion_show_legend = true;
 
-% Show legend on solution dispertion curve plot
-solution_plt_dispertion_show_legend = true;
+% Show legend on solution dispersion curve plot
+solution_plt_dispersion_show_legend = true;
 
 % Show legend on shear curve plot
 solution_plt_shear_show_legend = true;
 % --------------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------------
+% SOLUTION CONFIGURATION

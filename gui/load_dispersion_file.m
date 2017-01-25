@@ -1,6 +1,6 @@
-function load_dispertion_file(handles, lang)
+function load_dispersion_file(handles, lang)
 % LOAD DISPERTION FILE
-% Load dispertion file from Excel, then plot it on GUI.
+% Load dispersion file from Excel, then plot it on GUI.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -42,7 +42,7 @@ if baseName ~= 0
     constants;
  
     % Check if number of columns are valid
-    if nColumn == columns_dispertiondata
+    if nColumn == columns_dispersiondata
      
         % Save freq and vr_exp
         freq = excel_data(:, 1);
@@ -53,31 +53,31 @@ if baseName ~= 0
         setappdata(handles.root, 'disp_vrexp', excel_data(:, 2));
      
         % --- Plot data
-        axes(handles.plt_dispertion_file);
+        axes(handles.plt_dispersion_file);
      
         % Get plot style
-        plt_style = getappdata(handles.root, 'plt_dispertion_style');
+        plt_style = getappdata(handles.root, 'plt_dispersion_style');
      
         % Plot curve
         plot(freq, vr_exp, plt_style);
         
         % Save filename
-        setappdata(handles.root, 'dispertion_file', filename);
+        setappdata(handles.root, 'dispersion_file', filename);
      
         % Set filename on gui
-        if length(filename) > size_filename_dispertion_str
-            filename = filename(length(filename) - size_filename_dispertion_str:end);
+        if length(filename) > size_filename_dispersion_str
+            filename = filename(length(filename) - size_filename_dispersion_str:end);
             filename = strcat('...', filename);
         end
         set(handles.status_direction_file, 'string', filename);
-        setappdata(handles.root, 'dispertion_file_short', filename);
+        setappdata(handles.root, 'dispersion_file_short', filename);
      
         % Enable view larger plot context menu
         set(handles.disp_plt_viewlarger, 'Enable', 'on');
      
         % Set status
         set_status(handles, lang{35}, 'k');
-        setappdata(handles.root, 'dispertion_ok', true);
+        setappdata(handles.root, 'dispersion_ok', true);
      
     else
         disp_error(handles, lang, 34);

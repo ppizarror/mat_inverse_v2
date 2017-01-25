@@ -27,9 +27,12 @@ if baseName ~= 0
  
     % Open file
     set_status(handles, lang{8}, 'k');
+    set(handles.root, 'pointer', 'watch');
+    
     try
         excel_data = xlsread(strcat(folder, baseName));
     catch
+        set(handles.root, 'pointer', 'arrow');
         set_status(handles, lang{25}, 'r');
         errordlg(lang{24}, lang{23});
         return
@@ -73,6 +76,7 @@ if baseName ~= 0
          
             % Successful importation
             set_status(handles, lang{10});
+            set(handles.root, 'pointer', 'arrow');
          
         else
             disp_error(handles, lang, 9, num2str(excel_data(nRow, 1)));

@@ -31,8 +31,8 @@ end
 % Set main variables
 setappdata(handles.root, 'disp_freq', []);
 setappdata(handles.root, 'disp_vrexp', []);
-setappdata(handles.root, 'dispertion_ok', false);
-setappdata(handles.root, 'dispertion_file', '');
+setappdata(handles.root, 'dispersion_ok', false);
+setappdata(handles.root, 'dispersion_file', '');
 setappdata(handles.root, 'initial_table_validsize', 0);
 setappdata(handles.root, 'n_iter', []);
 setappdata(handles.root, 'vr_iter', []);
@@ -46,7 +46,7 @@ setappdata(handles.root, 'vp_sol', []);
 setappdata(handles.root, 'dns_sol', []);
 setappdata(handles.root, 'project_loaded', false);
 setappdata(handles.root, 'project_savefile', '');
-setappdata(handles.root, 'dispertion_file_short', '');
+setappdata(handles.root, 'dispersion_file_short', '');
 setappdata(handles.root, 'project_savefile_short', '');
 
 % Update inv entry (from config.m)
@@ -69,7 +69,7 @@ set(handles.menu_file_save, 'Enable', 'off');
 set_lang_string(handles.start_button, lang{42}, 'string');
 
 % Delete plot
-axes(handles.plt_dispertion_file);
+axes(handles.plt_dispersion_file);
 cla reset;
 set(handles.status_direction_file, 'string', '');
 

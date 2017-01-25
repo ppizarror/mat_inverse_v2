@@ -59,8 +59,8 @@ try
     % Save main variables - same order as new_file.m
     state.disp_freq = getappdata(handles.root, 'disp_freq');
     state.disp_vrexp = getappdata(handles.root, 'disp_vrexp');
-    state.dispertion_ok = getappdata(handles.root, 'dispertion_ok');
-    state.dispertion_file = getappdata(handles.root, 'dispertion_file');
+    state.dispersion_ok = getappdata(handles.root, 'dispersion_ok');
+    state.dispersion_file = getappdata(handles.root, 'dispersion_file');
     state.initial_table_validsize = getappdata(handles.root, 'initial_table_validsize');
     state.n_iter = getappdata(handles.root, 'n_iter');
     state.vr_iter = getappdata(handles.root, 'vr_iter');
@@ -74,7 +74,7 @@ try
     state.dns_sol = getappdata(handles.root, 'dns_sol');
     state.project_loaded = getappdata(handles.root, 'project_loaded');
     state.project_savefile = getappdata(handles.root, 'project_savefile');
-    state.dispertion_file_short = getappdata(handles.root, 'dispertion_file_short');
+    state.dispersion_file_short = getappdata(handles.root, 'dispersion_file_short');
     state.project_savefile_short = getappdata(handles.root, 'project_savefile_short');
     
     % Save inv entry

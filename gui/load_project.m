@@ -48,8 +48,8 @@ if baseName ~= 0
         % Load main variables
         setappdata(handles.root, 'disp_freq', state.disp_freq);
         setappdata(handles.root, 'disp_vrexp', state.disp_vrexp);
-        setappdata(handles.root, 'dispertion_ok', state.dispertion_ok);
-        setappdata(handles.root, 'dispertion_file', state.dispertion_file);
+        setappdata(handles.root, 'dispersion_ok', state.dispersion_ok);
+        setappdata(handles.root, 'dispersion_file', state.dispersion_file);
         setappdata(handles.root, 'initial_table_validsize', state.initial_table_validsize);
         setappdata(handles.root, 'n_iter', state.n_iter);
         setappdata(handles.root, 'vr_iter', state.vr_iter);
@@ -63,7 +63,7 @@ if baseName ~= 0
         setappdata(handles.root, 'dns_sol', state.dns_sol);
         setappdata(handles.root, 'project_loaded', state.project_loaded);
         setappdata(handles.root, 'project_savefile', strcat(folder, baseName));
-        setappdata(handles.root, 'dispertion_file_short', state.dispertion_file_short);
+        setappdata(handles.root, 'dispersion_file_short', state.dispersion_file_short);
         setappdata(handles.root, 'project_savefile_short', state.project_savefile_short);
 
         % Load inv entry
@@ -82,22 +82,22 @@ if baseName ~= 0
         set(handles.unit_rho, 'String', state.rho_units);
         set(handles.unit_rho, 'Value', state.unit_rho);
         
-        % Plot dispertion curve if loaded
-        if state.dispertion_ok
+        % Plot dispersion curve if loaded
+        if state.dispersion_ok
             
-            set(handles.status_direction_file, 'string', state.dispertion_file_short);
+            set(handles.status_direction_file, 'string', state.dispersion_file_short);
             
             % --- Plot data
-            axes(handles.plt_dispertion_file);
-            plt_style = getappdata(handles.root, 'plt_dispertion_style');
+            axes(handles.plt_dispersion_file);
+            plt_style = getappdata(handles.root, 'plt_dispersion_style');
             plot(state.disp_freq, state.disp_vrexp, plt_style);
             
             % Enable view larger plot context menu
             set(handles.disp_plt_viewlarger, 'Enable', 'on');
             
             % Check if file already exists
-            if ~ exist(state.dispertion_file, 'file')
-                disp_error(handles, lang, 93, state.dispertion_file);
+            if ~ exist(state.dispersion_file, 'file')
+                disp_error(handles, lang, 93, state.dispersion_file);
                 warn=warn+1;
             end
             
@@ -154,7 +154,10 @@ if baseName ~= 0
         
     end
 else
+    
+    % Project not loaded
     disp_error(handles, lang, 83);
+    
 end
 
 end

@@ -34,8 +34,8 @@ lang_entries = 100;
 %   2:  English (United States)
 lang_avaiable_languages = 2;
 
-% Number of columns in dispertion Excel file
-columns_dispertiondata = 2;
+% Number of columns in dispersion Excel file
+columns_dispersiondata = 2;
 
-% Size of dispertion file string on GUI
-size_filename_dispertion_str = 31;
+% Size of dispersion file string on GUI
+size_filename_dispersion_str = 31;

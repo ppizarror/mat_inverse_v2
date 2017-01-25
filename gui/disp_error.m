@@ -40,5 +40,8 @@ end
 if getappdata(handles.root, 'gui_sound')
     beep();
 end
+
+% Normal cursor
+set(handles.root, 'pointer', 'arrow');
     
 end

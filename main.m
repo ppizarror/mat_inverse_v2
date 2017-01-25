@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 20-Jan-2017 12:07:51
+% Last Modified by GUIDE v2.5 24-Jan-2017 23:03:42
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -110,15 +110,15 @@ setappdata(handles.root, 'cgf_sigma', inv_sigma);
 setappdata(handles.root, 'cgf_mu', inv_mu);
 setappdata(handles.root, 'cgf_maxiter', inv_maxiter);
 setappdata(handles.root, 'cgf_tolvs', inv_tol_vs);
-setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispertion_label_fontsize);
-setappdata(handles.root, 'plt_dispertion_style', plt_dispertion_style);
+setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispersion_label_fontsize);
+setappdata(handles.root, 'plt_dispersion_style', plt_dispersion_style);
 setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
 setappdata(handles.root, 'gui_sound', gui_sound_enabled);
-setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispertion_fontsize);
-setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispertion_experimental_style);
-setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispertion_solution_style);
-setappdata(handles.root, 'plt_dispertion_showlegend', plt_dispertion_show_legend);
-setappdata(handles.root, 'plt_dispertion_solution_showlegend', solution_plt_dispertion_show_legend);
+setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispersion_fontsize);
+setappdata(handles.root, 'sol_plot_disp_style_exp', soltion_plt_dispersion_experimental_style);
+setappdata(handles.root, 'sol_plot_disp_style_sol', soltion_plt_dispersion_solution_style);
+setappdata(handles.root, 'plt_dispersion_showlegend', plt_dispersion_show_legend);
+setappdata(handles.root, 'plt_dispersion_solution_showlegend', solution_plt_dispersion_show_legend);
 setappdata(handles.root, 'sol_plot_shear_showlegend', solution_plt_shear_show_legend);
 setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize);
 
@@ -138,8 +138,8 @@ set_lang_string(handles.menu_view_help, lang{18});
 set_lang_string(handles.menu_file_save, lang{20});
 set_lang_string(handles.menu_file_save_as, lang{21});
 set_lang_string(handles.menu_file_close, lang{22});
-set_lang_string(handles.text_dispertion_title, lang{31}, 'string');
-set_lang_string(handles.btn_opendispertion, lang{32}, 'string');
+set_lang_string(handles.text_dispersion_title, lang{31}, 'string');
+set_lang_string(handles.btn_opendispersion, lang{32}, 'string');
 set_lang_string(handles.disp_plt_viewlarger, lang{36});
 set_lang_string(handles.panel_units, lang{40}, 'Title');
 set_lang_string(handles.start_button, lang{42}, 'string');
@@ -310,16 +310,16 @@ function menu_file_close_Callback(hObject, eventdata, handles)
 close all;
 
 
-% --- Executes on button press in btn_opendispertion.
-function btn_opendispertion_Callback(hObject, eventdata, handles)
-% hObject    handle to btn_opendispertion (see GCBO)
+% --- Executes on button press in btn_opendispersion.
+function btn_opendispersion_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_opendispersion (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load_dispertion_file(handles, getappdata(handles.root, 'lang'));
+load_dispersion_file(handles, getappdata(handles.root, 'lang'));
 
 % --------------------------------------------------------------------
-function panel_dispertion_file_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to panel_dispertion_file (see GCBO)
+function panel_dispersion_file_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to panel_dispersion_file (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -417,8 +417,8 @@ end
 
 
 % --- Executes on mouse press over axes background.
-function plt_dispertion_file_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to plt_dispertion_file (see GCBO)
+function plt_dispersion_file_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to plt_dispersion_file (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -428,12 +428,12 @@ function disp_plt_viewlarger_Callback(hObject, eventdata, handles)
 % hObject    handle to disp_plt_viewlarger (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-plot_large_dispertioncurve(handles, getappdata(handles.root, 'lang'));
+plot_large_dispersioncurve(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
-function dispertion_curve_menu_Callback(hObject, eventdata, handles)
-% hObject    handle to dispertion_curve_menu (see GCBO)
+function dispersion_curve_menu_Callback(hObject, eventdata, handles)
+% hObject    handle to dispersion_curve_menu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -626,16 +626,16 @@ function param_tolvs_KeyPressFcn(hObject, eventdata, handles)
 
 
 % --- If Enable == 'on', executes on mouse press in 5 pixel border.
-% --- Otherwise, executes on mouse press in 5 pixel border or over btn_opendispertion.
-function btn_opendispertion_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to btn_opendispertion (see GCBO)
+% --- Otherwise, executes on mouse press in 5 pixel border or over btn_opendispersion.
+function btn_opendispersion_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to btn_opendispersion (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on key press with focus on btn_opendispertion and none of its controls.
-function btn_opendispertion_KeyPressFcn(hObject, eventdata, handles)
-% hObject    handle to btn_opendispertion (see GCBO)
+% --- Executes on key press with focus on btn_opendispersion and none of its controls.
+function btn_opendispersion_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to btn_opendispersion (see GCBO)
 % eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
 %	Key: name of the key that was pressed, in lower case
 %	Character: character interpretation of the key(s) that was pressed
