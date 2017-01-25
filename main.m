@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 25-Jan-2017 11:55:39
+% Last Modified by GUIDE v2.5 25-Jan-2017 16:43:09
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -671,4 +671,3 @@ function initial_solution_CellSelectionCallback(hObject, eventdata, handles)
 % eventdata  structure with the following fields (see MATLAB.UI.CONTROL.TABLE)
 %	Indices: row and column indices of the cell(s) currently selecteds
 % handles    structure with handles and user data (see GUIDATA)
-

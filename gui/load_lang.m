@@ -102,9 +102,9 @@ list{17, 1} = 'Ayuda';
 list{17, 2} = 'Help';
 list{17, 3} = 'Aider';
 
-list{18, 1} = 'Ver la ayuda';
-list{18, 2} = 'View Help';
-list{18, 3} = 'Voir Aide';
+list{18, 1} = 'Ver el Manual';
+list{18, 2} = 'See Manual';
+list{18, 3} = 'Voir manuel';
 
 list{19, 1} = 'Acerca de';
 list{19, 2} = 'About';
