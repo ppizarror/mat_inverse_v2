@@ -38,4 +38,4 @@ lang_avaiable_languages = 2;
 columns_dispertiondata = 2;
 
 % Size of dispertion file string on GUI
-size_filename_dispertion_str = 32;
+size_filename_dispertion_str = 31;
