@@ -19,11 +19,14 @@ function example2
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Initialize path
-initialize_path();
+% Set cosntants
 [ST, ~] = dbstack;
-verbose = true;
-status(verbose, 0, ST.name);
+VERBOSE = true;
+SHOW_PLOTS = false;
+
+% Initialize path and variables
+initialize_path();
+status(VERBOSE, 0, ST.name);
 
 % New theorical model created
 thk = [5.0 3.0]';
@@ -35,36 +38,44 @@ vp = [700 500 800]';
 freq = linspace(5, 100, 40)';
 
 % New dispersion curve
-status(verbose, 1);
+status(VERBOSE, 1);
 [vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq);
 
 % Store data on file
-status(verbose, 2);
-save_data(ST.name, vr, freq, thk, vp, vs, dns, verbose);
+status(VERBOSE, 2);
+save_data(ST.name, vr, freq, thk, vp, vs, dns, VERBOSE);
 
-% Phase velocity plot
-status(verbose, 4);
-h1 = figure('Name', 'Dispersion curve', 'NumberTitle', 'off'); 
-plot(freq, vr, 'ro-');
-xlabel('Frequency $({s}^{-1})$', 'Interpreter', 'latex');
-ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
-title('Dispersion curve');
+% Show plots
+if SHOW_PLOTS
+    
+    % Show status
+    status(VERBOSE, 4); %#ok<*UNRCH>
 
-% Shear velocity on depth plot
-vsinitial = vs';
-thk = thk';
-cumthk = [0 cumsum(thk)]; depth = 0; mdl_vel = vsinitial(1);
-for j = 1:length(thk)
-    depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-    mdl_vel = [mdl_vel vsinitial(j) vsinitial(j + 1)];
+    % Phase velocity plot
+    status(VERBOSE, 4);
+    h1 = figure('Name', 'Dispersion curve', 'NumberTitle', 'off'); 
+    plot(freq, vr, 'ro-');
+    xlabel('Frequency $({s}^{-1})$', 'Interpreter', 'latex');
+    ylabel('Phase velocity $(m/s)$', 'Interpreter', 'latex');
+    title('Dispersion curve');
+
+    % Shear velocity on depth plot
+    vsinitial = vs';
+    thk = thk';
+    cumthk = [0 cumsum(thk)]; depth = 0; mdl_vel = vsinitial(1);
+    for j = 1:length(thk)
+        depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
+        mdl_vel = [mdl_vel vsinitial(j) vsinitial(j + 1)];
+    end
+    depth = [depth sum(thk) + thk(length(thk))];
+    mdl_vel = [mdl_vel vsinitial(length(vsinitial))];
+
+    h1 = figure('Name', 'Shear Velocity Profile', 'NumberTitle', 'off'); %#ok<*NASGU>
+    plot(mdl_vel, depth, 'b');
+    set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
+    set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+    xlabel('Shear wave velocity $V_s$ $(m/sec)$', 'Interpreter', 'latex');
+    ylabel('Depth $(m)$', 'Interpreter', 'latex');
 end
-depth = [depth sum(thk) + thk(length(thk))];
-mdl_vel = [mdl_vel vsinitial(length(vsinitial))];
 
-h1 = figure('Name', 'Shear Velocity Profile', 'NumberTitle', 'off'); %#ok<*NASGU>
-plot(mdl_vel, depth, 'b');
-set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-xlabel('Shear wave velocity $V_s$ $(m/sec)$', 'Interpreter', 'latex');
-ylabel('Depth $(m)$', 'Interpreter', 'latex');
 end
