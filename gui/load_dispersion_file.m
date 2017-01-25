@@ -1,5 +1,5 @@
 function load_dispersion_file(handles, lang)
-% LOAD DISPERTION FILE
+% LOAD DISPERSION FILE
 % Load dispersion file from Excel, then plot it on GUI.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.

@@ -443,7 +443,7 @@ list{100, 3} = '';
 
 % --------------------------------------------------------------------
 
-% Create list of choise
+% Create list of choice
 langlist = cell(lang_entries, 1);
 for j = 1:lang_entries
     langlist{j} = list{j, langid};
