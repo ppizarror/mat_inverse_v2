@@ -21,13 +21,31 @@ function initialize_path
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Try first bin mode
-try
-    path_bin = cd(cd('../bin/'));
-    addpath(path_bin);
-    return
-catch
-    error('Error while setting path')
+% Add bin, and gui to path from folder (recursive)
+PATH_DEPTH = 3;
+
+for i=1:PATH_DEPTH
+
+    try
+        path_str = '';
+        if i~=1
+            for j=1:i-1
+                path_str = strcat(path_str, '../');
+            end
+        end
+        path_bin = cd(cd(strcat(path_str, 'bin')));
+        addpath(path_bin);
+        return
+        
+    catch Exception
+        
+        % Folders could not be found
+        if i==PATH_DEPTH
+            fprintf(getReport(Exception));
+            error('Error while setting software path.');
+        end
+        
+    end
 end
 
 end

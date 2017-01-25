@@ -69,11 +69,34 @@ function main_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for main
 handles.output = hObject;
 
-% Add bin, and gui to path
-path_bin = cd(cd('bin'));
-path_gui = cd(cd('gui'));
-addpath(path_bin);
-addpath(path_gui);
+% Add bin, and gui to path from folder (recursive)
+PATH_DEPTH = 3;
+
+for i=1:PATH_DEPTH
+
+    try
+        path_str = '';
+        if i~=1
+            for j=1:i-1
+                path_str = strcat(path_str, '../');
+            end
+        end
+        path_bin = cd(cd(strcat(path_str, 'bin')));
+        path_gui = cd(cd(strcat(path_str, 'gui')));
+        addpath(path_bin);
+        addpath(path_gui);
+        break
+        
+    catch Exception
+        
+        % Folders could not be found
+        if i==PATH_DEPTH
+            fprintf(getReport(Exception));
+            error('Error while setting software path.');
+        end
+        
+    end
+end
 
 % Center window
 movegui(gcf,'center');
