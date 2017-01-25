@@ -33,7 +33,7 @@ solution_plt_dispersion_solution_style = 'b-';
 solution_plt_shear_curve_style = 'r';
 
 % Dispersion curve vs iteration plot style
-dispersion_iteration_style = '--';
+dispersion_iteration_style = '-';
 
 % Dispersion curve vs iteration plot color (r, g, b, k)
 dispersion_iteration_color = 'b';

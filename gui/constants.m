@@ -1,5 +1,5 @@
 % CONSTANTS
-% Set some constants
+% Set some constants.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -21,7 +21,7 @@
 savefile_extension = '.invprj';
 
 % Version
-software_version = '2.5';
+software_version = '2.6';
 
 % Minimum size of the initial table
 min_rowsize_initialtable = 30;

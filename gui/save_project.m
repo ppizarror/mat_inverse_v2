@@ -105,6 +105,7 @@ catch Exception
     set_status(handles, lang{88}, 'r');
     errordlg(msg_error, lang{61});
     return
+    
 end
 % --------------------------------------------------------------------
 
