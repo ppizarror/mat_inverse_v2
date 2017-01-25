@@ -45,29 +45,29 @@ status(VERBOSE, 1);
 status(VERBOSE, 2);
 save_data(ST.name, vr, freq, thk, vp, vs, dns, VERBOSE);
 
-% Added some noise to data
-sigma = 0.02 + zeros(nfreq, 1);
-err = sigma .* randn(nfreq, 1);
-vr_exp = vr + err;
-
-% Invertion parameters
-maxiter = 10;
-mu = 10;
-tol_vs = 0.01;
-
-% New guess (initial solution) is defined to inverse
-thk1 = [5.0 10.0 10.0]';
-dns1 = [1.8 1.8 1.8 1.8]';
-vs1 = [350 350 350 350]';
-vp1 = [700 700 700 700]';
-
-% Inversion
-status(VERBOSE, 3);
-[niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
-
 % Show plots
 if SHOW_PLOTS
     
+    % Added some noise to data
+    sigma = 0.02 + zeros(nfreq, 1);
+    err = sigma .* randn(nfreq, 1);
+    vr_exp = vr + err;
+
+    % Invertion parameters
+    maxiter = 10;
+    mu = 10;
+    tol_vs = 0.01;
+
+    % New guess (initial solution) is defined to inverse
+    thk1 = [5.0 10.0 10.0]';
+    dns1 = [1.8 1.8 1.8 1.8]';
+    vs1 = [350 350 350 350]';
+    vp1 = [700 700 700 700]';
+
+    % Inversion
+    status(VERBOSE, 3);
+    [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
+  
     % Show status
     status(VERBOSE, 4);
     

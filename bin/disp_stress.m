@@ -131,7 +131,7 @@ for j = 1:length(freq)
         end
      
         if n_try(id) ~= NUMPOINTS
-            r(j, m, n_try(id + 1):NUMPOINTS, 1) = interp1(n_try(id + 1:end), squeeze(r(j, m, n_try(id + 1:end), 1)), n_try(id + 1):NUMPOINTS, 'nearest');
+            r(j, m, n_try(id + 1):NUMPOINTS, 1) = interp1(n_try(id + 1:end), squeeze(r(j, m, n_try(id + 1:end), 1)), n_try(id + 1):NUMPOINTS);
             r(j, m, n_try(id + 1):NUMPOINTS, 2) = interp1(n_try(id + 1:end), squeeze(r(j, m, n_try(id + 1:end), 2)), n_try(id + 1):NUMPOINTS);
             r(j, m, n_try(id + 1):NUMPOINTS, 3) = interp1(n_try(id + 1:end), squeeze(r(j, m, n_try(id + 1:end), 3)), n_try(id + 1):NUMPOINTS);
             r(j, m, n_try(id + 1):NUMPOINTS, 4) = interp1(n_try(id + 1:end), squeeze(r(j, m, n_try(id + 1:end), 4)), n_try(id + 1):NUMPOINTS);

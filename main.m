@@ -129,7 +129,7 @@ setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize)
 % Set solution configuration
 setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);
 setappdata(handles.root, 'show_shear_velocity_plot', show_shear_velocity_plot);
-setappdata(handles.root, 'show_dispertion_iterations', show_dispertion_iterations);
+setappdata(handles.root, 'show_dispersion_iterations', show_dispersion_iterations);
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
@@ -661,3 +661,4 @@ function initial_solution_CellSelectionCallback(hObject, eventdata, handles)
 % eventdata  structure with the following fields (see MATLAB.UI.CONTROL.TABLE)
 %	Indices: row and column indices of the cell(s) currently selecteds
 % handles    structure with handles and user data (see GUIDATA)
+

@@ -67,7 +67,7 @@ shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
 % Get solution config
 show_dispersion_comparision = getappdata(handles.root, 'show_dispersion_comparision');
 show_shear_velocity_plot = getappdata(handles.root, 'show_shear_velocity_plot');
-show_dispertion_iterations = getappdata(handles.root, 'show_dispertion_iterations');
+show_dispersion_iterations = getappdata(handles.root, 'show_dispersion_iterations');
 
 % Get plot units
 vr_units = get(handles.unit_vr, 'String');

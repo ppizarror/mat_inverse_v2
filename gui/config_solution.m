@@ -24,4 +24,4 @@ show_dispersion_comparision = true;
 show_shear_velocity_plot = true;
 
 % Show Calculated dispersion - iteration changes
-show_dispertion_iterations = true;
+show_dispersion_iterations = true;
