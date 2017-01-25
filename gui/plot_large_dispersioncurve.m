@@ -1,6 +1,6 @@
-function plot_large_dispertioncurve(handles, lang)
-% PLOT LARGE DISPERION CURVE
-% Plot dispertion curve on a larger scale
+function plot_large_dispersioncurve(handles, lang)
+% PLOT LARGE DISPERSION CURVE
+% Plot dispersion curve on a larger scale
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -23,9 +23,9 @@ freq = getappdata(handles.root, 'disp_freq');
 vr_exp = getappdata(handles.root, 'disp_vrexp');
 
 % Get plot style
-plt_style = getappdata(handles.root, 'plt_dispertion_style');
+plt_style = getappdata(handles.root, 'plt_dispersion_style');
 plt_labelsize = getappdata(handles.root, 'plt_disp_labl_fontsize');
-plt_showlegend = getappdata(handles.root, 'plt_dispertion_showlegend');
+plt_showlegend = getappdata(handles.root, 'plt_dispersion_showlegend');
 
 % Get unit from vr
 vr_units = get(handles.unit_vr, 'String');

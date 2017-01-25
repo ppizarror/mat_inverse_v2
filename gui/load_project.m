@@ -140,7 +140,7 @@ if baseName ~= 0
     catch Exception
         
         % Get Exception message
-        msg_error = getReport(Exception);
+        msg_error = getReport(Exception, 'basic', 'hyperlinks', 'off');
         if getappdata(handles.root, 'gui_sound')
             beep();
         end

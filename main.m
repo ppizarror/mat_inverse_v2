@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 24-Jan-2017 23:03:42
+% Last Modified by GUIDE v2.5 25-Jan-2017 11:55:39
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -247,7 +247,7 @@ function menu_edition_cleantable_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_edition_cleantable (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-clear_initialtable(handles, getappdata(handles.root, 'lang'));
+clear_initialtable(handles, getappdata(handles.root, 'lang'), true);
 
 
 % --------------------------------------------------------------------

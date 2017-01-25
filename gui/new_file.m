@@ -76,7 +76,7 @@ cla reset;
 set(handles.status_direction_file, 'string', '');
 
 % Clear initialtable
-clear_initialtable(handles, lang);
+clear_initialtable(handles, lang, false);
 
 % Clear status
 set_status(handles, '');

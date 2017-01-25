@@ -1,4 +1,4 @@
-function clear_initialtable(handles, lang)
+function clear_initialtable(handles, lang, doask)
 % CLEAR INITIAL TABLE
 % Clear initial table
 %
@@ -35,7 +35,7 @@ for i=1:ndata
 end
 
 % Ask user
-if ~data_empty
+if ~data_empty && doask
     choice = questdlg(lang{100}, lang{101}, lang{74}, lang{75}, lang{74});
     switch choice
         case lang{74}

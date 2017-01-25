@@ -24,7 +24,7 @@ if ~ exist('verbose', 'var')
 end
 
 % Create filenames
-initial_filename = strcat(filename, '_initial');
+initial_filename = strcat(filename, '_guess');
 disperse_filename = strcat(filename, '_disperse');
 theo_filename = strcat(filename, '_theorical');
 

@@ -73,13 +73,14 @@ try
 catch Exception
     
     % Get Exception message
-    msg_error = getReport(Exception);
+    msg_error = getReport(Exception, 'basic', 'hyperlinks', 'off');
     beep();
     
     % Display errors / set statuses
     set_status(handles, lang{60}, 'r');
     errordlg(msg_error, lang{61});
     set_lang_string(handles.start_button, lang{42}, 'string');
+    disp(msg_error);
     
     % Disable/Enable buttons
     set(handles.start_button, 'Enable', 'on');
