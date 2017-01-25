@@ -316,11 +316,11 @@ list{91, 2} = 'project1';
 list{92, 1} = 'Tiempo total de ejecución: %.1fs';
 list{92, 2} = 'Total execution time: %.1fs';
 
-list{93, 1} = '';
-list{93, 2} = '';
+list{93, 1} = 'No se encontró el archivo de dispersión ''%s''';
+list{93, 2} = 'Dispersion file ''%s'' not found';
 
-list{94, 1} = '';
-list{94, 2} = '';
+list{94, 1} = 'Info: Proyecto cargado, errores: %d.';
+list{94, 2} = 'Info: Project loaded, errors: %d.';
 
 list{95, 1} = '';
 list{95, 2} = '';

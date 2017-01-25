@@ -1,6 +1,6 @@
 function save_data(filename, vr, freq, thk, vp, vs, dns, verbose)
 % SAVE DATA
-% This function creates dispertion and initial solution
+% This function creates dispertion, theorical and initial solution
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

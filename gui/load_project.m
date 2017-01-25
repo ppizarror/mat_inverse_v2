@@ -26,8 +26,12 @@ savefile_extension = strcat('*', savefile_extension); %#ok<NODEF>
 set_status(handles, lang{81});
 [baseName, folder] = uigetfile({savefile_extension, lang{78}}, lang{82}); %#ok<*ASGLU>
 
+% Warning counter
+warn = 0;
+
 % If filename is valid
 if baseName ~= 0
+    
     try
         
         % Loading project
@@ -80,6 +84,7 @@ if baseName ~= 0
         
         % Plot dispertion curve if loaded
         if state.dispertion_ok
+            
             set(handles.status_direction_file, 'string', state.dispertion_file_short);
             
             % --- Plot data
@@ -89,6 +94,12 @@ if baseName ~= 0
             
             % Enable view larger plot context menu
             set(handles.disp_plt_viewlarger, 'Enable', 'on');
+            
+            % Check if file already exists
+            if ~ exist(state.dispertion_file, 'file')
+                disp_error(handles, lang, 93, state.dispertion_file);
+                warn=warn+1;
+            end
             
         end
         
@@ -105,7 +116,11 @@ if baseName ~= 0
         set_lang_string(handles.start_button, lang{42}, 'string');
         
         % Project loaded successfully
-        set_status(handles, lang{87});
+        if warn==0
+            set_status(handles, lang{87});
+        else
+            set_status(handles, sprintf(lang{94}, warn));
+        end
         
         % Enable view plot if solution is loaded
         if state.solution_ok
@@ -135,4 +150,5 @@ if baseName ~= 0
 else
     disp_error(handles, lang, 83);
 end
+
 end
