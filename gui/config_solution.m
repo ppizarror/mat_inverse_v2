@@ -1,5 +1,5 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+% SOLUTION CONFIGURATION
+% Configures solution behaviour.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,8 +17,11 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Import all config files
-config_app;
-config_inverse;
-config_plots;
-config_solution;
+% Show Calculated vs Experimental dispersion curve
+show_dispersion_comparision = true;
+
+% Show Shear velocity on depth plot
+show_shear_velocity_plot = true;
+
+% Show Calculated dispersion - iteration changes
+show_dispertion_iterations = true;

@@ -1,5 +1,5 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+% GUI APP CONFIGURATION
+% GUI Configuration.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,8 +17,14 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Import all config files
-config_app;
-config_inverse;
-config_plots;
-config_solution;
+% Language selection
+%   1:  Spanish (Español)
+%   2:  English (United States)
+%   3:  French (Français)
+lang = load_lang(1);
+
+% Deletes entry if invalid
+delete_entry_if_invalid = false;
+
+% Enable GUI sounds
+gui_sound_enabled = true;

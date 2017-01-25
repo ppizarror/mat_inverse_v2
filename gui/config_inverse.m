@@ -1,5 +1,5 @@
-% CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+% INVERSE MATLAB CONFIGURATION
+% Set configurations used by mat_inverse libraries.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,8 +17,14 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Import all config files
-config_app;
-config_inverse;
-config_plots;
-config_solution;
+% Maximum number of iterations, used by mat_inverse
+inv_maxiter = 10;
+
+% Mu coefficient, mat_inverse
+inv_mu = 10;
+
+% Vs tolerance error, mat_inverse
+inv_tol_vs = 0.01;
+
+% Sigma, mat_inverse
+inv_sigma = 0.03;
