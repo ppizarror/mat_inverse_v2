@@ -445,17 +445,17 @@ list{101, 1} = 'Limpiar tabla';
 list{101, 2} = 'Clean table';
 list{101, 3} = 'Table propre';
 
-list{102, 1} = '';
-list{102, 2} = '';
-list{102, 3} = '';
+list{102, 1} = 'Variación de la curva de dispersión en función de las iteraciones';
+list{102, 2} = 'Variation of the dispersion curve as a function of the iterations';
+list{102, 3} = 'La variation de la courbe de dispersion selon itérations';
 
-list{103, 1} = '';
-list{103, 2} = '';
-list{103, 3} = '';
+list{103, 1} = 'Error: Ocurrió un error al generar la curva de dispersión en función de las iteraciones.';
+list{103, 2} = 'Error: There was an error in generating the scatter curve based on the iterations.';
+list{103, 3} = 'Erreur: Une erreur est survenue lors de la génération de la courbe de dispersion en fonction des itérations.';
 
-list{104, 1} = '';
-list{104, 2} = '';
-list{104, 3} = '';
+list{104, 1} = 'Iteración %d';
+list{104, 2} = 'Iteration %d';
+list{104, 3} = 'Itération %d';
 
 list{105, 1} = '';
 list{105, 2} = '';

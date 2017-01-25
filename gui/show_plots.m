@@ -63,6 +63,10 @@ disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
 showlegend_dispersion = getappdata(handles.root, 'plt_dispersion_solution_showlegend');
 showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
 shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
+dispersion_iteration_style = getappdata(handles.root, 'dispersion_iteration_style');
+dispersion_iteration_fontsize = getappdata(handles.root, 'dispersion_iteration_fontsize');
+dispersion_iteration_show_legend = getappdata(handles.root, 'dispersion_iteration_show_legend');
+dispersion_iteration_color = getappdata(handles.root, 'dispersion_iteration_color');
 
 % Get solution config
 show_dispersion_comparision = getappdata(handles.root, 'show_dispersion_comparision');
@@ -128,6 +132,47 @@ if show_shear_velocity_plot
     catch
         close(h2);
         disp_error(handles, lang, 99);
+    end
+end
+
+% Inversion v/s frequency v/s iteration number
+if show_dispersion_iterations
+    
+    % Create plot color
+    switch dispersion_iteration_color
+        case 'r'
+            plt_color = [1 0 0];
+        case 'g'
+            plt_color = [0 1 0];
+        case 'b'
+            plt_color = [0 0 1];
+        case 'k'
+            plt_color = [1 1 1];
+        otherwise
+            plt_color = [1 1 1];
+    end
+    
+    try
+        h3 = figure('Name', lang{102}, 'NumberTitle', 'off'); %#ok<*NASGU>
+        hold on;
+        for i=1:niter
+            plot(freq, vr_iter(:, i), 'Color', plt_color.*(i/niter), 'Linewidth', 6);
+        end
+        xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize',dispersion_iteration_fontsize);
+        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
+        hold off;
+        
+        % Show legend
+        if dispersion_iteration_show_legend
+            legnd = cell(niter, 1);
+            for i=1:niter
+                legnd{i}=sprintf(lang{104}, i);
+            end
+            legend(legnd);
+        end
+    catch
+        close(h3);
+        disp_error(handles, lang, 103);
     end
 end
 

@@ -115,7 +115,7 @@ setappdata(handles.root, 'cgf_mu', inv_mu);
 setappdata(handles.root, 'cgf_maxiter', inv_maxiter);
 setappdata(handles.root, 'cgf_tolvs', inv_tol_vs);
 
-% Set plot configuration
+% Set plot configuration - style
 setappdata(handles.root, 'plt_disp_labl_fontsize', plt_dispersion_label_fontsize);
 setappdata(handles.root, 'plt_dispersion_style', plt_dispersion_style);
 setappdata(handles.root, 'sol_plot_disp_fontsize', solution_plt_dispersion_fontsize);
@@ -125,6 +125,10 @@ setappdata(handles.root, 'plt_dispersion_showlegend', plt_dispersion_show_legend
 setappdata(handles.root, 'plt_dispersion_solution_showlegend', solution_plt_dispersion_show_legend);
 setappdata(handles.root, 'sol_plot_shear_showlegend', solution_plt_shear_show_legend);
 setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize);
+setappdata(handles.root, 'dispersion_iteration_style', dispersion_iteration_style);
+setappdata(handles.root, 'dispersion_iteration_fontsize', dispersion_iteration_fontsize);
+setappdata(handles.root, 'dispersion_iteration_color', dispersion_iteration_color);
+setappdata(handles.root, 'dispersion_iteration_show_legend', dispersion_iteration_show_legend);
 
 % Set solution configuration
 setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);

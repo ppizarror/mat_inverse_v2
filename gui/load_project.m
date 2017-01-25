@@ -112,9 +112,6 @@ if baseName ~= 0
         % Enable / Disable buttons
         set(handles.start_button, 'Enable', 'on');
 
-        % Set button strings
-        set_lang_string(handles.start_button, lang{42}, 'string');
-        
         % Project loaded successfully
         if warn==0
             set_status(handles, lang{87});
@@ -131,7 +128,10 @@ if baseName ~= 0
             
             % Write iteration number
             set(handles.status_iteration, 'string', sprintf(lang{58}, state.n_iter, str2double(state.inv_entry_maxiter)));
+            set_lang_string(handles.start_button, lang{42}, 'string');
             
+        else
+            disable_sol(handles, lang);
         end
         
         % Set title of the app

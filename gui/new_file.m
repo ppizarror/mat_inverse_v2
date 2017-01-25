@@ -61,14 +61,9 @@ set(handles.unit_vsvp, 'Value', 1);
 set(handles.unit_h, 'Value', 1);
 set(handles.unit_rho, 'Value', 1);
 
-% Set button strings
-set_lang_string(handles.start_button, lang{42}, 'string');
-
 % Disable / Enable buttons
-set(handles.start_button, 'Enable', 'on');
 set(handles.menu_file_save, 'Enable', 'off');
-set(handles.view_sol_plot, 'Enable', 'off');
-set(handles.export_results, 'Enable', 'off');
+disable_sol(handles, lang);
 
 % Delete plot
 axes(handles.plt_dispersion_file);

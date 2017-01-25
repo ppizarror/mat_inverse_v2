@@ -17,6 +17,9 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+% --------------------------------------------------------------------
+% PLOT STYLES (COLOR, SYMBOL, LINEWIDTH)
+
 % Dispersion plot style
 plt_dispersion_style = 'ro-';
 
@@ -25,6 +28,18 @@ soltion_plt_dispersion_experimental_style = 'ro--';
 
 % Solution dispersion curve plot style - solution curve
 soltion_plt_dispersion_solution_style = 'b-';
+
+% Dispersion curve vs iteration plot style
+dispersion_iteration_style = '-';
+
+% Dispersion curve vs iteration plot color (r, g, b, k)
+dispersion_iteration_color = 'r';
+% --------------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------------
+% PLOT LABEL FONTSIZE
 
 % Dispersion plot label fontsize
 plt_dispersion_label_fontsize = 10;
@@ -35,6 +50,15 @@ solution_plt_dispersion_fontsize = 10;
 % Solution shear plot fontsize
 solution_plt_shear_fontsize = 10;
 
+% Dispersion curve vs iteration fontsize
+dispersion_iteration_fontsize = 10;
+% --------------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------------
+% PLOT SHOW LEGEND
+
 % Show legend on experimental dispersion curve
 plt_dispersion_show_legend = true;
 
@@ -43,3 +67,7 @@ solution_plt_dispersion_show_legend = true;
 
 % Show legend on shear curve plot
 solution_plt_shear_show_legend = true;
+
+% Show legend on dispersion iteration plot
+dispersion_iteration_show_legend = true;
+% --------------------------------------------------------------------
