@@ -307,7 +307,10 @@ function menu_file_close_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_file_close (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-close all;
+doclose = close_app(getappdata(handles.root, 'lang'));
+if doclose
+    close all;
+end
 
 
 % --- Executes on button press in btn_opendispersion.

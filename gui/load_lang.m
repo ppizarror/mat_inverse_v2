@@ -417,9 +417,9 @@ list{94, 1} = 'Info: Proyecto cargado, errores: %d.';
 list{94, 2} = 'Info: Project loaded, errors: %d.';
 list{94, 3} = 'Info: Projet chargé, erreurs: %d.';
 
-list{95, 1} = '';
-list{95, 2} = '';
-list{95, 3} = '';
+list{95, 1} = 'Desea salir?';
+list{95, 2} = 'Do you want to close?';
+list{95, 3} = 'Voulez-vous fermer?';
 
 list{96, 1} = '';
 list{96, 2} = '';
@@ -448,4 +448,5 @@ langlist = cell(lang_entries, 1);
 for j = 1:lang_entries
     langlist{j} = list{j, langid};
 end
+
 end
