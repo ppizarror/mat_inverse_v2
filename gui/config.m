@@ -23,6 +23,7 @@
 % Language selection
 %   1:  Spanish (Español)
 %   2:  English (United States)
+%   3:  French (Français)
 lang = load_lang(1);
 
 % Deletes entry if invalid

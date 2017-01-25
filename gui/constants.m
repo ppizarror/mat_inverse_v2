@@ -32,7 +32,8 @@ lang_entries = 100;
 % Total of avaiable languages
 %   1:  Spanish (Español)
 %   2:  English (United States)
-lang_avaiable_languages = 2;
+%   3:  French (Français)
+lang_avaiable_languages = 3;
 
 % Number of columns in dispersion Excel file
 columns_dispersiondata = 2;
