@@ -122,10 +122,16 @@ if baseName ~= 0
             set_status(handles, sprintf(lang{94}, warn));
         end
         
-        % Enable view plot if solution is loaded
+        % If solution is OK
         if state.solution_ok
+            
+            % Enable view plot if solution is loaded
             set(handles.export_results, 'Enable', 'on');
             set(handles.view_sol_plot, 'Enable', 'on');
+            
+            % Write iteration number
+            set(handles.status_iteration, 'string', sprintf(lang{58}, state.n_iter, str2double(state.inv_entry_maxiter)));
+            
         end
         
         % Set title of the app
