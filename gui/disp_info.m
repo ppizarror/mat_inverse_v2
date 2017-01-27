@@ -1,5 +1,5 @@
 function disp_info(handles, lang, title, message)
-% DISP ERROR
+% DISP INFO
 % This function displays an info on a pop-up.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
