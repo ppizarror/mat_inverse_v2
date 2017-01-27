@@ -85,25 +85,25 @@ end
 if verbose
     fprintf('\t\tCreating initial guess file ''%s''\n', initial_filename);
 end
+xlswrite(initial_filename, dns_initial, 1, 'D');
 xlswrite(initial_filename, thk2, 1, 'A');
 xlswrite(initial_filename, vs_initial, 1, 'B');
 xlswrite(initial_filename, vp_initial, 1, 'C');
-xlswrite(initial_filename, dns_initial, 1, 'D');
 
 % Save theorical guess file
 if verbose
     fprintf('\t\tCreating theorical file ''%s''\n', theo_filename);
 end
+xlswrite(theo_filename, dns2, 1, 'D');
 xlswrite(theo_filename, thk2, 1, 'A');
 xlswrite(theo_filename, vs2, 1, 'B');
 xlswrite(theo_filename, vp2, 1, 'C');
-xlswrite(theo_filename, dns2, 1, 'D');
 
 % Save dispersion file
 if verbose
     fprintf('\t\tCreating dispersion file ''%s''\n', disperse_filename);
 end
-xlswrite(disperse_filename, freq2, 1, 'A');
 xlswrite(disperse_filename, vr2, 1, 'B');
+xlswrite(disperse_filename, freq2, 1, 'A');
 
 end

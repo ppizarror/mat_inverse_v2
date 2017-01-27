@@ -1,4 +1,4 @@
-function export_results(handles, lang)
+function export_results(handles, hObject, lang)
 % EXPORT RESULTS
 % This function export all results into an Excel file.
 %
@@ -45,7 +45,9 @@ end
 try
     
     % Set status
+    pause(0.01);
     set(handles.root, 'pointer', 'watch');
+    guidata(hObject, handles);
     
     % Create export filename
     filename = strcat(path, file);
@@ -107,18 +109,18 @@ try
     end
     
     % Save data - sheet 1 (final solution)
-    xlswrite(filename, thk, 1, 'A');
     xlswrite(filename, vs, 1, 'B');
     xlswrite(filename, vp, 1, 'C');
     xlswrite(filename, rho, 1, 'D');
+    xlswrite(filename, thk, 1, 'A');
     
     % Save data - sheet 2 (fr / vr)
-    xlswrite(filename, freq, 2, 'A');
     xlswrite(filename, vr, 2, 'B');
+    xlswrite(filename, freq, 2, 'A');
     
     % Save data - sheed 3 (vs / iteration)
-    xlswrite(filename, itert, 3, 'A');
     xlswrite(filename, vs_i, 3, 'B');
+    xlswrite(filename, itert, 3, 'A');
     
     % Set status
     set(handles.root, 'pointer', 'arrow');
