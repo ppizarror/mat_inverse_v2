@@ -21,22 +21,16 @@ function langlist = load_lang(langid)
 % Constant import
 constants;
 
-% Import specific function
+% Import specific language strings
 switch langid
     case 1
-        list = lang_en();
+        langlist = lang_en();
     case 2
-        list = lang_es();
+        langlist = lang_es();
     case 3
-        list = lang_fr();
+        langlist = lang_fr();
     otherwise
         error('Invalid langid');
-end
-
-% Create list of choice
-langlist = cell(lang_entries, 1);
-for j = 1:lang_entries
-    langlist{j} = list{j};
 end
 
 end
