@@ -153,8 +153,28 @@ list{125} = 'Automatically delete incorrect data';
 list{126} = 'Saved configuration';
 list{127} = 'You must restart the application for the changes to take effect';
 list{128} = 'Error: Gui directory does not exist, configuration can not be loaded.';
-list{129} = '';
-list{130} = '';
+list{129} = 'Solution configuration';
+list{130} = 'Inversion settings';
+list{131} = 'Graph settings';
+list{132} = '';
+list{133} = '';
+list{134} = '';
+list{135} = '';
+list{136} = '';
+list{137} = '';
+list{138} = '';
+list{139} = '';
+list{140} = '';
+list{141} = '';
+list{142} = '';
+list{143} = '';
+list{144} = '';
+list{145} = '';
+list{146} = '';
+list{147} = '';
+list{148} = '';
+list{149} = '';
+list{150} = '';
 % --------------------------------------------------------------------
 
 end

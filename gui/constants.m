@@ -36,7 +36,7 @@ export_extension = '.xls';
 min_rowsize_initialtable = 30;
 
 % Total of entries in lang list
-lang_entries = 130;
+lang_entries = 150;
 
 % Number of columns in dispersion Excel file
 columns_dispersiondata = 2;

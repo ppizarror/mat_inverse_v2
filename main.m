@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 27-Jan-2017 00:55:40
+% Last Modified by GUIDE v2.5 27-Jan-2017 02:36:13
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -179,6 +179,9 @@ set_lang_string(handles.menu_import_dispersion_file, lang{119});
 set_lang_string(handles.menu_clean_initial_invparam, lang{120});
 set_lang_string(handles.menu_preferences, lang{121});
 set_lang_string(handles.menu_cfg_app, lang{122});
+set_lang_string(handles.menu_cfg_plot, lang{131});
+set_lang_string(handles.menu_cfg_inversion, lang{130});
+set_lang_string(handles.menu_cfg_solution, lang{129});
 
 % Set new file
 new_file(handles, lang, false);
@@ -758,4 +761,25 @@ if exist('gui', 'dir')
 else
     disp_error(handles, lang, 128);
 end
+
+
+% --------------------------------------------------------------------
+function menu_cfg_plot_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_cfg_plot (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_cfg_inversion_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_cfg_inversion (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_cfg_solution_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_cfg_solution (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 

@@ -153,8 +153,28 @@ list{125} = 'Supprimer automatiquement les données incorrectes';
 list{126} = 'Paramètres enregistrés';
 list{127} = 'Vous devez redémarrer pour que les modifications prennent effet';
 list{128} = 'Erreur: n''existe pas le répertoire gui, vous ne pouvez pas charger la configuration.';
-list{129} = '';
-list{130} = '';
+list{129} = 'Configuration de la solution';
+list{130} = 'Paramètres d''inversion';
+list{131} = 'Paramètres graphiques';
+list{132} = '';
+list{133} = '';
+list{134} = '';
+list{135} = '';
+list{136} = '';
+list{137} = '';
+list{138} = '';
+list{139} = '';
+list{140} = '';
+list{141} = '';
+list{142} = '';
+list{143} = '';
+list{144} = '';
+list{145} = '';
+list{146} = '';
+list{147} = '';
+list{148} = '';
+list{149} = '';
+list{150} = '';
 % --------------------------------------------------------------------
 
 end
