@@ -20,6 +20,9 @@ function new_file(handles, lang, doask)
 
 % If doask is 'false' then creates a new file without asking to user
 if doask
+    if getappdata(handles.root, 'gui_sound')
+        beep();
+    end
     choice = questdlg(lang{73}, lang{76}, lang{74}, lang{75}, lang{74});
     switch choice
         case lang{74}   

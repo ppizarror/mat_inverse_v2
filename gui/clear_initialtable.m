@@ -34,6 +34,10 @@ for i=1:ndata
     end
 end
 
+if data_empty
+    return
+end
+
 % Ask user
 if ~data_empty && doask
     if getappdata(handles.root, 'gui_sound')

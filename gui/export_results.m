@@ -20,7 +20,7 @@ function export_results(handles, hObject, lang)
 
 % Constant import
 constants;
-export_extension = strcat('*', export_extension); % #ok<*NODEF>
+export_extension = strcat('*', export_extension); %#ok<*NODEF>
 
 % Get solution status
 solution_status = getappdata(handles.root, 'solution_ok');
@@ -45,7 +45,7 @@ end
 try
  
     % Set status
-    pause(0.01);
+    pause(0.1);
     set(handles.root, 'pointer', 'watch');
     guidata(hObject, handles);
  

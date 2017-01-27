@@ -1,4 +1,4 @@
-function status = close_app(lang)
+function status = close_app(handles, lang)
 % CLOSE
 % This function asks user when closing software.
 %
@@ -19,6 +19,10 @@ function status = close_app(lang)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
 % USA.
 
+% Set beep sound
+if getappdata(handles.root, 'gui_sound')
+    beep();
+end
 choice = questdlg(lang{95}, lang{22}, lang{74}, lang{75}, lang{74});
 switch choice
     case lang{74}
