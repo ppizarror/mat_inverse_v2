@@ -111,6 +111,7 @@ set(handles.start_button, 'Enable', 'on');
 
 % Store data
 setappdata(handles.root, 'n_iter', niter);
+setappdata(handles.root, 'max_iter_sol', maxiter);
 setappdata(handles.root, 'vr_iter', vr_iter);
 setappdata(handles.root, 'vp_iter', vp_iter);
 setappdata(handles.root, 'vs_iter', vs_iter);

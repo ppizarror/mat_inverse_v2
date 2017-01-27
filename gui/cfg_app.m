@@ -53,13 +53,14 @@ function cfg_app_OpeningFcn(hObject, eventdata, handles, varargin) %#ok<*INUSL>
 % varargin   command line arguments to root (see VARARGIN)
 
 % Check if application is opened from main
-if ~ (length(varargin)==2 && strcmp(varargin{2}, 'main'))
+if ~ (length(varargin)==3 && strcmp(varargin{2}, 'main'))
     close;
 end
 
 % Set main variables
 lang = varargin{1}; %#ok<*NASGU>
 setappdata(handles.root, 'lang', lang);
+setappdata(handles.root, 'main_handles', varargin{3});
 
 % Set app strings
 set(handles.root, 'Name', lang{122});
@@ -144,6 +145,9 @@ function btn_save_Callback(hObject, eventdata, handles)
 % Get lang
 lang = getappdata(handles.root, 'lang');
 
+% Get main handles
+main_handles = getappdata(handles.root, 'main_handles');
+
 % Get configs
 selected_lang = get(handles.conf_lang, 'Value');
 selected_delt = get(handles.cfg_delete_inv_entry, 'Value');
@@ -181,12 +185,49 @@ else
     fprintf(conf_file, '%s\n', '% Enable GUI sounds');
     fprintf(conf_file, '%s\n\n', str_sound);
     fclose(conf_file);
+    
+    % If lang changed then is loaded
+    if ~(selected_lang == lang_id)
+
+        % Load new lang
+        lang = load_lang(selected_lang);
+
+        % Save new lang
+        setappdata(main_handles.root, 'lang', lang);
+
+        % Set gui lang
+        set_gui_lang(main_handles, lang);
+        set_status(main_handles, '');
+        
+        % If solution is OK
+        if getappdata(main_handles.root, 'solution_ok')
+            
+            % Enable view plot if solution is loaded
+            set(main_handles.export_results, 'Enable', 'on');
+            set(main_handles.view_sol_plot, 'Enable', 'on');
+            
+            % Write iteration number
+            n_iter = getappdata(main_handles.root, 'n_iter');
+            max_iter_sol = getappdata(main_handles.root, 'max_iter_sol');
+            set(main_handles.status_iteration, 'string', sprintf(lang{58}, n_iter, ...
+                max_iter_sol));
+            set_lang_string(main_handles.start_button, lang{42}, 'string');
+            
+        else
+            disable_sol(main_handles, lang);
+        end
+        
+    end
+    
+    % Save other configurations
+    setappdata(main_handles.root, 'gui_sound', selected_sound);
+    setappdata(main_handles.root, 'delete_entry_if_invalid', selected_delt);
 
     % Display message and close app
-    if getappdata(handles.root, 'gui_sound')
-        beep();
-    end
-    waitfor(msgbox(lang{127}, lang{126}, 'help'));
+    % if getappdata(handles.root, 'gui_sound')
+    %     beep();
+    % end
+    % waitfor(msgbox(lang{127}, lang{126}, 'help'));
     
 end
 close;

@@ -38,6 +38,7 @@ setappdata(handles.root, 'dispersion_ok', false);
 setappdata(handles.root, 'dispersion_file', '');
 setappdata(handles.root, 'initial_table_validsize', 0);
 setappdata(handles.root, 'n_iter', []);
+setappdata(handles.root, 'max_iter_sol', 0);
 setappdata(handles.root, 'vr_iter', []);
 setappdata(handles.root, 'vp_iter', []);
 setappdata(handles.root, 'vs_iter', []);
@@ -51,6 +52,7 @@ setappdata(handles.root, 'project_loaded', false);
 setappdata(handles.root, 'project_savefile', '');
 setappdata(handles.root, 'dispersion_file_short', '');
 setappdata(handles.root, 'project_savefile_short', '');
+setappdata(handles.root, 'last_status_id', 0);
 
 % Update inv entry (from config.m)
 set(handles.param_inv_sigma, 'string', getappdata(handles.root, 'cgf_sigma'));

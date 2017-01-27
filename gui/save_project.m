@@ -67,6 +67,7 @@ try
     state.dispersion_file = getappdata(handles.root, 'dispersion_file');
     state.initial_table_validsize = getappdata(handles.root, 'initial_table_validsize');
     state.n_iter = getappdata(handles.root, 'n_iter');
+    state.max_iter_sol = getappdata(handles.root, 'max_iter_sol');
     state.vr_iter = getappdata(handles.root, 'vr_iter');
     state.vp_iter = getappdata(handles.root, 'vp_iter');
     state.vs_iter = getappdata(handles.root, 'vs_iter');

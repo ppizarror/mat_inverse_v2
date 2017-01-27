@@ -52,6 +52,7 @@ if baseName ~= 0
         setappdata(handles.root, 'dispersion_file', state.dispersion_file);
         setappdata(handles.root, 'initial_table_validsize', state.initial_table_validsize);
         setappdata(handles.root, 'n_iter', state.n_iter);
+        setappdata(handles.root, 'max_iter_sol', state.max_iter_sol);
         setappdata(handles.root, 'vr_iter', state.vr_iter);
         setappdata(handles.root, 'vp_iter', state.vp_iter);
         setappdata(handles.root, 'vs_iter', state.vs_iter);
@@ -128,7 +129,7 @@ if baseName ~= 0
             
             % Write iteration number
             set(handles.status_iteration, 'string', sprintf(lang{58}, state.n_iter, ...
-                str2double(state.inv_entry_maxiter)));
+                state.max_iter_sol));
             set_lang_string(handles.start_button, lang{42}, 'string');
             
         else
