@@ -748,5 +748,15 @@ function menu_cfg_app_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_cfg_app (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-cfg_app(getappdata(handles.root, 'lang'), 'main');
+
+% Get lang variable
+lang = getappdata(handles.root, 'lang');
+
+% Check if gui dir exist, if not a message error is displayed
+if exist('gui', 'dir')
+    cfg_app(lang, 'main');
+else
+    disp_error(handles, lang, 128);
+end
+
 

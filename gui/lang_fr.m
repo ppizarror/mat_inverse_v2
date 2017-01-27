@@ -152,7 +152,7 @@ list{124} = 'Activer le son';
 list{125} = 'Supprimer automatiquement les données incorrectes';
 list{126} = 'Paramètres enregistrés';
 list{127} = 'Vous devez redémarrer pour que les modifications prennent effet';
-list{128} = '';
+list{128} = 'Erreur: n''existe pas le répertoire gui, vous ne pouvez pas charger la configuration.';
 list{129} = '';
 list{130} = '';
 % --------------------------------------------------------------------

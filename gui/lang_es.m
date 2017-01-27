@@ -152,7 +152,7 @@ list{124} = 'Activar sonidos';
 list{125} = 'Eliminar automáticamente datos incorrectos';
 list{126} = 'Configuración guardada';
 list{127} = 'Debe reiniciar la aplicación para que los cambios surtan efecto';
-list{128} = '';
+list{128} = 'Error: El directorio gui no existe, no se puede cargar la configuración.';
 list{129} = '';
 list{130} = '';
 % --------------------------------------------------------------------

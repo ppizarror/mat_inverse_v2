@@ -21,7 +21,7 @@
 %   1:  English (United States)
 %   2:  Spanish (Español)
 %   3:  French (Français)
-lang_id = 1;
+lang_id = 2;
 
 % Deletes entry if invalid
 delete_entry_if_invalid = false;

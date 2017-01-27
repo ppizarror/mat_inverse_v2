@@ -152,7 +152,7 @@ list{124} = 'Enable sounds';
 list{125} = 'Automatically delete incorrect data';
 list{126} = 'Saved configuration';
 list{127} = 'You must restart the application for the changes to take effect';
-list{128} = '';
+list{128} = 'Error: Gui directory does not exist, configuration can not be loaded.';
 list{129} = '';
 list{130} = '';
 % --------------------------------------------------------------------
