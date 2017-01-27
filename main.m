@@ -783,3 +783,13 @@ function menu_cfg_solution_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Get lang variable
+lang = getappdata(handles.root, 'lang');
+
+% Check if gui dir exist, if not a message error is displayed
+if exist('gui', 'dir')
+    cfg_sol(lang, 'main', handles.root);
+else
+    disp_error(handles, lang, 128);
+end
+
