@@ -1,6 +1,6 @@
-function disp_error(handles, lang, errnumber, repl)
+function disp_info(handles, lang, title, message)
 % DISP ERROR
-% This function displays an error on a pop-up.
+% This function displays an info on a pop-up.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -18,30 +18,18 @@ function disp_error(handles, lang, errnumber, repl)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Message error on status bar
-msg_err = lang{errnumber};
-
-% Message error on pop-up
-msg_ppup = strrep(msg_err, lang{53}, ''); % Error
-msg_ppup = strrep(msg_ppup, lang{54}, ''); % Info
-
-% No sprintf method
-if ~ exist('repl', 'var')
-    set_status(handles, msg_err, 'r');
-    errordlg(msg_ppup, lang{23});
-    
-% Sprintf method
-else
-    set_status(handles, sprintf(msg_err, repl), 'r');
-    errordlg(sprintf(msg_ppup, repl), lang{23});
+% Removes info from message
+n = length(message);
+for i=1:n
+    message{i}=strrep(message{i}, lang{54}, '');
 end
+
+% Create messagebox
+msgbox(message, title, 'help');
 
 % Trigger error sound if enabled by app configuration
 if getappdata(handles.root, 'gui_sound')
     beep();
 end
 
-% Normal cursor
-set(handles.root, 'pointer', 'arrow');
-    
 end
