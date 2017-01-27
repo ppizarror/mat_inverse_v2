@@ -43,3 +43,4 @@ columns_dispersiondata = 2;
 
 % Size of dispersion file string on GUI
 size_filename_dispersion_str = 31;
+

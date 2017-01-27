@@ -40,3 +40,4 @@ set(handles.initial_solution, 'Data', new_table_data);
 set(handles.initial_solution, 'RowName', new_table_row_name);
 
 end
+

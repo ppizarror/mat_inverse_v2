@@ -38,3 +38,6 @@ cvr = cr(index); %#ok<*FNDSB>
 if isempty(cvr)
    error('No root found for homogeneous half space')
 end
+
+end
+

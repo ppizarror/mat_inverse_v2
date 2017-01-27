@@ -44,4 +44,6 @@ else
     set(handles.initial_solution, 'RowName', new_table_row_name);
  
 end
+
 end
+

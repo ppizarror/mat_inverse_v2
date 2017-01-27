@@ -71,4 +71,6 @@ setappdata(handles.root, 'initial_table_validsize', min_nrows);
 
 % Set status to correct
 status = true;
+
 end
+

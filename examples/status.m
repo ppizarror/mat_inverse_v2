@@ -19,7 +19,6 @@ function status(verbose, numstatus, strdata)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 if verbose
-    
     switch numstatus
         case 0
             fprintf('Starting %s\n', strdata);
@@ -31,7 +30,8 @@ if verbose
             fprintf('\tInversion started\n');
         case 4
             fprintf('\tPlotting results\n');
-    end
-    
+    end  
 end
+
 end
+

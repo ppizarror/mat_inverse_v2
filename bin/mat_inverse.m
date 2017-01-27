@@ -1,4 +1,5 @@
-function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, vp, vs, dns, maxiter, mu, tol_vs, gui, object, msg)
+function [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, ...
+    sigma, thk, vp, vs, dns, maxiter, mu, tol_vs, gui, object, msg)
 % input:
 %   1. dispersion curve
 %       freq, vr_exp, sigma

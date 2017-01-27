@@ -33,3 +33,4 @@ appname = strrep(appname, savefile_extension, '');
 set(handles.root, 'Name', sprintf(lang{90}, appname));
 
 end
+

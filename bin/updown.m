@@ -48,3 +48,6 @@ if layer <= length(thk)
     lamu(1, 1) = exp(- nup * (depth(layer + 1) - z));
     lamu(2, 2) = exp(- nus * (depth(layer + 1) - z));
 end
+
+end
+

@@ -66,4 +66,6 @@ set(handles.initial_solution, 'RowName', table_row_name);
 
 % Successful importation
 set_status(handles, lang{26});
+
 end
+

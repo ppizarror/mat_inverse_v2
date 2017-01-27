@@ -25,3 +25,4 @@ set(handles.start_button, 'Enable', 'on');
 set_lang_string(handles.start_button, lang{42}, 'string');
 
 end
+

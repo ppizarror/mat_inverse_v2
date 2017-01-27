@@ -28,3 +28,4 @@ delete_entry_if_invalid = false;
 
 % Enable GUI sounds
 gui_sound_enabled = true;
+

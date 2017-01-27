@@ -94,3 +94,6 @@ else
     du(2, 2, :) = exp(- nus(1:length(thk)) .* thk);
  
 end
+
+end
+

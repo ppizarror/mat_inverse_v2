@@ -55,7 +55,8 @@ for j = 1:length(freq)
             if (f2 < f1) && (f2 < f3)
              
                 % Use golden search/parabolic interpolation to refine minimun
-                [ktrial, ftrial] = fminbnd('secular', k3, k1, optimset('TolX', 1e-12, 'Display', 'off'), om, thk, dns, cvp, cvs);
+                [ktrial, ftrial] = fminbnd('secular', k3, k1, optimset('TolX', 1e-12, ...
+                    'Display', 'off'), om, thk, dns, cvp, cvs);
              
                 % Check to see if ktrial is a zero and different from the previous zero
                 if (ftrial < TOL && abs((ktrial - kold) / kold) > 1e-2)
@@ -76,3 +77,6 @@ for j = 1:length(freq)
         end
     end
 end
+
+end
+

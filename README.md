@@ -1,4 +1,4 @@
-# Mat inverse v2.0
+# Mat inverse v2
 Matlab code for inversion of Rayleigh phase velocity, with GUI and new options.
 
 <p align="center">

@@ -48,3 +48,4 @@ end
 set(handles.status_console, 'ForegroundColor', color);
 
 end
+

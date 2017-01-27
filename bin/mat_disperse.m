@@ -146,7 +146,8 @@ if (nargout >= 2)
     % Determine the energy integrals, group velocities, and the partial derivatives of the
     % modal phase velocites with respect to the shear and compression wave velocities both
     % at individual depths and for each layer
-    [~, ~, ~, ~, zdvrvs, zdvrvp, zdvrrho, dvrvs, dvrvp, dvrrho] = partial(freq, vr, z, r, dr, thk, dns, cvs, cvp);
+    [~, ~, ~, ~, zdvrvs, zdvrvp, zdvrrho, dvrvs, dvrvp, dvrrho] = partial(freq, vr, z, ...
+        r, dr, thk, dns, cvs, cvp);
     varargout{1} = dvrvs;
     varargout{2} = dvrrho;
     varargout{3} = dvrvp;
@@ -155,3 +156,6 @@ if (nargout >= 2)
     varargout{6} = zdvrrho;
     varargout{7} = zdvrvp;
 end
+
+end
+

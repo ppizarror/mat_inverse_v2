@@ -68,7 +68,8 @@ if SHOW_PLOTS
 
     % Inversion
     status(VERBOSE, 3);
-    [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
+    [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, ...
+        thk1, vp1, vs1, dns1, maxiter, mu, tol_vs); %#ok<*ASGLU>
     
     % Show status
     status(VERBOSE, 4);
@@ -116,3 +117,4 @@ if SHOW_PLOTS
 end
 
 end
+

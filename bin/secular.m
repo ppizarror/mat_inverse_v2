@@ -1,5 +1,5 @@
 function d = secular(k, om, thk, dns, cvp, cvs)
-% Modified by Yiran Ma.
+% Modified by Yiran Ma and Pablo Pizarro.
 %
 % This function calculates the absolute value of the secular function for
 % a particular frequency and wavenumber.
@@ -33,6 +33,5 @@ end
 
 % Note that the absolute value of the secular function is calculated
 d = abs(det(e21(:, :, 1) + e22(:, :, 1) * du(:, :, 1) * Rd(:, :, 1)) / (nus(1) * nup(1) * mu(1) ^ 2));
-% Ru_0 = -inv(e21(:,:,1))*e22(:,:,1)*du(:,:,1);
-% d2 = abs( det(eye(2)-Ru_0*Rd(:,:,1)) );
-% d = abs(det(e21(:,:,1) + e22(:,:,1)*du(:,:,1)*Rd(:,:,1))/det(e21(:,:,1)));
+end
+
