@@ -32,6 +32,12 @@ solution_plt_dispersion_solution_style = 'b-';
 % Solution shear plot curve style
 solution_plt_shear_curve_style = 'r';
 
+% Solution shear plot comparision curve shear style
+solution_shear_comparision_shear_curve_style = 'r';
+
+% Solution shear plot comparision initial guess style
+solution_shear_comparision_iguess_curve_style = 'k--';
+
 % Dispersion curve vs iteration plot style
 dispersion_iteration_style = '-';
 
@@ -53,6 +59,12 @@ solution_plt_dispersion_linewidth = 1;
 % Shear curve plot linewidth
 solution_plot_shear_linewidth = 1.2;
 
+% Solution shear plot comparision curve linewidth
+solution_shear_comparision_shear_curve_linewidth = 1.2;
+
+% Solution shear plot comparision initial guess linewidth
+solution_shear_comparision_iguess_curve_linewidth = 1.0;
+
 % --------------------------------------------------------------------
 
 
@@ -71,6 +83,9 @@ solution_plt_shear_fontsize = 10;
 
 % Dispersion curve vs iteration fontsize
 dispersion_iteration_fontsize = 10;
+
+% Solution shear comparision plot fontsize
+solution_shear_comparision_fontsize = 10;
 % --------------------------------------------------------------------
 
 
@@ -89,5 +104,8 @@ solution_plt_shear_show_legend = true;
 
 % Show legend on dispersion iteration plot
 dispersion_iteration_show_legend = true;
+
+% Show legend on shear comparision
+solution_plt_shear_comparision_legend = true;
 % --------------------------------------------------------------------
 

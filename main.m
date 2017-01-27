@@ -141,11 +141,18 @@ setappdata(handles.root, 'plt_dispersion_linewidth', plt_dispersion_linewidth);
 setappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth', solution_plt_dispersion_experimental_linewidth);
 setappdata(handles.root, 'solution_plt_dispersion_linewidth', solution_plt_dispersion_linewidth);
 setappdata(handles.root, 'solution_plot_shear_linewidth', solution_plot_shear_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_fontsize', solution_shear_comparision_fontsize);
+setappdata(handles.root, 'solution_shear_comparision_shear_curve_linewidth', solution_shear_comparision_shear_curve_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_iguess_curve_linewidth', solution_shear_comparision_iguess_curve_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_shear_curve_style', solution_shear_comparision_shear_curve_style);
+setappdata(handles.root, 'solution_shear_comparision_iguess_curve_style', solution_shear_comparision_iguess_curve_style);
+setappdata(handles.root, 'solution_plt_shear_comparision_legend', solution_plt_shear_comparision_legend);
 
 % Set solution configuration
 setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);
 setappdata(handles.root, 'show_shear_velocity_plot', show_shear_velocity_plot);
 setappdata(handles.root, 'show_dispersion_iterations', show_dispersion_iterations);
+setappdata(handles.root, 'show_shear_velocity_comparision', show_shear_velocity_comparision);
 
 % Set GUI Strings from lang
 set_gui_lang(handles, lang);

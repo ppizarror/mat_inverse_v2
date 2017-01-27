@@ -56,27 +56,40 @@ vs = getappdata(handles.root, 'vs_sol');
 vp = getappdata(handles.root, 'vp_sol');
 dns = getappdata(handles.root, 'dns_sol');
 
-% Get plot config
+% Get plot config style
 disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
 disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
-disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
-showlegend_dispersion = getappdata(handles.root, 'plt_dispersion_solution_showlegend');
-showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
-shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
 dispersion_iteration_style = getappdata(handles.root, 'dispersion_iteration_style');
-dispersion_iteration_fontsize = getappdata(handles.root, 'dispersion_iteration_fontsize');
-dispersion_iteration_show_legend = getappdata(handles.root, 'dispersion_iteration_show_legend');
 dispersion_iteration_color = getappdata(handles.root, 'dispersion_iteration_color');
 solution_plt_shear_curve_style = getappdata(handles.root, 'solution_plt_shear_curve_style');
+solution_shearc_shear_curve_style = getappdata(handles.root, 'solution_shear_comparision_shear_curve_style');
+solution_shearc_iguess_curve_style = getappdata(handles.root, 'solution_shear_comparision_iguess_curve_style');
+
+% Get plot config fontsize
+disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
+dispersion_iteration_fontsize = getappdata(handles.root, 'dispersion_iteration_fontsize');
+shear_fontsize = getappdata(handles.root, 'sol_plot_shear_fontsize');
+solution_shearc_fontsize = getappdata(handles.root, 'solution_shear_comparision_fontsize');
+
+% Get plot show legend
+showlegend_dispersion = getappdata(handles.root, 'plt_dispersion_solution_showlegend');
+showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
+dispersion_iteration_show_legend = getappdata(handles.root, 'dispersion_iteration_show_legend');
+solution_plt_shear_comparision_legend = getappdata(handles.root, 'solution_plt_shear_comparision_legend');
+
+% Get plot linewidth
 dispersion_iteration_linewidth = getappdata(handles.root, 'dispersion_iteration_linewidth');
 solution_plt_dispersion_experimental_linewidth = getappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth');
 solution_plt_dispersion_linewidth = getappdata(handles.root, 'solution_plt_dispersion_linewidth');
 solution_plot_shear_linewidth = getappdata(handles.root, 'solution_plot_shear_linewidth');
+solution_shearc_shear_curve_lw = getappdata(handles.root, 'solution_shear_comparision_shear_curve_linewidth');
+solution_shearc_iguess_curve_lw = getappdata(handles.root, 'solution_shear_comparision_iguess_curve_linewidth');
 
 % Get solution config
 show_dispersion_comparision = getappdata(handles.root, 'show_dispersion_comparision');
 show_shear_velocity_plot = getappdata(handles.root, 'show_shear_velocity_plot');
 show_dispersion_iterations = getappdata(handles.root, 'show_dispersion_iterations');
+show_shear_velocity_comparision = getappdata(handles.root, 'show_shear_velocity_comparision');
 
 % Get plot units
 vr_units = get(handles.unit_vr, 'String');
@@ -110,17 +123,16 @@ end
 if show_shear_velocity_plot
     try
         vsfinal = vs_iter(:, niter)';
-        vsinitial = vs';
-        thk = thk';
+        thk2 = thk';
         if ~ isempty(vsfinal)
-            cumthk = [0 cumsum(thk)];
+            cumthk = [0 cumsum(thk2)];
             depth = 0;
             velocity = vsfinal(1);
-            for j = 1:length(thk)
+            for j = 1:length(thk2)
                 depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
                 velocity = [velocity vsfinal(j) vsfinal(j + 1)];
             end
-            depth = [depth sum(thk) + thk(length(thk))];
+            depth = [depth sum(thk2) + thk2(length(thk2))];
             velocity = [velocity vsfinal(length(vsfinal))];
          
             h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
@@ -130,7 +142,7 @@ if show_shear_velocity_plot
             xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
             ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);       
             if showlegend_shear
-                legend(lang{72});
+                legend(lang{143}, 'Location', 'southwest');
             end            
         end
     catch
@@ -179,6 +191,41 @@ if show_dispersion_iterations
         close(h3);
         disp_error(handles, lang, 103);
     end
+end
+
+% Shear comparision
+if show_shear_velocity_comparision
+    vsfinal = vs_iter(:, niter)';
+    vsinitial = vs';
+    thk3 = thk';
+    if ~ isempty(vsfinal)
+        cumthk = [0 cumsum(thk3)];
+        depth = 0;
+        velocity = vsfinal(1);
+        ivel = vsinitial(1);
+        for j = 1:length(thk3)
+            depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
+            velocity = [velocity vsfinal(j) vsfinal(j + 1)];
+            ivel = [ivel vsinitial(j) vsinitial(j + 1)];
+        end
+        depth = [depth sum(thk3) + thk3(length(thk3))];
+        velocity = [velocity vsfinal(length(vsfinal))];
+        ivel = [ivel vsinitial(length(vsinitial))];
+
+        h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
+        hold on;
+        plot(velocity, depth, solution_shearc_shear_curve_style, 'Linewidth', solution_shearc_shear_curve_lw);
+        plot(ivel, depth, solution_shearc_iguess_curve_style, 'Linewidth', solution_shearc_iguess_curve_lw);
+        hold off;
+        set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
+        set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+        xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', solution_shearc_fontsize);
+        ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', solution_shearc_fontsize);       
+        if solution_plt_shear_comparision_legend
+            legend(lang{143}, lang{15}, 'Location', 'southwest');
+        end            
+    end
+    
 end
 
 % Set status and pointer to normal

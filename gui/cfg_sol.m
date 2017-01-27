@@ -22,7 +22,7 @@ function varargout = cfg_sol(varargin)
 
 % Edit the above text to modify the response to help root
 
-% Last Modified by GUIDE v2.5 27-Jan-2017 02:59:34
+% Last Modified by GUIDE v2.5 27-Jan-2017 20:27:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -69,6 +69,7 @@ set_lang_string(handles.btn_close, lang{22}, 'string');
 set_lang_string(handles.text_comparision, lang{132}, 'string');
 set_lang_string(handles.text_shear, lang{133}, 'string');
 set_lang_string(handles.text_iteration, lang{134}, 'string');
+set_lang_string(handles.text_shear_comparision, lang{140}, 'string');
 
 % Import config
 config_solution;
@@ -83,6 +84,9 @@ if show_shear_velocity_plot
 end
 if show_dispersion_iterations
     set(handles.cfg_iteration, 'Value', 1.0);
+end
+if show_shear_velocity_comparision
+    set(handles.cfg_comparision_shear, 'Value', 1.0);
 end
 
 % Save configs
@@ -154,10 +158,11 @@ config_solution;
 comparision = get(handles.cfg_comparision, 'Value');
 shear = get(handles.cfg_shear, 'Value');
 iteration = get(handles.cfg_iteration, 'Value');
+shear_comparision = get(handles.cfg_comparision_shear, 'Value');
 
 % Check if something changed
 if (comparision == show_dispersion_comparision) && (shear == show_shear_velocity_plot) && ...
-        (show_dispersion_iterations == iteration)
+        (show_dispersion_iterations == iteration) && (shear_comparision == show_shear_velocity_comparision)
 else
     
     % Set config strings
@@ -176,6 +181,11 @@ else
     else
         str_iteration = 'show_dispersion_iterations = false;';
     end
+    if shear_comparision
+        str_shear_comparision = 'show_shear_velocity_comparision = true;';
+    else
+        str_shear_comparision = 'show_shear_velocity_comparision = false;';
+    end
 
     % Save config file
     conf_file = fopen('gui/config_solution.m', 'wt');
@@ -186,12 +196,15 @@ else
     fprintf(conf_file, '%s\n\n', str_shear);
     fprintf(conf_file, '%s\n', '% Show Calculated dispersion - iteration changes');
     fprintf(conf_file, '%s\n\n', str_iteration);
+    fprintf(conf_file, '%s\n', '% Show shear velocity comparision');
+    fprintf(conf_file, '%s\n\n', str_shear_comparision);
     fclose(conf_file);
    
     % Set changes
     setappdata(root_handles, 'show_dispersion_comparision', comparision);
     setappdata(root_handles, 'show_shear_velocity_plot', shear);
     setappdata(root_handles, 'show_dispersion_iterations', iteration);
+    setappdata(root_handles, 'show_shear_velocity_comparision', shear_comparision);
     
 end
 close;
@@ -239,3 +252,13 @@ function cfg_iteration_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of cfg_iteration
+
+
+% --- Executes on button press in cfg_comparision_shear.
+function cfg_comparision_shear_Callback(hObject, eventdata, handles)
+% hObject    handle to cfg_comparision_shear (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of cfg_comparision_shear
+
