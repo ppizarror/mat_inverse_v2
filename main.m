@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 25-Jan-2017 16:43:09
+% Last Modified by GUIDE v2.5 26-Jan-2017 23:18:32
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -146,8 +146,11 @@ setappdata(handles.root, 'show_dispersion_iterations', show_dispersion_iteration
 
 % Set GUI Strings from lang
 set_lang_string(handles.table_add_row, lang{1}); %#ok<*USENS>
+set_lang_string(handles.menu_add_row_table, lang{1});
 set_lang_string(handles.delete_last_row, lang{2});
+set_lang_string(handles.menu_delete_row_table, lang{2});
 set_lang_string(handles.table_import_from_excel, lang{4});
+set_lang_string(handles.menu_import_table_from_excel, lang{4});
 set_lang_string(handles.initial_solution_table_title, lang{15}, 'string');
 set_lang_string(handles.menu_file, lang{11});
 set_lang_string(handles.menu_file_new, lang{12});
@@ -676,3 +679,28 @@ function initial_solution_CellSelectionCallback(hObject, eventdata, handles)
 % eventdata  structure with the following fields (see MATLAB.UI.CONTROL.TABLE)
 %	Indices: row and column indices of the cell(s) currently selecteds
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_import_table_from_excel_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_import_table_from_excel (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+import_initialtable_excel(handles, getappdata(handles.root, 'lang'));
+
+
+% --------------------------------------------------------------------
+function menu_add_row_table_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_add_row_table (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+add_row(handles);
+
+
+% --------------------------------------------------------------------
+function menu_delete_row_table_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_delete_row_table (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+delete_last_row(handles, getappdata(handles.root, 'lang'));
+
