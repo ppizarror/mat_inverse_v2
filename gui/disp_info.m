@@ -30,7 +30,7 @@ if getappdata(handles.root, 'gui_sound')
 end
 
 % Create messagebox
-waitfor(msgbox(message, title, 'help'));
+msgbox(message, title, 'help');
 
 end
 

@@ -216,3 +216,4 @@ function cfg_delete_inv_entry_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of cfg_delete_inv_entry
+

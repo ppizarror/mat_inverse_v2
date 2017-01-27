@@ -25,6 +25,11 @@ msg_err = lang{errnumber};
 msg_ppup = strrep(msg_err, lang{53}, ''); % Error
 msg_ppup = strrep(msg_ppup, lang{54}, ''); % Info
 
+% Trigger error sound if enabled by app configuration
+if getappdata(handles.root, 'gui_sound')
+    beep();
+end
+
 % No sprintf method
 if ~ exist('repl', 'var')
     set_status(handles, msg_err, 'r');
@@ -34,11 +39,6 @@ if ~ exist('repl', 'var')
 else
     set_status(handles, sprintf(msg_err, repl), 'r');
     errordlg(sprintf(msg_ppup, repl), lang{23});
-end
-
-% Trigger error sound if enabled by app configuration
-if getappdata(handles.root, 'gui_sound')
-    beep();
 end
 
 % Normal cursor
