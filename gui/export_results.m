@@ -122,6 +122,7 @@ try
     
     % Set status
     set(handles.root, 'pointer', 'arrow');
+    set_status(handles, lang{117});
     
 catch Exception
     

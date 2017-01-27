@@ -36,6 +36,9 @@ end
 
 % Ask user
 if ~data_empty && doask
+    if getappdata(handles.root, 'gui_sound')
+        beep();
+    end
     choice = questdlg(lang{100}, lang{101}, lang{74}, lang{75}, lang{74});
     switch choice
         case lang{74}

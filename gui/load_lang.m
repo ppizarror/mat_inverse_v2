@@ -506,9 +506,9 @@ list{116, 1} = 'ITERACIÓN';
 list{116, 2} = 'ITERATION';
 list{116, 3} = 'ITÉRATION';
 
-list{117, 1} = '';
-list{117, 2} = '';
-list{117, 3} = '';
+list{117, 1} = 'Info: Resultados exportados exitosamente.';
+list{117, 2} = 'Info: Results successfully exported.';
+list{117, 3} = 'Info: Résultats exportés avec succès.';
 
 list{118, 1} = '';
 list{118, 2} = '';
