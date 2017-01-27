@@ -44,6 +44,9 @@ end
 % Export data
 try
     
+    % Set status
+    set(handles.root, 'pointer', 'watch');
+    
     % Create export filename
     filename = strcat(path, file);
     
@@ -117,6 +120,9 @@ try
     xlswrite(filename, itert, 3, 'A');
     xlswrite(filename, vs_i, 3, 'B');
     
+    % Set status
+    set(handles.root, 'pointer', 'arrow');
+    
 catch Exception
     
     % Get Exception report
@@ -128,6 +134,7 @@ catch Exception
     % Display errors / set statuses
     set_status(handles, lang{109}, 'r');
     errordlg(msg_error, lang{61});
+    set(handles.root, 'pointer', 'arrow');
     return
     
 end

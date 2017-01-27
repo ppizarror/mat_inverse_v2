@@ -51,6 +51,9 @@ end
 
 try
 
+    % Set waiting pointer
+    set(handles.root, 'pointer', 'watch');
+    
     % --------------------------------------------------------------------
     % Save table
     state.initial_table = get(handles.initial_solution, 'Data');
@@ -104,6 +107,7 @@ catch Exception
     % Display errors / set statuses
     set_status(handles, lang{88}, 'r');
     errordlg(msg_error, lang{61});
+    set(handles.root, 'pointer', 'arrow');
     return
     
 end
@@ -117,6 +121,7 @@ set(handles.menu_file_save, 'Enable', 'on');
 
 % Set status
 set_status(handles, lang{89});
+set(handles.root, 'pointer', 'arrow');
 
 % Set title of the app
 set_app_title(handles, lang);
