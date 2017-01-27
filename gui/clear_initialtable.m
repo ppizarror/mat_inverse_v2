@@ -1,6 +1,6 @@
 function clear_initialtable(handles, lang, doask)
 % CLEAR INITIAL TABLE
-% Clear initial table
+% Clear initial table.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

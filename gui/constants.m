@@ -18,11 +18,11 @@
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Version
-software_version = '2.6';
+software_version = '2.7';
 
 % Total of avaiable languages
-%   1:  Spanish (Español)
-%   2:  English (United States)
+%   1:  English (United States)
+%   2:  Spanish (Español)
 %   3:  French (Français)
 lang_avaiable_languages = 3;
 
@@ -36,7 +36,7 @@ export_extension = '.xls';
 min_rowsize_initialtable = 30;
 
 % Total of entries in lang list
-lang_entries = 120;
+lang_entries = 130;
 
 % Number of columns in dispersion Excel file
 columns_dispersiondata = 2;

@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 26-Jan-2017 23:18:32
+% Last Modified by GUIDE v2.5 26-Jan-2017 23:37:57
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -171,6 +171,9 @@ set_lang_string(handles.start_button, lang{42}, 'string');
 set_lang_string(handles.view_sol_plot, lang{43}, 'string');
 set_lang_string(handles.export_results, lang{44}, 'string');
 set_lang_string(handles.inv_entry_panel, lang{45}, 'Title');
+set_lang_string(handles.menu_edit_import, lang{118});
+set_lang_string(handles.menu_import_dispersion_file, lang{119});
+set_lang_string(handles.menu_clean_initial_invparam, lang{120});
 
 % Set new file
 new_file(handles, lang, false);
@@ -703,4 +706,27 @@ function menu_delete_row_table_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 delete_last_row(handles, getappdata(handles.root, 'lang'));
+
+
+% --------------------------------------------------------------------
+function menu_edit_import_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_edit_import (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_import_dispersion_file_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_import_dispersion_file (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+load_dispersion_file(handles, getappdata(handles.root, 'lang'));
+
+
+% --------------------------------------------------------------------
+function menu_clean_initial_invparam_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_clean_initial_invparam (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+clear_invparam(handles);
 

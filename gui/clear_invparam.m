@@ -1,5 +1,6 @@
-% GUI APP CONFIGURATION
-% GUI Configuration.
+function clear_invparam(handles)
+% CLEAR INVERSION PARAMETERS
+% Clear invertion parameters (mu, sigma, max_iter, tol_vs).
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -17,14 +18,9 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
-%   1:  English (United States)
-%   2:  Spanish (Español)
-%   3:  French (Français)
-lang = load_lang(1);
+set(handles.param_inv_sigma, 'string', '');
+set(handles.param_inv_mu, 'string', '');
+set(handles.param_maxiter, 'string', '');
+set(handles.param_tolvs, 'string', '');
 
-% Deletes entry if invalid
-delete_entry_if_invalid = false;
-
-% Enable GUI sounds
-gui_sound_enabled = true;
+end
