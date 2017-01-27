@@ -17,11 +17,11 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Language selection
+% Language id selection
 %   1:  English (United States)
 %   2:  Spanish (Español)
 %   3:  French (Français)
-lang = load_lang(2);
+lang_id = 2;
 
 % Deletes entry if invalid
 delete_entry_if_invalid = false;

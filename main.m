@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 26-Jan-2017 23:37:57
+% Last Modified by GUIDE v2.5 27-Jan-2017 00:55:40
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -103,6 +103,9 @@ movegui(gcf,'center');
 
 % Import configurations
 config;
+
+% Load language strings
+lang = load_lang(lang_id);
 
 % Disable Excel warning
 warning('off','MATLAB:xlswrite:AddSheet');
@@ -174,6 +177,8 @@ set_lang_string(handles.inv_entry_panel, lang{45}, 'Title');
 set_lang_string(handles.menu_edit_import, lang{118});
 set_lang_string(handles.menu_import_dispersion_file, lang{119});
 set_lang_string(handles.menu_clean_initial_invparam, lang{120});
+set_lang_string(handles.menu_preferences, lang{121});
+set_lang_string(handles.menu_cfg_app, lang{122});
 
 % Set new file
 new_file(handles, lang, false);
@@ -729,4 +734,19 @@ function menu_clean_initial_invparam_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 clear_invparam(handles);
+
+
+% --------------------------------------------------------------------
+function menu_preferences_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_preferences (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --------------------------------------------------------------------
+function menu_cfg_app_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_cfg_app (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+cfg_app(getappdata(handles.root, 'lang'), 'main');
 

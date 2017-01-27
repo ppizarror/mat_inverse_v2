@@ -24,13 +24,13 @@ for i=1:n
     message{i}=strrep(message{i}, lang{54}, '');
 end
 
-% Create messagebox
-msgbox(message, title, 'help');
-
 % Trigger error sound if enabled by app configuration
 if getappdata(handles.root, 'gui_sound')
     beep();
 end
+
+% Create messagebox
+waitfor(msgbox(message, title, 'help'));
 
 end
 
