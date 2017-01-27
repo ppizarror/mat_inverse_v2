@@ -102,7 +102,9 @@ set_status(handles, sprintf(lang{59}, exec_time), 'k');
 set(handles.root, 'pointer', 'arrow');
 set_lang_string(handles.start_button, lang{42}, 'string');
 msgbox({lang{64}; sprintf(lang{92}, exec_time)}, lang{63}, 'help');
-beep();
+if getappdata(handles.root, 'gui_sound')
+    beep();
+end
 
 % Enable buttons
 set(handles.view_sol_plot, 'Enable', 'on');
