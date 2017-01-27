@@ -17,23 +17,26 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Savefile extension
-savefile_extension = '.invprj';
-
 % Version
 software_version = '2.6';
-
-% Minimum size of the initial table
-min_rowsize_initialtable = 30;
-
-% Total of entries in lang list
-lang_entries = 110;
 
 % Total of avaiable languages
 %   1:  Spanish (Español)
 %   2:  English (United States)
 %   3:  French (Français)
 lang_avaiable_languages = 3;
+
+% Savefile extension
+savefile_extension = '.invprj';
+
+% Export extension
+export_extension = '.xls';
+
+% Minimum size of the initial table
+min_rowsize_initialtable = 30;
+
+% Total of entries in lang list
+lang_entries = 120;
 
 % Number of columns in dispersion Excel file
 columns_dispersiondata = 2;

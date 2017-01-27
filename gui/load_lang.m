@@ -352,7 +352,7 @@ list{78, 2} = 'Mat_inverse project (*.invprj)';
 list{78, 3} = 'Projet mat_inverse (*.invprj)';
 
 list{79, 1} = 'Error: El proyecto no ha sido guardado.';
-list{79, 2} = 'Error: Project has not been saved.';
+list{79, 2} = 'Error: Project have not been saved.';
 list{79, 3} = 'Erreur: Le projet n''a pas été enregistré.';
 
 list{80, 1} = 'Ingrese el nombre y la ubicación del nuevo proyecto';
@@ -457,29 +457,70 @@ list{104, 1} = 'Iteración %d';
 list{104, 2} = 'Iteration %d';
 list{104, 3} = 'Itération %d';
 
-list{105, 1} = '';
-list{105, 2} = '';
-list{105, 3} = '';
+list{105, 1} = 'Exportando resultados...';
+list{105, 2} = 'Exporting results...';
+list{105, 3} = 'Exporter des résultats...';
 
-list{106, 1} = '';
-list{106, 2} = '';
-list{106, 3} = '';
+% Same as lang(85) but without *.xlsx
+list{106, 1} = 'Archivos Excel (*.xls)';
+list{106, 2} = 'Excel file (*.xls)';
+list{106, 3} = 'Fichier Excel (*.xls)';
 
-list{107, 1} = '';
-list{107, 2} = '';
-list{107, 3} = '';
+list{107, 1} = 'Exportar proyecto como';
+list{107, 2} = 'Export project as';
+list{107, 3} = 'Exporter le projet comme';
 
-list{108, 1} = '';
-list{108, 2} = '';
-list{108, 3} = '';
+list{108, 1} = 'Error: Los resultados no han sido exportados.';
+list{108, 2} = 'Error: Results have not been exported.';
+list{108, 3} = 'Erreur: Les résultats ne sont pas exportés.';
 
-list{109, 1} = '';
-list{109, 2} = '';
-list{109, 3} = '';
+list{109, 1} = 'Info: Ocurrió una excepción al exportar los resultados.';
+list{109, 2} = 'Info: An exception occurred while exporting results.';
+list{109, 3} = 'Info: Une exception est survenue lors de l''exportation des résultats.';
 
-list{110, 1} = '';
-list{110, 2} = '';
-list{110, 3} = '';
+list{110, 1} = 'H';
+list{110, 2} = 'H';
+list{110, 3} = 'H';
+
+list{111, 1} = 'VR';
+list{111, 2} = 'VR';
+list{111, 3} = 'VR';
+
+list{112, 1} = 'VS';
+list{112, 2} = 'VS';
+list{112, 3} = 'VS';
+
+list{113, 1} = 'VP';
+list{113, 2} = 'VP';
+list{113, 3} = 'VP';
+
+list{114, 1} = 'FREQ';
+list{114, 2} = 'FREQ';
+list{114, 3} = 'FREQ';
+
+list{115, 1} = 'RHO';
+list{115, 2} = 'RHO';
+list{115, 3} = 'RHO';
+
+list{116, 1} = 'ITERACIÓN';
+list{116, 2} = 'ITERATION';
+list{116, 3} = 'ITÉRATION';
+
+list{117, 1} = '';
+list{117, 2} = '';
+list{117, 3} = '';
+
+list{118, 1} = '';
+list{118, 2} = '';
+list{118, 3} = '';
+
+list{119, 1} = '';
+list{119, 2} = '';
+list{119, 3} = '';
+
+list{120, 1} = '';
+list{120, 2} = '';
+list{120, 3} = '';
 
 % --------------------------------------------------------------------
 

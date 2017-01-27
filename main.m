@@ -104,6 +104,9 @@ movegui(gcf,'center');
 % Import configurations
 config;
 
+% Disable Excel warning
+warning('off','MATLAB:xlswrite:AddSheet');
+
 % Set gui-app config
 setappdata(handles.root, 'lang', lang);
 setappdata(handles.root, 'gui_sound', gui_sound_enabled);
@@ -295,6 +298,7 @@ function menu_view_help_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_view_help (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+manual;
 
 
 % --------------------------------------------------------------------
@@ -569,6 +573,7 @@ function export_results_Callback(hObject, eventdata, handles)
 % hObject    handle to export_results (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+export_results(handles, getappdata(handles.root, 'lang'));
 
 
 % --- Executes on key press with focus on param_inv_sigma and none of its controls.
