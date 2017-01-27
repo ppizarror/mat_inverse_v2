@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 27-Jan-2017 02:36:13
+% Last Modified by GUIDE v2.5 27-Jan-2017 14:56:54
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -775,6 +775,16 @@ function menu_cfg_inversion_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_cfg_inversion (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+% Get lang variable
+lang = getappdata(handles.root, 'lang');
+
+% Check if gui dir exist, if not a message error is displayed
+if exist('gui', 'dir')
+    cfg_inv(lang, 'main', handles.root);
+else
+    disp_error(handles, lang, 128);
+end
 
 
 % --------------------------------------------------------------------
