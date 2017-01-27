@@ -162,7 +162,8 @@ if show_dispersion_iterations
         hold on;
         errorbar(freq, vr_exp, sigma, disp_style_err, 'Linewidth', solution_plt_dispersion_experimental_linewidth);
         for i = 1:niter
-            plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', plt_color .* (i / niter), 'Linewidth', dispersion_iteration_linewidth);
+            plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
+                plt_color .* (i / niter), 'Linewidth', dispersion_iteration_linewidth);
         end
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
         ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
@@ -177,6 +178,7 @@ if show_dispersion_iterations
             end
             legend(legnd);
         end
+        
     catch
         close(h3);
         disp_error(handles, lang, 103);

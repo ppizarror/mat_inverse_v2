@@ -25,9 +25,9 @@ constants;
 data = get(handles.initial_solution, 'Data');
 ndata = length(data);
 data_empty = true;
-for i=1:ndata
-    for j=1:4
-        if ~isempty(data{i,j})
+for i = 1:ndata
+    for j = 1:4
+        if ~ isempty(data{i, j})
             data_empty = false;
             break
         end
@@ -39,14 +39,14 @@ if data_empty
 end
 
 % Ask user
-if ~data_empty && doask
+if ~ data_empty && doask
     if getappdata(handles.root, 'gui_sound')
         beep();
     end
     choice = questdlg(lang{100}, lang{101}, lang{74}, lang{75}, lang{74});
     switch choice
         case lang{74}
-        case lang{75} 
+        case lang{75}
             return
     end
 end

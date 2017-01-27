@@ -1,6 +1,6 @@
 function set_app_title(handles, lang)
 % SET APP TITLE
-% This function set the app title with the actual project name
+% This function set the app title with the actual project name.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -30,8 +30,6 @@ end
 
 % Removes extension from appname
 appname = strrep(appname, savefile_extension, '');
-
 set(handles.root, 'Name', sprintf(lang{90}, appname));
 
 end
-

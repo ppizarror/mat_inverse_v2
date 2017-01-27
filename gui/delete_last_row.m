@@ -1,6 +1,6 @@
 function delete_last_row(handles, lang)
 % DELETE LAST ROW
-% Delete the last row from initial solution table
+% Delete the last row from initial solution table.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

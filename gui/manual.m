@@ -74,3 +74,4 @@ function varargout = manual_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+

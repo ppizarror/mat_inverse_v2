@@ -1,6 +1,6 @@
 function set_lang_string(object, string, param)
 % SET LANG STRING
-% Set string of 'label' properties of GUI's objects
+% Set string of 'label' properties of GUI's objects.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

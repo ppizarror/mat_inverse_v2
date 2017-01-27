@@ -1,6 +1,6 @@
 function save_project(handles, lang, saveas)
 % SAVE ACTUAL PROJECT
-% Save status of project
+% Save status of the actual project.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -29,7 +29,8 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     if strcmp(getappdata(handles.root, 'project_savefile'), '')
         [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, lang{91});
     else
-        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, getappdata(handles.root, 'project_savefile'));
+        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
+            getappdata(handles.root, 'project_savefile'));
     end
     
     % Check if filename is valid
@@ -125,3 +126,5 @@ set(handles.root, 'pointer', 'arrow');
 
 % Set title of the app
 set_app_title(handles, lang);
+
+end

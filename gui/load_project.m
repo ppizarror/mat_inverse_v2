@@ -1,6 +1,6 @@
 function load_project(handles, lang)
 % LOAD PROJECT
-% Load a project from file
+% Load a project from file.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -127,7 +127,8 @@ if baseName ~= 0
             set(handles.view_sol_plot, 'Enable', 'on');
             
             % Write iteration number
-            set(handles.status_iteration, 'string', sprintf(lang{58}, state.n_iter, str2double(state.inv_entry_maxiter)));
+            set(handles.status_iteration, 'string', sprintf(lang{58}, state.n_iter, ...
+                str2double(state.inv_entry_maxiter)));
             set_lang_string(handles.start_button, lang{42}, 'string');
             
         else

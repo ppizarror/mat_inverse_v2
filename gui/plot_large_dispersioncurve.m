@@ -1,6 +1,6 @@
 function plot_large_dispersioncurve(handles, lang)
 % PLOT LARGE DISPERSION CURVE
-% Plot dispersion curve on a larger scale
+% Plot dispersion curve on a larger scale.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -39,4 +39,5 @@ ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', plt_label
 if plt_showlegend
     legend(lang{67});
 end
+
 end

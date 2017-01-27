@@ -1,5 +1,5 @@
 % CONFIG
-% GUI Configuration and mat_inverse configurations are stored in this file.
+% Import all configurations.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

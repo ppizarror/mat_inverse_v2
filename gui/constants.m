@@ -18,7 +18,7 @@
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Version
-software_version = '2.7';
+software_version = '2.8';
 
 % Total of avaiable languages
 %   1:  English (United States)

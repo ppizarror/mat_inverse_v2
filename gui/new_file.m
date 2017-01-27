@@ -1,6 +1,6 @@
 function new_file(handles, lang, doask)
 % NEW FILE
-% Deletes all status variables.
+% Deletes all status variables and clear application.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

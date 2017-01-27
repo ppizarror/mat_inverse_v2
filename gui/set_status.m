@@ -1,5 +1,7 @@
 function set_status(handles, status, color)
-% This function set GUI's status
+% SET STATUS
+% This function set GUI's status.
+%
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
 % This program is free software; you can redistribute it and/or
@@ -41,6 +43,8 @@ else
             color = [0, 1, 1]; % Cyan
     end
 end
+
+% Change status
 set(handles.status_console, 'ForegroundColor', color);
 
 end

@@ -1,6 +1,6 @@
 function replace_nan_initialtable(handles, lang)
 % REPLACE NAN INITIALTABLE
-% This function replace al NaN's from initial solution table
+% This function replace al NaN's from initial solution table.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

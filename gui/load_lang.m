@@ -1,6 +1,6 @@
 function langlist = load_lang(langid)
 % LOAD LANG
-% Set lang list of string entries.
+% Import language strings.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

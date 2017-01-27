@@ -1,6 +1,6 @@
 function status = close_app(handles, lang)
 % CLOSE
-% This function asks user when closing software.
+% This function asks user when closing the application.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
@@ -23,6 +23,8 @@ function status = close_app(handles, lang)
 if getappdata(handles.root, 'gui_sound')
     beep();
 end
+
+% Prompt quest dialog
 choice = questdlg(lang{95}, lang{22}, lang{74}, lang{75}, lang{74});
 switch choice
     case lang{74}
