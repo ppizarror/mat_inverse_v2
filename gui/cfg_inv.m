@@ -22,7 +22,7 @@ function varargout = cfg_inv(varargin)
 
 % Edit the above text to modify the response to help root
 
-% Last Modified by GUIDE v2.5 27-Jan-2017 19:00:40
+% Last Modified by GUIDE v2.5 27-Jan-2017 19:50:35
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -77,13 +77,14 @@ config_app;
 config_inverse;
 
 % Save configs
+setappdata(handles.root, 'delete_entry_if_invalid', delete_entry_if_invalid);
 setappdata(handles.root, 'gui_sound', gui_sound_enabled);
 
 % Set initial configuration
-set(handles.ent_mu, 'String', inv_mu);
-set(handles.ent_sigma, 'String', inv_sigma);
-set(handles.ent_maxiter, 'String', inv_maxiter);
-set(handles.ent_tolvs, 'String', inv_tol_vs);
+set(handles.param_inv_mu, 'String', inv_mu);
+set(handles.param_inv_sigma, 'String', inv_sigma);
+set(handles.param_maxiter, 'String', inv_maxiter);
+set(handles.param_tolvs, 'String', inv_tol_vs);
 
 % Center window
 movegui(gcf,'center');
@@ -145,50 +146,52 @@ lang = getappdata(handles.root, 'lang');
 root_handles = getappdata(handles.root, 'main_handles');
 
 % Import config
-config_solution;
+config_inverse;
 
-% Get configs
-comparision = get(handles.cfg_comparision, 'Value');
-shear = get(handles.cfg_shear, 'Value');
-iteration = get(handles.cfg_iteration, 'Value');
+% Check entry status
+status = check_inv_parameters(handles, lang, true);
+if status
+    sigma = get(handles.param_inv_sigma, 'string');
+    mu = get(handles.param_inv_mu, 'string');
+    maxiter = get(handles.param_maxiter, 'string');
+    tol_vs = get(handles.param_tolvs, 'string');
+else
+    return
+end
 
 % Check if something changed
-if (comparision == show_dispersion_comparision) && (shear == show_shear_velocity_plot) && ...
-        (show_dispersion_iterations == iteration)
+if (str2double(sigma) == inv_sigma) && (str2double(maxiter) == inv_maxiter) && ...
+        (str2double(mu) == inv_mu) && (inv_tol_vs == str2double(tol_vs))
 else
     
-    % Set config strings
-    if comparision
-        str_comparision = 'show_dispersion_comparision = true;';
-    else
-        str_comparision = 'show_dispersion_comparision = false;';
-    end
-    if shear
-        str_shear = 'show_shear_velocity_plot = true;';
-    else
-        str_shear = 'show_shear_velocity_plot = false;';
-    end
-    if iteration
-        str_iteration = 'show_dispersion_iterations = true;';
-    else
-        str_iteration = 'show_dispersion_iterations = false;';
-    end
+    % Create strings
+    str_maxiter = sprintf('inv_maxiter = %s;', maxiter);
+    str_mu = sprintf('inv_mu = %s;', mu);
+    str_sigma = sprintf('inv_sigma = %s;', sigma);
+    str_tolvs = sprintf('inv_tol_vs = %s;', tol_vs);
 
     % Save config file
-    conf_file = fopen('gui/config_solution.m', 'wt');
-    write_conf_header(conf_file, ' SOLUTION CONFIGURATION', ' Configures solution behaviour.');
-    fprintf(conf_file, '%s\n', '% Show Calculated vs Experimental dispersion curve');
-    fprintf(conf_file, '%s\n\n', str_comparision);
-    fprintf(conf_file, '%s\n', '% Show Shear velocity on depth plot');
-    fprintf(conf_file, '%s\n\n', str_shear);
-    fprintf(conf_file, '%s\n', '% Show Calculated dispersion - iteration changes');
-    fprintf(conf_file, '%s\n\n', str_iteration);
+    conf_file = fopen('gui/config_inverse.m', 'wt');
+    write_conf_header(conf_file, ' INVERSE MATLAB CONFIGURATION', ' Set configurations used by mat_inverse libraries.');
+    fprintf(conf_file, '%s\n', '% Maximum number of iterations, used by mat_inverse');
+    fprintf(conf_file, '%s\n\n', str_maxiter);
+    fprintf(conf_file, '%s\n', '% Mu coefficient, mat_inverse');
+    fprintf(conf_file, '%s\n\n', str_mu);
+    fprintf(conf_file, '%s\n', '% Vs tolerance error, mat_inverse');
+    fprintf(conf_file, '%s\n\n', str_tolvs);
+    fprintf(conf_file, '%s\n', '% Sigma, mat_inverse');
+    fprintf(conf_file, '%s\n\n', str_sigma);
     fclose(conf_file);
-   
-    % Set changes
-    setappdata(root_handles, 'show_dispersion_comparision', comparision);
-    setappdata(root_handles, 'show_shear_velocity_plot', shear);
-    setappdata(root_handles, 'show_dispersion_iterations', iteration);
+    
+    % Set inversion config
+    sigma = str2double(sigma);
+    mu = str2double(mu);
+    maxiter = str2double(maxiter);
+    tol_vs = str2double(tol_vs);
+    setappdata(root_handles, 'cgf_sigma', sigma);
+    setappdata(root_handles, 'cgf_mu', mu);
+    setappdata(root_handles, 'cgf_maxiter', maxiter);
+    setappdata(root_handles, 'cgf_tolvs', tol_vs);
     
 end
 close;
@@ -239,18 +242,18 @@ function cfg_iteration_Callback(hObject, eventdata, handles)
 
 
 
-function ent_mu_Callback(hObject, eventdata, handles)
-% hObject    handle to ent_mu (see GCBO)
+function param_inv_mu_Callback(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of ent_mu as text
-%        str2double(get(hObject,'String')) returns contents of ent_mu as a double
+% Hints: get(hObject,'String') returns contents of param_inv_mu as text
+%        str2double(get(hObject,'String')) returns contents of param_inv_mu as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function ent_mu_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to ent_mu (see GCBO)
+function param_inv_mu_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_mu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -262,18 +265,18 @@ end
 
 
 
-function ent_sigma_Callback(hObject, eventdata, handles)
-% hObject    handle to ent_sigma (see GCBO)
+function param_inv_sigma_Callback(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of ent_sigma as text
-%        str2double(get(hObject,'String')) returns contents of ent_sigma as a double
+% Hints: get(hObject,'String') returns contents of param_inv_sigma as text
+%        str2double(get(hObject,'String')) returns contents of param_inv_sigma as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function ent_sigma_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to ent_sigma (see GCBO)
+function param_inv_sigma_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_inv_sigma (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -285,18 +288,18 @@ end
 
 
 
-function ent_maxiter_Callback(hObject, eventdata, handles)
-% hObject    handle to ent_maxiter (see GCBO)
+function param_maxiter_Callback(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of ent_maxiter as text
-%        str2double(get(hObject,'String')) returns contents of ent_maxiter as a double
+% Hints: get(hObject,'String') returns contents of param_maxiter as text
+%        str2double(get(hObject,'String')) returns contents of param_maxiter as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function ent_maxiter_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to ent_maxiter (see GCBO)
+function param_maxiter_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_maxiter (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -308,18 +311,18 @@ end
 
 
 
-function ent_tolvs_Callback(hObject, eventdata, handles)
-% hObject    handle to ent_tolvs (see GCBO)
+function param_tolvs_Callback(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of ent_tolvs as text
-%        str2double(get(hObject,'String')) returns contents of ent_tolvs as a double
+% Hints: get(hObject,'String') returns contents of param_tolvs as text
+%        str2double(get(hObject,'String')) returns contents of param_tolvs as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function ent_tolvs_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to ent_tolvs (see GCBO)
+function param_tolvs_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to param_tolvs (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
