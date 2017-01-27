@@ -149,38 +149,46 @@ selected_lang = get(handles.conf_lang, 'Value');
 selected_delt = get(handles.cfg_delete_inv_entry, 'Value');
 selected_sound = get(handles.cfg_sound, 'Value');
 
-% Set config strings
-str_lang = sprintf('lang_id = %d;', selected_lang);
-if selected_delt
-    str_delt = 'delete_entry_if_invalid = true;';
+% Check if something changed
+config_app;
+if (selected_lang == lang_id) && (selected_delt == delete_entry_if_invalid) && ...
+        (gui_sound_enabled == selected_sound)
 else
-    str_delt = 'delete_entry_if_invalid = false;';
-end
-if selected_sound
-    str_sound = 'gui_sound_enabled = true;';
-else
-    str_sound = 'gui_sound_enabled = false;';
-end
+    
+    % Set config strings
+    str_lang = sprintf('lang_id = %d;', selected_lang);
+    if selected_delt
+        str_delt = 'delete_entry_if_invalid = true;';
+    else
+        str_delt = 'delete_entry_if_invalid = false;';
+    end
+    if selected_sound
+        str_sound = 'gui_sound_enabled = true;';
+    else
+        str_sound = 'gui_sound_enabled = false;';
+    end
 
-% Save config file
-conf_file = fopen('gui/config_app.m', 'wt');
-write_conf_header(conf_file, ' GUI APP CONFIGURATION', ' GUI Configuration.');
-fprintf(conf_file, '%s\n', '% Language id selection');
-fprintf(conf_file, '%s\n', '%   1:  English (United States)');
-fprintf(conf_file, '%s\n', '%   2:  Spanish (Español)');
-fprintf(conf_file, '%s\n', '%   3:  French (Français)');
-fprintf(conf_file, '%s\n\n', str_lang);
-fprintf(conf_file, '%s\n', '% Deletes entry if invalid');
-fprintf(conf_file, '%s\n\n', str_delt);
-fprintf(conf_file, '%s\n', '% Enable GUI sounds');
-fprintf(conf_file, '%s\n\n', str_sound);
-fclose(conf_file);
+    % Save config file
+    conf_file = fopen('gui/config_app.m', 'wt');
+    write_conf_header(conf_file, ' GUI APP CONFIGURATION', ' GUI Configuration.');
+    fprintf(conf_file, '%s\n', '% Language id selection');
+    fprintf(conf_file, '%s\n', '%   1:  English (United States)');
+    fprintf(conf_file, '%s\n', '%   2:  Spanish (Español)');
+    fprintf(conf_file, '%s\n', '%   3:  French (Français)');
+    fprintf(conf_file, '%s\n\n', str_lang);
+    fprintf(conf_file, '%s\n', '% Deletes entry if invalid');
+    fprintf(conf_file, '%s\n\n', str_delt);
+    fprintf(conf_file, '%s\n', '% Enable GUI sounds');
+    fprintf(conf_file, '%s\n\n', str_sound);
+    fclose(conf_file);
 
-% Display message and close app
-if getappdata(handles.root, 'gui_sound')
-    beep();
+    % Display message and close app
+    if getappdata(handles.root, 'gui_sound')
+        beep();
+    end
+    waitfor(msgbox(lang{127}, lang{126}, 'help'));
+    
 end
-waitfor(msgbox(lang{127}, lang{126}, 'help'));
 close;
 
 
