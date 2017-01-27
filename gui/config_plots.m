@@ -52,6 +52,7 @@ solution_plt_dispersion_linewidth = 1;
 
 % Shear curve plot linewidth
 solution_plot_shear_linewidth = 1.2;
+
 % --------------------------------------------------------------------
 
 

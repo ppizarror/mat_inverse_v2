@@ -128,11 +128,10 @@ if show_shear_velocity_plot
             set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
             set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
             xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
-            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
-         
+            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);       
             if showlegend_shear
                 legend(lang{72});
-            end
+            end            
         end
     catch
         close(h2);
@@ -168,8 +167,6 @@ if show_dispersion_iterations
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
         ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
         hold off;
-     
-        % Show legend
         if dispersion_iteration_show_legend
             legnd = cell(niter + 1, 1);
             legnd{1} = lang{67};
@@ -177,8 +174,7 @@ if show_dispersion_iterations
                 legnd{i + 1} = sprintf(lang{104}, i);
             end
             legend(legnd);
-        end
-        
+        end   
     catch
         close(h3);
         disp_error(handles, lang, 103);
