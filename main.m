@@ -138,15 +138,24 @@ setappdata(handles.root, 'dispersion_iteration_show_legend', dispersion_iteratio
 setappdata(handles.root, 'solution_plt_shear_curve_style', solution_plt_shear_curve_style);
 setappdata(handles.root, 'dispersion_iteration_linewidth', dispersion_iteration_linewidth);
 setappdata(handles.root, 'plt_dispersion_linewidth', plt_dispersion_linewidth);
-setappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth', solution_plt_dispersion_experimental_linewidth);
-setappdata(handles.root, 'solution_plt_dispersion_linewidth', solution_plt_dispersion_linewidth);
-setappdata(handles.root, 'solution_plot_shear_linewidth', solution_plot_shear_linewidth);
-setappdata(handles.root, 'solution_shear_comparision_fontsize', solution_shear_comparision_fontsize);
-setappdata(handles.root, 'solution_shear_comparision_shear_curve_linewidth', solution_shear_comparision_shear_curve_linewidth);
-setappdata(handles.root, 'solution_shear_comparision_iguess_curve_linewidth', solution_shear_comparision_iguess_curve_linewidth);
-setappdata(handles.root, 'solution_shear_comparision_shear_curve_style', solution_shear_comparision_shear_curve_style);
-setappdata(handles.root, 'solution_shear_comparision_iguess_curve_style', solution_shear_comparision_iguess_curve_style);
-setappdata(handles.root, 'solution_plt_shear_comparision_legend', solution_plt_shear_comparision_legend);
+setappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth', ...
+    solution_plt_dispersion_experimental_linewidth);
+setappdata(handles.root, 'solution_plt_dispersion_linewidth', ...
+    solution_plt_dispersion_linewidth);
+setappdata(handles.root, 'solution_plot_shear_linewidth', ...
+    solution_plot_shear_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_fontsize', ...
+    solution_shear_comparision_fontsize);
+setappdata(handles.root, 'solution_shear_comparision_shear_curve_linewidth', ...
+    solution_shear_comparision_shear_curve_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_iguess_curve_linewidth', ...
+    solution_shear_comparision_iguess_curve_linewidth);
+setappdata(handles.root, 'solution_shear_comparision_shear_curve_style', ...
+    solution_shear_comparision_shear_curve_style);
+setappdata(handles.root, 'solution_shear_comparision_iguess_curve_style', ...
+    solution_shear_comparision_iguess_curve_style);
+setappdata(handles.root, 'solution_plt_shear_comparision_legend', ...
+    solution_plt_shear_comparision_legend);
 
 % Set solution configuration
 setappdata(handles.root, 'show_dispersion_comparision', show_dispersion_comparision);
