@@ -28,6 +28,7 @@ if baseName ~= 0
     % Open file
     set_status(handles, lang{8}, 'k');
     set(handles.root, 'pointer', 'watch');
+    pause(0.1);
     
     try
         excel_data = xlsread(strcat(folder, baseName));
