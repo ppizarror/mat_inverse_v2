@@ -62,8 +62,10 @@ disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
 dispersion_iteration_style = getappdata(handles.root, 'dispersion_iteration_style');
 dispersion_iteration_color = getappdata(handles.root, 'dispersion_iteration_color');
 solution_plt_shear_curve_style = getappdata(handles.root, 'solution_plt_shear_curve_style');
-solution_shearc_shear_curve_style = getappdata(handles.root, 'solution_shear_comparision_shear_curve_style');
-solution_shearc_iguess_curve_style = getappdata(handles.root, 'solution_shear_comparision_iguess_curve_style');
+solution_shearc_shear_curve_style = getappdata(handles.root, ...
+    'solution_shear_comparision_shear_curve_style');
+solution_shearc_iguess_curve_style = getappdata(handles.root, ...
+    'solution_shear_comparision_iguess_curve_style');
 
 % Get plot config fontsize
 disp_fontsize = getappdata(handles.root, 'sol_plot_disp_fontsize');
@@ -75,15 +77,19 @@ solution_shearc_fontsize = getappdata(handles.root, 'solution_shear_comparision_
 showlegend_dispersion = getappdata(handles.root, 'plt_dispersion_solution_showlegend');
 showlegend_shear = getappdata(handles.root, 'sol_plot_shear_showlegend');
 dispersion_iteration_show_legend = getappdata(handles.root, 'dispersion_iteration_show_legend');
-solution_plt_shear_comparision_legend = getappdata(handles.root, 'solution_plt_shear_comparision_legend');
+solution_plt_shear_comparision_legend = getappdata(handles.root, ...
+    'solution_plt_shear_comparision_legend');
 
 % Get plot linewidth
 dispersion_iteration_linewidth = getappdata(handles.root, 'dispersion_iteration_linewidth');
-solution_plt_dispersion_experimental_linewidth = getappdata(handles.root, 'solution_plt_dispersion_experimental_linewidth');
+solution_plt_dispersion_experimental_linewidth = getappdata(handles.root, ...
+    'solution_plt_dispersion_experimental_linewidth');
 solution_plt_dispersion_linewidth = getappdata(handles.root, 'solution_plt_dispersion_linewidth');
 solution_plot_shear_linewidth = getappdata(handles.root, 'solution_plot_shear_linewidth');
-solution_shearc_shear_curve_lw = getappdata(handles.root, 'solution_shear_comparision_shear_curve_linewidth');
-solution_shearc_iguess_curve_lw = getappdata(handles.root, 'solution_shear_comparision_iguess_curve_linewidth');
+solution_shearc_shear_curve_lw = getappdata(handles.root, ...
+    'solution_shear_comparision_shear_curve_linewidth');
+solution_shearc_iguess_curve_lw = getappdata(handles.root, ...
+    'solution_shear_comparision_iguess_curve_linewidth');
 
 % Get solution config
 show_dispersion_comparision = getappdata(handles.root, 'show_dispersion_comparision');
@@ -105,10 +111,13 @@ if show_dispersion_comparision
     try
         h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
         hold on;
-        errorbar(freq, vr_exp, sigma, disp_style_err, 'Linewidth', solution_plt_dispersion_experimental_linewidth);
-        plot(freq, vr_iter(:, niter), disp_style_sol, 'Linewidth', solution_plt_dispersion_linewidth);
+        errorbar(freq, vr_exp, sigma, disp_style_err, ...
+            'Linewidth', solution_plt_dispersion_experimental_linewidth);
+        plot(freq, vr_iter(:, niter), disp_style_sol, ...
+            'Linewidth', solution_plt_dispersion_linewidth);
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
-        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', disp_fontsize);
+        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', ...
+            'FontSize', disp_fontsize);
         hold off;
         if showlegend_dispersion % Show legend
             legend(lang{67}, lang{68});
@@ -136,7 +145,8 @@ if show_shear_velocity_plot
             velocity = [velocity vsfinal(length(vsfinal))];
          
             h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
-            plot(velocity, depth, solution_plt_shear_curve_style, 'Linewidth', solution_plot_shear_linewidth);
+            plot(velocity, depth, solution_plt_shear_curve_style, ...
+                'Linewidth', solution_plot_shear_linewidth);
             set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
             set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
             xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
@@ -171,13 +181,15 @@ if show_dispersion_iterations
     try
         h3 = figure('Name', lang{102}, 'NumberTitle', 'off'); %#ok<*NASGU>
         hold on;
-        errorbar(freq, vr_exp, sigma, disp_style_err, 'Linewidth', solution_plt_dispersion_experimental_linewidth);
+        errorbar(freq, vr_exp, sigma, disp_style_err, ...
+            'Linewidth', solution_plt_dispersion_experimental_linewidth);
         for i = 1:niter
             plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
                 plt_color .* (i / niter), 'Linewidth', dispersion_iteration_linewidth);
         end
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
-        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
+        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', ...
+            'FontSize', dispersion_iteration_fontsize);
         hold off;
         if dispersion_iteration_show_legend
             legnd = cell(niter + 1, 1);
@@ -214,13 +226,17 @@ if show_shear_velocity_comparision
 
         h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
         hold on;
-        plot(velocity, depth, solution_shearc_shear_curve_style, 'Linewidth', solution_shearc_shear_curve_lw);
-        plot(ivel, depth, solution_shearc_iguess_curve_style, 'Linewidth', solution_shearc_iguess_curve_lw);
+        plot(velocity, depth, solution_shearc_shear_curve_style, ...
+            'Linewidth', solution_shearc_shear_curve_lw);
+        plot(ivel, depth, solution_shearc_iguess_curve_style, ...
+            'Linewidth', solution_shearc_iguess_curve_lw);
         hold off;
         set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
         set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-        xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', solution_shearc_fontsize);
-        ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', solution_shearc_fontsize);       
+        xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', ...
+            'FontSize', solution_shearc_fontsize);
+        ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', ...
+            'FontSize', solution_shearc_fontsize);       
         if solution_plt_shear_comparision_legend
             legend(lang{143}, lang{15}, 'Location', 'southwest');
         end            

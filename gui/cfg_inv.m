@@ -241,7 +241,6 @@ function cfg_iteration_Callback(hObject, eventdata, handles)
 % Hint: get(hObject,'Value') returns toggle state of cfg_iteration
 
 
-
 function param_inv_mu_Callback(hObject, eventdata, handles)
 % hObject    handle to param_inv_mu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -262,7 +261,6 @@ function param_inv_mu_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function param_inv_sigma_Callback(hObject, eventdata, handles)
@@ -287,7 +285,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-
 function param_maxiter_Callback(hObject, eventdata, handles)
 % hObject    handle to param_maxiter (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -308,7 +305,6 @@ function param_maxiter_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function param_tolvs_Callback(hObject, eventdata, handles)
