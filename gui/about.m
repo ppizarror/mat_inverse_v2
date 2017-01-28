@@ -1,6 +1,6 @@
 function about(lang)
 % ABOUT
-% Show an about popup
+% Show an about popup.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %

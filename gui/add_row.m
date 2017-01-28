@@ -1,6 +1,6 @@
 function add_row(handles)
 % ADD ROW
-% Add a row on initial solution table
+% Add a row on initial solution table.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
 %
