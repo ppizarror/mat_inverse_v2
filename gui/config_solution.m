@@ -27,5 +27,5 @@ show_shear_velocity_plot = true;
 show_dispersion_iterations = false;
 
 % Show shear velocity comparision
-show_shear_velocity_comparision = true;
+show_shear_velocity_comparision = false;
 
