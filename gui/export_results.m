@@ -32,8 +32,24 @@ if ~ solution_status
     return
 end
 
-% Request name of new export file
-[file, path] = uiputfile({export_extension, lang{106}}, lang{107});
+% Generate new example name if file is saved
+if ~strcmp(getappdata(handles.root, 'project_savefile_short'), '')
+    
+    % Replaces extension
+    new_filename = getappdata(handles.root, 'project_savefile');
+    new_filename = strrep(new_filename, savefile_extension, '');
+    
+    % Add end extension
+    new_filename = strcat(new_filename, lang{144});
+    new_filename = strrep(new_filename, '.xls', '');
+    
+    % Request name of new export file
+    [file, path] = uiputfile({export_extension, lang{106}}, lang{107}, new_filename);
+    
+else
+    % Request name of new export file
+    [file, path] = uiputfile({export_extension, lang{106}}, lang{107});
+end
 
 % Check if filename is valid
 if length(file) == 1 && length(path) == 1
