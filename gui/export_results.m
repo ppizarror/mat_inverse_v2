@@ -108,12 +108,6 @@ try
         end
     end
  
-    % Save data - sheet 1 (final solution)
-    xlswrite(filename, vs, 1, 'B');
-    xlswrite(filename, vp, 1, 'C');
-    xlswrite(filename, rho, 1, 'D');
-    xlswrite(filename, thk, 1, 'A');
- 
     % Save data - sheet 2 (fr / vr)
     xlswrite(filename, vr, 2, 'B');
     xlswrite(filename, freq, 2, 'A');
@@ -121,6 +115,12 @@ try
     % Save data - sheed 3 (vs / iteration)
     xlswrite(filename, vs_i, 3, 'B');
     xlswrite(filename, itert, 3, 'A');
+    
+    % Save data - sheet 1 (final solution)
+    xlswrite(filename, vs, 1, 'B');
+    xlswrite(filename, vp, 1, 'C');
+    xlswrite(filename, rho, 1, 'D');
+    xlswrite(filename, thk, 1, 'A');
  
     % Set status
     set(handles.root, 'pointer', 'arrow');

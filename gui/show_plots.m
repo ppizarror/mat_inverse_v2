@@ -107,62 +107,46 @@ unit_vr = vr_units{get(handles.unit_vr, 'Value')};
 unit_vs = vs_units{get(handles.unit_vsvp, 'Value')};
 unit_h = h_units{get(handles.unit_h, 'Value')};
 
-% Calculated vs Experimental dispersion curve
-if show_dispersion_comparision
-    try
-        h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
+% H4: Shear comparision
+if show_shear_velocity_comparision
+    vsfinal = vs_iter(:, niter)';
+    vsinitial = vs';
+    thk3 = thk';
+    if ~ isempty(vsfinal)
+        cumthk = [0 cumsum(thk3)];
+        depth = 0;
+        velocity = vsfinal(1);
+        ivel = vsinitial(1);
+        for j = 1:length(thk3)
+            depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
+            velocity = [velocity vsfinal(j) vsfinal(j + 1)];
+            ivel = [ivel vsinitial(j) vsinitial(j + 1)];
+        end
+        depth = [depth sum(thk3) + thk3(length(thk3))];
+        velocity = [velocity vsfinal(length(vsfinal))];
+        ivel = [ivel vsinitial(length(vsinitial))];
+
+        h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
         hold on;
-        errorbar(freq, vr_exp, sigma, disp_style_err, ...
-            'Linewidth', solution_plt_dispersion_experimental_linewidth);
-        plot(freq, vr_iter(:, niter), disp_style_sol, ...
-            'Linewidth', solution_plt_dispersion_linewidth);
-        xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
-        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', ...
-            'FontSize', disp_fontsize);
+        plot(velocity, depth, solution_shearc_shear_curve_style, ...
+            'Linewidth', solution_shearc_shear_curve_lw);
+        plot(ivel, depth, solution_shearc_iguess_curve_style, ...
+            'Linewidth', solution_shearc_iguess_curve_lw);
         hold off;
-        if showlegend_dispersion % Show legend
-            legend(lang{67}, lang{68});
-        end
-    catch
-        close(h1);
-        disp_error(handles, lang, 98);
+        set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
+        set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+        xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', ...
+            'FontSize', solution_shearc_fontsize);
+        ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', ...
+            'FontSize', solution_shearc_fontsize);       
+        if solution_plt_shear_comparision_legend
+            legend(lang{143}, lang{15}, 'Location', 'southwest');
+        end            
     end
+    
 end
 
-% Shear velocity on depth plot
-if show_shear_velocity_plot
-    try
-        vsfinal = vs_iter(:, niter)';
-        thk2 = thk';
-        if ~ isempty(vsfinal)
-            cumthk = [0 cumsum(thk2)];
-            depth = 0;
-            velocity = vsfinal(1);
-            for j = 1:length(thk2)
-                depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-                velocity = [velocity vsfinal(j) vsfinal(j + 1)];
-            end
-            depth = [depth sum(thk2) + thk2(length(thk2))];
-            velocity = [velocity vsfinal(length(vsfinal))];
-         
-            h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
-            plot(velocity, depth, solution_plt_shear_curve_style, ...
-                'Linewidth', solution_plot_shear_linewidth);
-            set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-            set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-            xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
-            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);       
-            if showlegend_shear
-                legend(lang{143}, 'Location', 'southwest');
-            end            
-        end
-    catch
-        close(h2);
-        disp_error(handles, lang, 99);
-    end
-end
-
-% Inversion v/s frequency v/s iteration number
+% H3: Inversion v/s frequency v/s iteration number
 if show_dispersion_iterations
  
     % Create plot color if color is not random
@@ -205,7 +189,7 @@ if show_dispersion_iterations
             for i = 1:niter
                 legnd{i + 1} = sprintf(lang{104}, i);
             end
-            legend(legnd);
+            legend(legnd, 'Location', 'Best');
         end   
     catch
         close(h3);
@@ -213,43 +197,59 @@ if show_dispersion_iterations
     end
 end
 
-% Shear comparision
-if show_shear_velocity_comparision
-    vsfinal = vs_iter(:, niter)';
-    vsinitial = vs';
-    thk3 = thk';
-    if ~ isempty(vsfinal)
-        cumthk = [0 cumsum(thk3)];
-        depth = 0;
-        velocity = vsfinal(1);
-        ivel = vsinitial(1);
-        for j = 1:length(thk3)
-            depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-            velocity = [velocity vsfinal(j) vsfinal(j + 1)];
-            ivel = [ivel vsinitial(j) vsinitial(j + 1)];
+% H2: Shear velocity on depth plot
+if show_shear_velocity_plot
+    try
+        vsfinal = vs_iter(:, niter)';
+        thk2 = thk';
+        if ~ isempty(vsfinal)
+            cumthk = [0 cumsum(thk2)];
+            depth = 0;
+            velocity = vsfinal(1);
+            for j = 1:length(thk2)
+                depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
+                velocity = [velocity vsfinal(j) vsfinal(j + 1)];
+            end
+            depth = [depth sum(thk2) + thk2(length(thk2))];
+            velocity = [velocity vsfinal(length(vsfinal))];
+         
+            h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
+            plot(velocity, depth, solution_plt_shear_curve_style, ...
+                'Linewidth', solution_plot_shear_linewidth);
+            set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
+            set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+            xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
+            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);       
+            if showlegend_shear
+                legend(lang{143}, 'Location', 'southwest');
+            end            
         end
-        depth = [depth sum(thk3) + thk3(length(thk3))];
-        velocity = [velocity vsfinal(length(vsfinal))];
-        ivel = [ivel vsinitial(length(vsinitial))];
-
-        h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
-        hold on;
-        plot(velocity, depth, solution_shearc_shear_curve_style, ...
-            'Linewidth', solution_shearc_shear_curve_lw);
-        plot(ivel, depth, solution_shearc_iguess_curve_style, ...
-            'Linewidth', solution_shearc_iguess_curve_lw);
-        hold off;
-        set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-        set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
-        xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', ...
-            'FontSize', solution_shearc_fontsize);
-        ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', ...
-            'FontSize', solution_shearc_fontsize);       
-        if solution_plt_shear_comparision_legend
-            legend(lang{143}, lang{15}, 'Location', 'southwest');
-        end            
+    catch
+        close(h2);
+        disp_error(handles, lang, 99);
     end
-    
+end
+
+% H1: Calculated vs Experimental dispersion curve
+if show_dispersion_comparision
+    try
+        h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
+        hold on;
+        errorbar(freq, vr_exp, sigma, disp_style_err, ...
+            'Linewidth', solution_plt_dispersion_experimental_linewidth);
+        plot(freq, vr_iter(:, niter), disp_style_sol, ...
+            'Linewidth', solution_plt_dispersion_linewidth);
+        xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', disp_fontsize);
+        ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', ...
+            'FontSize', disp_fontsize);
+        hold off;
+        if showlegend_dispersion % Show legend
+            legend(lang{67}, lang{68});
+        end
+    catch
+        close(h1);
+        disp_error(handles, lang, 98);
+    end
 end
 
 % Set status and pointer to normal
