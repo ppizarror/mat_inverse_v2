@@ -134,6 +134,7 @@ setappdata(handles.root, 'sol_plot_shear_fontsize', solution_plt_shear_fontsize)
 setappdata(handles.root, 'dispersion_iteration_style', dispersion_iteration_style);
 setappdata(handles.root, 'dispersion_iteration_fontsize', dispersion_iteration_fontsize);
 setappdata(handles.root, 'dispersion_iteration_color', dispersion_iteration_color);
+setappdata(handles.root, 'dispersion_iteration_random_color', dispersion_iteration_random_color);
 setappdata(handles.root, 'dispersion_iteration_show_legend', dispersion_iteration_show_legend);
 setappdata(handles.root, 'solution_plt_shear_curve_style', solution_plt_shear_curve_style);
 setappdata(handles.root, 'dispersion_iteration_linewidth', dispersion_iteration_linewidth);

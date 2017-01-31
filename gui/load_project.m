@@ -65,7 +65,7 @@ if baseName ~= 0
         setappdata(handles.root, 'project_loaded', state.project_loaded);
         setappdata(handles.root, 'project_savefile', strcat(folder, baseName));
         setappdata(handles.root, 'dispersion_file_short', state.dispersion_file_short);
-        setappdata(handles.root, 'project_savefile_short', state.project_savefile_short);
+        setappdata(handles.root, 'project_savefile_short', baseName);
 
         % Load inv entry
         set(handles.param_inv_sigma, 'string', state.inv_entry_sigma);

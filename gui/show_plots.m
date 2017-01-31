@@ -61,6 +61,7 @@ disp_style_err = getappdata(handles.root, 'sol_plot_disp_style_exp');
 disp_style_sol = getappdata(handles.root, 'sol_plot_disp_style_sol');
 dispersion_iteration_style = getappdata(handles.root, 'dispersion_iteration_style');
 dispersion_iteration_color = getappdata(handles.root, 'dispersion_iteration_color');
+dispersion_iteration_random_color = getappdata(handles.root, 'dispersion_iteration_random_color');
 solution_plt_shear_curve_style = getappdata(handles.root, 'solution_plt_shear_curve_style');
 solution_shearc_shear_curve_style = getappdata(handles.root, ...
     'solution_shear_comparision_shear_curve_style');
@@ -164,18 +165,20 @@ end
 % Inversion v/s frequency v/s iteration number
 if show_dispersion_iterations
  
-    % Create plot color
-    switch dispersion_iteration_color
-        case 'r'
-            plt_color = [1 0 0];
-        case 'g'
-            plt_color = [0 1 0];
-        case 'b'
-            plt_color = [0 0 1];
-        case 'k'
-            plt_color = [1 1 1];
-        otherwise
-            plt_color = [1 1 1];
+    % Create plot color if color is not random
+    if ~dispersion_iteration_random_color
+        switch dispersion_iteration_color
+            case 'r'
+                plt_color = [1 0 0];
+            case 'g'
+                plt_color = [0 1 0];
+            case 'b'
+                plt_color = [0 0 1];
+            case 'k'
+                plt_color = [1 1 1];
+            otherwise
+                plt_color = [1 1 1];
+        end
     end
  
     try
@@ -184,8 +187,13 @@ if show_dispersion_iterations
         errorbar(freq, vr_exp, sigma, disp_style_err, ...
             'Linewidth', solution_plt_dispersion_experimental_linewidth);
         for i = 1:niter
-            plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
+            if dispersion_iteration_random_color
+                plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
+                [rand() rand() rand()], 'Linewidth', dispersion_iteration_linewidth);
+            else
+                plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
                 plt_color .* (i / niter), 'Linewidth', dispersion_iteration_linewidth);
+            end
         end
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
         ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', ...

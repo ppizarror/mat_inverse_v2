@@ -41,8 +41,12 @@ solution_shear_comparision_iguess_curve_style = 'k--';
 % Dispersion curve vs iteration plot style
 dispersion_iteration_style = '-';
 
-% Dispersion curve vs iteration plot color (r, g, b, k)
+% Dispersion curve vs iteration plot color (r, g, b, k) [WORKS ONLY IF NOT
+% RANDOM COLOR]
 dispersion_iteration_color = 'b';
+
+% Dispersion curve vs iteration plot random color
+dispersion_iteration_random_color = true;
 
 % Dispersion curve vs iteration plot linewidth
 dispersion_iteration_linewidth = 1;
