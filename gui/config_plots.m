@@ -43,10 +43,10 @@ dispersion_iteration_style = '-';
 
 % Dispersion curve vs iteration plot color (r, g, b, k) [WORKS ONLY IF NOT
 % RANDOM COLOR]
-dispersion_iteration_color = 'b';
+dispersion_iteration_color = 'r';
 
 % Dispersion curve vs iteration plot random color
-dispersion_iteration_random_color = true;
+dispersion_iteration_random_color = false;
 
 % Dispersion curve vs iteration plot linewidth
 dispersion_iteration_linewidth = 1;
