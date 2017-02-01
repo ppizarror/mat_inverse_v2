@@ -27,7 +27,8 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
     set_status(handles, lang{80}, 'k');
     if strcmp(getappdata(handles.root, 'project_savefile'), '')
-        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, lang{91});
+        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
+            lang{91}, getappdata(handles.root));
     else
         [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
             getappdata(handles.root, 'project_savefile'));
@@ -44,6 +45,7 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     % Filename is stored
     setappdata(handles.root, 'project_savefile', savefile);
     setappdata(handles.root, 'project_savefile_short', file);
+    setappdata(handles.root, 'last_opened_folder', path);
     
 % If not then load savefile from GUI
 else

@@ -48,7 +48,8 @@ if ~strcmp(getappdata(handles.root, 'project_savefile_short'), '')
     
 else
     % Request name of new export file
-    [file, path] = uiputfile({export_extension, lang{106}}, lang{107});
+    [file, path] = uiputfile({export_extension, lang{106}}, lang{107}, ...
+        getappdata(handles.root, 'last_opened_folder'));
 end
 
 % Check if filename is valid

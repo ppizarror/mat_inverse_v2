@@ -20,7 +20,8 @@ function import_initialtable_excel(handles, lang)
 
 % Request file
 set_status(handles, lang{5});
-[baseName, folder] = uigetfile({'*.xlsx; *.xls', lang{85}}, lang{5});
+[baseName, folder] = uigetfile({'*.xlsx; *.xls', lang{85}}, lang{5}, ...
+    getappdata(handles.root, 'last_opened_folder'));
 
 % If filename is valid
 if baseName ~= 0
@@ -74,6 +75,7 @@ if baseName ~= 0
             % Store table
             set(handles.initial_solution, 'Data', new_table);
             set(handles.initial_solution, 'RowName', table_row_name);
+            setappdata(handles.root, 'last_opened_folder', folder);
          
             % Successful importation
             set_status(handles, lang{10});

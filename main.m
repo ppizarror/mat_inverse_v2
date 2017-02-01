@@ -169,6 +169,7 @@ set_gui_lang(handles, lang);
 
 % Set new file
 new_file(handles, lang, false);
+setappdata(handles.root, 'last_opened_folder', '');
 
 % Update handles structure
 guidata(hObject, handles);

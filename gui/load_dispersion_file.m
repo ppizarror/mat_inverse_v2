@@ -19,7 +19,9 @@ function load_dispersion_file(handles, lang)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 set_status(handles, lang{5});
-[baseName, folder] = uigetfile({'*.xlsx; *.xls', lang{85}}, lang{5});
+
+[baseName, folder] = uigetfile({'*.xlsx; *.xls', lang{85}}, lang{5}, ...
+    getappdata(handles.root, 'last_opened_folder'));
 
 % If filename is valid
 if baseName ~= 0
@@ -81,6 +83,7 @@ if baseName ~= 0
         set_status(handles, lang{35}, 'k');
         setappdata(handles.root, 'dispersion_ok', true);
         set(handles.root, 'pointer', 'arrow');
+        setappdata(handles.root, 'last_opened_folder', folder);
         
         % Disable solution buttons
         disable_sol(handles, lang);
@@ -95,5 +98,6 @@ else
     disp_error(handles, lang, 33);
     return
 end
+
 end
 

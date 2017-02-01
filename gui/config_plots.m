@@ -68,7 +68,6 @@ solution_shear_comparision_shear_curve_linewidth = 1.2;
 
 % Solution shear plot comparision initial guess linewidth
 solution_shear_comparision_iguess_curve_linewidth = 1.0;
-
 % --------------------------------------------------------------------
 
 

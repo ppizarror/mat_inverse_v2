@@ -24,7 +24,8 @@ savefile_extension = strcat('*', savefile_extension); %#ok<NODEF>
 
 % Set loading status and request file
 set_status(handles, lang{81});
-[baseName, folder] = uigetfile({savefile_extension, lang{78}}, lang{82}); %#ok<*ASGLU>
+[baseName, folder] = uigetfile({savefile_extension, lang{78}}, lang{82}, ...
+    getappdata(handles.root, 'last_opened_folder')); %#ok<*ASGLU>
 
 % Warning counter
 warn = 0;
@@ -37,6 +38,7 @@ if baseName ~= 0
         % Loading project
         set_status(handles, lang{86});
         filename = strcat(folder, baseName);
+        setappdata(handles.root, 'last_opened_folder', folder);
         set(handles.root, 'pointer', 'watch');
         load(filename,'-mat');
         
@@ -155,11 +157,10 @@ if baseName ~= 0
         errordlg(msg_error, lang{61});
         
     end
+    
+% Project not loaded
 else
-    
-    % Project not loaded
-    disp_error(handles, lang, 83);
-    
+    disp_error(handles, lang, 83);    
 end
 
 end
