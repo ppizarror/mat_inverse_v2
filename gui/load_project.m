@@ -95,8 +95,9 @@ if baseName ~= 0
             plt_style = getappdata(handles.root, 'plt_dispersion_style');
             plot(state.disp_freq, state.disp_vrexp, plt_style);
             
-            % Enable view larger plot context menu
+            % Enable context menu
             set(handles.disp_plt_viewlarger, 'Enable', 'on');
+            set(handles.dispersion_plt_viewtable, 'Enable', 'on');
             
             % Check if file already exists
             if ~ exist(state.dispersion_file, 'file')

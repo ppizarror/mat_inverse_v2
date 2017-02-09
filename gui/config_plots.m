@@ -21,7 +21,7 @@
 % PLOT STYLES (COLOR, SYMBOL, LINEWIDTH)
 
 % Dispersion plot style
-plt_dispersion_style = 'ro-';
+plt_dispersion_style = 'rs-';
 
 % Solution dispersion curve plot style - experimental curve errorbar
 solution_plt_dispersion_experimental_style = 'ro--';

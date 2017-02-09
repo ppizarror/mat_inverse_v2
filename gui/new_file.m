@@ -68,6 +68,8 @@ set(handles.unit_rho, 'Value', 1);
 
 % Disable / Enable buttons
 set(handles.menu_file_save, 'Enable', 'off');
+set(handles.disp_plt_viewlarger, 'Enable', 'off');
+set(handles.dispersion_plt_viewtable, 'Enable', 'off');
 disable_sol(handles, lang);
 
 % Delete plot

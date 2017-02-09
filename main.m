@@ -794,3 +794,10 @@ function dispersion_plt_viewtable_Callback(hObject, eventdata, handles)
 % hObject    handle to dispersion_plt_viewtable (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+% Get lang variable
+lang = getappdata(handles.root, 'lang');
+
+if getappdata(handles.root, 'dispersion_ok')
+    view_dispersion_table(lang, 'main', handles.root);
+end

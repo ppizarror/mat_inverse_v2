@@ -76,8 +76,9 @@ if baseName ~= 0
         set(handles.status_direction_file, 'string', filename);
         setappdata(handles.root, 'dispersion_file_short', filename);
      
-        % Enable view larger plot context menu
+        % Enable context menu
         set(handles.disp_plt_viewlarger, 'Enable', 'on');
+        set(handles.dispersion_plt_viewtable, 'Enable', 'on');
      
         % Set status
         set_status(handles, lang{35}, 'k');
