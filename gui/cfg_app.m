@@ -90,7 +90,7 @@ else
 end
 
 % Center window
-movegui(gcf,'center');
+movegui(gcf, 'center');
 
 % Choose default command line output for root
 handles.output = hObject;

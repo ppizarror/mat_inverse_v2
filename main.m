@@ -99,7 +99,7 @@ for i=1:PATH_DEPTH
 end
 
 % Center window
-movegui(gcf,'center');
+movegui(gcf, 'center');
 
 % Import configurations
 config;
@@ -108,7 +108,7 @@ config;
 lang = load_lang(lang_id);
 
 % Disable Excel warning
-warning('off','MATLAB:xlswrite:AddSheet');
+warning('off', 'MATLAB:xlswrite:AddSheet');
 
 % Set gui-app config
 setappdata(handles.root, 'lang', lang);

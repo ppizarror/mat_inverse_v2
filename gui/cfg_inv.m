@@ -87,7 +87,7 @@ set(handles.param_maxiter, 'String', inv_maxiter);
 set(handles.param_tolvs, 'String', inv_tol_vs);
 
 % Center window
-movegui(gcf,'center');
+movegui(gcf, 'center');
 
 % Choose default command line output for root
 handles.output = hObject;

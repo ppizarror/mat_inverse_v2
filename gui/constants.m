@@ -18,12 +18,9 @@
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Version
-software_version = '2.10';
+software_version = '2.11';
 
-% Total of avaiable languages
-%   1:  English (United States)
-%   2:  Spanish (Español)
-%   3:  French (Français)
+% Total of avaiable languages (English, French, Spanish)
 lang_avaiable_languages = 3;
 
 % Savefile extension

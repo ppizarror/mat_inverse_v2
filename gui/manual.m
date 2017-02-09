@@ -56,7 +56,7 @@ function manual_OpeningFcn(hObject, eventdata, handles, varargin) %#ok<*INUSL>
 handles.output = hObject;
 
 % Center window
-movegui(gcf,'center');
+movegui(gcf, 'center');
 
 % Update handles structure
 guidata(hObject, handles);
