@@ -29,7 +29,7 @@ end
 
 [e11, e12, e21, e22, du, mu, nus, nup] = psv(thk, dns, cvp, cvs, om, k);
 [td, tu, rd, ru] = modrt(e11, e12, e21, e22, du);
-[Td, Rd] = genrt(td, tu, rd, ru); %#ok<*ASGLU> % #ok<*ASGLU>
+[Td, Rd] = genrt(td, tu, rd, ru); %#ok<*ASGLU>
 
 % Note that the absolute value of the secular function is calculated
 d = abs(det(e21(:, :, 1) + e22(:, :, 1) * du(:, :, 1) * Rd(:, :, 1)) / (nus(1) * nup(1) * mu(1) ^ 2));

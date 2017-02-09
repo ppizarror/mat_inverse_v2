@@ -22,7 +22,7 @@ function example3
 % Set cosntants
 [ST, ~] = dbstack;
 VERBOSE = true;
-SHOW_PLOTS = false;
+SHOW_PLOTS = true;
 
 % Initialize path and variables
 initialize_path();

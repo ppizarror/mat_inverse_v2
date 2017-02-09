@@ -24,8 +24,8 @@ show_dispersion_comparision = true;
 show_shear_velocity_plot = true;
 
 % Show Calculated dispersion - iteration changes
-show_dispersion_iterations = false;
+show_dispersion_iterations = true;
 
 % Show shear velocity comparision
-show_shear_velocity_comparision = false;
+show_shear_velocity_comparision = true;
 
