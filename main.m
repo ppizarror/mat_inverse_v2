@@ -36,7 +36,7 @@ function varargout = main(varargin)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 %
-% Last Modified by GUIDE v2.5 27-Jan-2017 21:17:56
+% Last Modified by GUIDE v2.5 09-Feb-2017 16:09:04
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -788,3 +788,9 @@ else
     disp_error(handles, lang, 128);
 end
 
+
+% --------------------------------------------------------------------
+function dispersion_plt_viewtable_Callback(hObject, eventdata, handles)
+% hObject    handle to dispersion_plt_viewtable (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)

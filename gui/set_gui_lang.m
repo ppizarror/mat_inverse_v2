@@ -52,6 +52,7 @@ set_lang_string(handles.menu_cfg_app, lang{122});
 set_lang_string(handles.menu_cfg_plot, lang{131});
 set_lang_string(handles.menu_cfg_inversion, lang{130});
 set_lang_string(handles.menu_cfg_solution, lang{129});
+set_lang_string(handles.dispersion_plt_viewtable, lang{145});
 
 end
 
