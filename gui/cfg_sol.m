@@ -65,7 +65,7 @@ setappdata(handles.root, 'main_handles', varargin{3});
 % Set app strings
 set(handles.root, 'Name', lang{129});
 set_lang_string(handles.btn_save, lang{20}, 'string');
-set_lang_string(handles.btn_close, lang{22}, 'string');
+set_lang_string(handles.btn_close, lang{147}, 'string');
 set_lang_string(handles.text_comparision, lang{132}, 'string');
 set_lang_string(handles.text_shear, lang{133}, 'string');
 set_lang_string(handles.text_iteration, lang{134}, 'string');

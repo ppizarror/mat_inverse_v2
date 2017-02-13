@@ -66,7 +66,7 @@ setappdata(handles.root, 'main_handles', varargin{3});
 set(handles.root, 'Name', lang{130});
 set(handles.panel_initialparams, 'Title', lang{135});
 set_lang_string(handles.btn_save, lang{20}, 'string');
-set_lang_string(handles.btn_close, lang{22}, 'string');
+set_lang_string(handles.btn_close, lang{147}, 'string');
 set(handles.text_mu, 'String', lang{136});
 set(handles.text_sigma, 'String', lang{137});
 set(handles.text_maxiter, 'String', lang{138});
