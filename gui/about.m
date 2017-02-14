@@ -23,7 +23,7 @@ constants;
 
 % Display message box
 msgbox({'Mat inverse V2'; lang{29}; ''; lang{27}; lang{28}; lang{30}; ''; ...
-    sprintf(lang{41}, software_version)}, lang{19}, 'help');
+    sprintf(lang{41}, software_version); lang{148}}, lang{19}, 'help');
 
 end
 

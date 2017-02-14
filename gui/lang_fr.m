@@ -172,7 +172,7 @@ list{144} = '_résultats.xls';
 list{145} = 'Voir tableau de dispersion';
 list{146} = 'Tableau de dispersion';
 list{147} = 'Fermer';
-list{148} = '';
+list{148} = 'Licence: GPL-2.0';
 list{149} = '';
 list{150} = '';
 % --------------------------------------------------------------------
