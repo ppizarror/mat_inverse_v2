@@ -244,7 +244,7 @@ function table_import_from_excel_Callback(hObject, eventdata, handles)
 % hObject    handle to table_import_from_excel (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-import_initialtable_excel(handles, getappdata(handles.root, 'lang'));
+import_initbl_excel(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
@@ -453,7 +453,7 @@ function disp_plt_viewlarger_Callback(hObject, eventdata, handles)
 % hObject    handle to disp_plt_viewlarger (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-plot_large_dispersioncurve(handles, getappdata(handles.root, 'lang'));
+plot_large_dispcurv(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------
@@ -682,7 +682,7 @@ function menu_import_table_from_excel_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_import_table_from_excel (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-import_initialtable_excel(handles, getappdata(handles.root, 'lang'));
+import_initbl_excel(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------

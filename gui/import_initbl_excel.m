@@ -1,4 +1,4 @@
-function import_initialtable_excel(handles, lang)
+function import_initbl_excel(handles, lang)
 % IMPORT INITIAL TABLE FROM EXCEL
 % Import initial table (used by mat_inverse) from Excel file.
 %

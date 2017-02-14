@@ -1,4 +1,4 @@
-function plot_large_dispersioncurve(handles, lang)
+function plot_large_dispcurv(handles, lang)
 % PLOT LARGE DISPERSION CURVE
 % Plot dispersion curve on a larger scale.
 %
