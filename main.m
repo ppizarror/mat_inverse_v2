@@ -799,5 +799,5 @@ function dispersion_plt_viewtable_Callback(hObject, eventdata, handles)
 lang = getappdata(handles.root, 'lang');
 
 if getappdata(handles.root, 'dispersion_ok')
-    view_dispersion_table(lang, 'main', handles.root);
+    view_disp_table(lang, 'main', handles.root);
 end

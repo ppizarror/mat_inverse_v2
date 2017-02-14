@@ -1,5 +1,5 @@
-function varargout = view_dispersion_table(varargin)
-% VIEW_DISPERSION_TABLE MATLAB code for view_dispersion_table.fig
+function varargout = view_disp_table(varargin)
+% VIEW_DISPERSION_TABLE MATLAB code for view_disp_table.fig
 %      VIEW_DISPERSION_TABLE, by itself, creates a new VIEW_DISPERSION_TABLE or raises the existing
 %      singleton*.
 %
