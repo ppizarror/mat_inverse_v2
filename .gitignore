@@ -4,6 +4,9 @@
 # Inverse project savefile
 *.invprj
 
+# LC python file
+lc.py
+
 # ASV Matlab file
 *.asv
 
@@ -225,4 +228,3 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
-

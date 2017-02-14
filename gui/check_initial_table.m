@@ -1,6 +1,6 @@
 function status = check_initial_table(handles, lang)
 % CHECK INITIAL TABLE
-% This function checks that initial solution for solving inverse problem
+% This function checks that initial guess table to solve inverse problem
 % is valid.
 %
 % Author: Pablo Pizarro @ppizarror.com, 2017.
