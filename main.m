@@ -228,7 +228,7 @@ function initial_solution_CellEditCallback(hObject, eventdata, handles)
 %	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
 %	Error: error string when failed to convert EditData to appropriate value for Data
 % handles    structure with handles and user data (see GUIDATA)
-replace_nan_initialtable(handles, getappdata(handles.root, 'lang'));
+replace_nan_initbl(handles, getappdata(handles.root, 'lang'));
 
 
 % --------------------------------------------------------------------

@@ -1,4 +1,4 @@
-function replace_nan_initialtable(handles, lang)
+function replace_nan_initbl(handles, lang)
 % REPLACE NAN INITIALTABLE
 % This function replace al NaN's from initial solution table.
 %
