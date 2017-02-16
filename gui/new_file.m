@@ -92,5 +92,8 @@ set_app_title(handles, lang);
 % Clear iteration status
 set(handles.status_iteration, 'string', '');
 
+% Clear memory
+clearvars -except handles;
+
 end
 
