@@ -127,6 +127,7 @@ if show_shear_velocity_comparision
         ivel = [ivel, vsinitial(length(vsinitial))];
         
         h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
+        set(h4, 'Visible', 'off');
         hold on;
         plot(velocity, depth, solution_shearc_shear_curve_style, ...
             'Linewidth', solution_shearc_shear_curve_lw);
@@ -142,6 +143,8 @@ if show_shear_velocity_comparision
         if solution_plt_shear_comparision_legend
             legend(lang{143}, lang{15}, 'Location', 'southwest');
         end
+        movegui(h4, 'center');
+        set(h4, 'Visible', 'on');
     end
     
 end
@@ -167,6 +170,7 @@ if show_dispersion_iterations
     
     try
         h3 = figure('Name', lang{102}, 'NumberTitle', 'off'); %#ok<*NASGU>
+        set(h3, 'Visible', 'off');
         hold on;
         errorbar(freq, vr_exp, sigma, disp_style_err, ...
             'Linewidth', solution_plt_dispersion_experimental_linewidth);
@@ -191,6 +195,8 @@ if show_dispersion_iterations
             end
             legend(legnd, 'Location', 'Best');
         end
+        movegui(h3, 'center');
+        set(h3, 'Visible', 'on');
     catch
         close(h3);
         disp_error(handles, lang, 103);
@@ -214,6 +220,7 @@ if show_shear_velocity_plot
             velocity = [velocity, vsfinal(length(vsfinal))];
             
             h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
+            set(h2, 'Visible', 'off');
             plot(velocity, depth, solution_plt_shear_curve_style, ...
                 'Linewidth', solution_plot_shear_linewidth);
             set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
@@ -223,6 +230,8 @@ if show_shear_velocity_plot
             if showlegend_shear
                 legend(lang{143}, 'Location', 'southwest');
             end
+            movegui(h2, 'center');
+            set(h2, 'Visible', 'on');
         end
     catch
         close(h2);
@@ -234,6 +243,7 @@ end
 if show_dispersion_comparision
     try
         h1 = figure('Name', lang{66}, 'NumberTitle', 'off'); %#ok<*NASGU>
+        set(h1, 'Visible', 'off');
         hold on;
         errorbar(freq, vr_exp, sigma, disp_style_err, ...
             'Linewidth', solution_plt_dispersion_experimental_linewidth);
@@ -246,6 +256,8 @@ if show_dispersion_comparision
         if showlegend_dispersion % Show legend
             legend(lang{67}, lang{68});
         end
+        movegui(h1, 'center');
+        set(h1, 'Visible', 'on');
     catch
         close(h1);
         disp_error(handles, lang, 98);

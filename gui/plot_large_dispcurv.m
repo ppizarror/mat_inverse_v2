@@ -33,12 +33,15 @@ unit_vr = vr_units{get(handles.unit_vr, 'Value')};
 
 % Create figure
 h = figure('Name', lang{38}, 'NumberTitle', 'off'); %#ok<*NASGU>
+set(h, 'Visible', 'off');
 plot(freq, vr_exp, plt_style);
 xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', plt_labelsize);
 ylabel(sprintf(lang{39}, unit_vr), 'Interpreter', 'latex', 'FontSize', plt_labelsize);
 if plt_showlegend
     legend(lang{67});
 end
+movegui(h, 'center');
+set(h, 'Visible', 'on');
 
 end
 
