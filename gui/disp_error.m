@@ -31,11 +31,11 @@ if getappdata(handles.root, 'gui_sound')
 end
 
 % No sprintf method
-if ~ exist('repl', 'var')
+if ~exist('repl', 'var')
     set_status(handles, msg_err, 'r');
     errordlg(msg_ppup, lang{23});
     
-% Sprintf method
+    % Sprintf method
 else
     set_status(handles, sprintf(msg_err, repl), 'r');
     errordlg(sprintf(msg_ppup, repl), lang{23});
@@ -43,6 +43,6 @@ end
 
 % Normal cursor
 set(handles.root, 'pointer', 'arrow');
-    
+
 end
 

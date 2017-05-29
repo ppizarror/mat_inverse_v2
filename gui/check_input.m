@@ -23,20 +23,20 @@ status = false;
 
 % Check if inversion parameters are OK
 inv_status = check_inv_parameters(handles, lang, true);
-if ~ inv_status
+if ~inv_status
     return
 end
 
 % Check if initial table is valid
 initial_table_status = check_initial_table(handles, lang);
-if ~ initial_table_status
+if ~initial_table_status
     % disp_error(handles, lang, 51);
     return
 end
 
 % Check if dispertion properly loaded
 dispertion_status = getappdata(handles.root, 'dispertion_ok');
-if ~ dispertion_status
+if ~dispertion_status
     disp_error(handles, lang, 50);
     return
 end

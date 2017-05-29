@@ -27,7 +27,7 @@ ndata = length(data);
 data_empty = true;
 for i = 1:ndata
     for j = 1:4
-        if ~ isempty(data{i, j})
+        if ~isempty(data{i, j})
             data_empty = false;
             break
         end
@@ -39,7 +39,7 @@ if data_empty
 end
 
 % Ask user
-if ~ data_empty && doask
+if ~data_empty && doask
     if getappdata(handles.root, 'gui_sound')
         beep();
     end

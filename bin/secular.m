@@ -23,7 +23,7 @@ function d = secular(k, om, thk, dns, cvp, cvs)
 % Check to see if the trial phase velocity is equal to the shear wave velocity
 % or compression wave velocity of one of the layers
 epsilon = 0.0001;
-while any(abs(om / k - cvs) < epsilon) || any(abs(om / k - cvp) < epsilon)
+while any(abs(om/k-cvs) < epsilon) || any(abs(om/k-cvp) < epsilon)
     k = k * (1 + epsilon);
 end
 
@@ -32,6 +32,6 @@ end
 [Td, Rd] = genrt(td, tu, rd, ru); %#ok<*ASGLU>
 
 % Note that the absolute value of the secular function is calculated
-d = abs(det(e21(:, :, 1) + e22(:, :, 1) * du(:, :, 1) * Rd(:, :, 1)) / (nus(1) * nup(1) * mu(1) ^ 2));
+d = abs(det(e21(:,:, 1)+e22(:,:, 1)*du(:,:, 1)*Rd(:,:, 1))/(nus(1) * nup(1) * mu(1) ^ 2));
 end
 

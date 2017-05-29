@@ -30,19 +30,19 @@ if nRows == 1
     disp_error(handles, lang, 3);
     return
 else
- 
+    
     % Create new data cell
-    new_table_data = cell(nRows - 1, nColumns); %#ok<*PREALL>
-    new_table_data = old_table_data(1:nRows - 1, :);
- 
+    new_table_data = cell(nRows-1, nColumns); %#ok<*PREALL>
+    new_table_data = old_table_data(1:nRows-1,:);
+    
     % Set new row name
-    new_table_row_name = cell(nRows - 1, 1);
-    new_table_row_name = old_table_row_names(1:nRows - 1, :);
- 
+    new_table_row_name = cell(nRows-1, 1);
+    new_table_row_name = old_table_row_names(1:nRows-1,:);
+    
     % Set table
     set(handles.initial_solution, 'Data', new_table_data);
     set(handles.initial_solution, 'RowName', new_table_row_name);
- 
+    
 end
 
 end

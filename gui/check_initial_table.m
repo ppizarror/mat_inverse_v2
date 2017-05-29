@@ -49,7 +49,7 @@ end
 min_nrows = min([valid_nrows{2}, valid_nrows{3}, valid_nrows{4}]);
 
 % Check columns 2 to 4 are equal to min_rows
-if ~ (valid_nrows{2} == min_nrows && valid_nrows{3} == min_nrows && valid_nrows{4} == min_nrows)
+if ~(valid_nrows{2} == min_nrows && valid_nrows{3} == min_nrows && valid_nrows{4} == min_nrows)
     disp_error(handles, lang, 52, 'sigma');
     return
 end

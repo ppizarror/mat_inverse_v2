@@ -25,7 +25,7 @@ savefile_extension = strcat('*', savefile_extension); %#ok<NODEF>
 % Set loading status and request file
 set_status(handles, lang{81});
 [baseName, folder] = uigetfile({savefile_extension, lang{78}}, lang{82}, ...
-    getappdata(handles.root, 'last_opened_folder')); %#ok<*ASGLU>
+    getappdata(handles.root, 'last_opened_folder'));%#ok<*ASGLU>
 
 % Warning counter
 warn = 0;
@@ -40,7 +40,7 @@ if baseName ~= 0
         filename = strcat(folder, baseName);
         setappdata(handles.root, 'last_opened_folder', folder);
         set(handles.root, 'pointer', 'watch');
-        load(filename,'-mat');
+        load(filename, '-mat');
         
         % --------------------------------------------------------------------
         % Load initial table
@@ -68,7 +68,7 @@ if baseName ~= 0
         setappdata(handles.root, 'project_savefile', strcat(folder, baseName));
         setappdata(handles.root, 'dispersion_file_short', state.dispersion_file_short);
         setappdata(handles.root, 'project_savefile_short', baseName);
-
+        
         % Load inv entry
         set(handles.param_inv_sigma, 'string', state.inv_entry_sigma);
         set(handles.param_inv_mu, 'string', state.inv_entry_mu);
@@ -77,7 +77,7 @@ if baseName ~= 0
         
         % Load units
         set(handles.unit_vr, 'String', state.vr_units);
-        set(handles.unit_vr, 'Value', state.unit_vr);  
+        set(handles.unit_vr, 'Value', state.unit_vr);
         set(handles.unit_vsvp, 'String', state.vsvp_units);
         set(handles.unit_vsvp, 'Value', state.unit_vsvp);
         set(handles.unit_h, 'String', state.h_units);
@@ -100,9 +100,25 @@ if baseName ~= 0
             set(handles.dispersion_plt_viewtable, 'Enable', 'on');
             
             % Check if file already exists
-            if ~ exist(state.dispersion_file, 'file')
-                disp_error(handles, lang, 93, state.dispersion_file);
-                warn=warn+1;
+            if ~exist(state.dispersion_file, 'file')
+                [~, dispertion_file_name, dispertion_file_name_ext] = fileparts(state.dispersion_file);
+                dispersion_filename = strcat(folder, strcat(dispertion_file_name, dispertion_file_name_ext));
+                if ~exist(dispersion_filename, 'file')
+                    disp_error(handles, lang, 93, dispersion_filename);
+                    warn = warn + 1;
+                else
+                    setappdata(handles.root, 'dispersion_file', dispersion_filename);
+                    
+                    % Set short filename on gui
+                    if length(dispersion_filename) > size_filename_dispersion_str
+                        short_dispersion_filename = dispersion_filename(length(dispersion_filename)-size_filename_dispersion_str:end);
+                        short_dispersion_filename = strcat('...', short_dispersion_filename);
+                    else
+                        short_dispersion_filename = dispersion_filename;
+                    end
+                    setappdata(handles.root, 'dispersion_file_short', short_dispersion_filename);
+                    set(handles.status_direction_file, 'string', short_dispersion_filename);
+                end
             end
             
         end
@@ -115,9 +131,9 @@ if baseName ~= 0
         
         % Enable / Disable buttons
         set(handles.start_button, 'Enable', 'on');
-
+        
         % Project loaded successfully
-        if warn==0
+        if warn == 0
             set_status(handles, lang{87});
         else
             set_status(handles, sprintf(lang{94}, warn));
@@ -149,7 +165,7 @@ if baseName ~= 0
         if getappdata(handles.root, 'gui_sound')
             beep();
         end
-
+        
         % Set new file
         new_file(handles, lang, false);
         
@@ -159,9 +175,9 @@ if baseName ~= 0
         
     end
     
-% Project not loaded
+    % Project not loaded
 else
-    disp_error(handles, lang, 83);    
+    disp_error(handles, lang, 83);
 end
 
 end

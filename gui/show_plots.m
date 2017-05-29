@@ -24,7 +24,7 @@ set_status(handles, lang{96});
 set(handles.root, 'pointer', 'watch');
 
 % Check if solution is ok
-if ~ solution_status
+if ~solution_status
     disp_error(handles, lang, 65);
     return
 end
@@ -112,20 +112,20 @@ if show_shear_velocity_comparision
     vsfinal = vs_iter(:, niter)';
     vsinitial = vs';
     thk3 = thk';
-    if ~ isempty(vsfinal)
-        cumthk = [0 cumsum(thk3)];
+    if ~isempty(vsfinal)
+        cumthk = [0, cumsum(thk3)];
         depth = 0;
         velocity = vsfinal(1);
         ivel = vsinitial(1);
         for j = 1:length(thk3)
-            depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-            velocity = [velocity vsfinal(j) vsfinal(j + 1)];
-            ivel = [ivel vsinitial(j) vsinitial(j + 1)];
+            depth = [depth, cumthk(j + 1), cumthk(j + 1)]; %#ok<*AGROW>
+            velocity = [velocity, vsfinal(j), vsfinal(j + 1)];
+            ivel = [ivel, vsinitial(j), vsinitial(j + 1)];
         end
-        depth = [depth sum(thk3) + thk3(length(thk3))];
-        velocity = [velocity vsfinal(length(vsfinal))];
-        ivel = [ivel vsinitial(length(vsinitial))];
-
+        depth = [depth, sum(thk3) + thk3(length(thk3))];
+        velocity = [velocity, vsfinal(length(vsfinal))];
+        ivel = [ivel, vsinitial(length(vsinitial))];
+        
         h4 = figure('Name', lang{142}, 'NumberTitle', 'off'); % #ok<*NASGU>
         hold on;
         plot(velocity, depth, solution_shearc_shear_curve_style, ...
@@ -134,37 +134,37 @@ if show_shear_velocity_comparision
             'Linewidth', solution_shearc_iguess_curve_lw);
         hold off;
         set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-        set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+        set(gca, 'Position', [0.13, 0.05, 0.775, 0.815], 'PlotBoxAspectRatio', [0.75, 1, 1]);
         xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', ...
             'FontSize', solution_shearc_fontsize);
         ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', ...
-            'FontSize', solution_shearc_fontsize);       
+            'FontSize', solution_shearc_fontsize);
         if solution_plt_shear_comparision_legend
             legend(lang{143}, lang{15}, 'Location', 'southwest');
-        end            
+        end
     end
     
 end
 
 % H3: Inversion v/s frequency v/s iteration number
 if show_dispersion_iterations
- 
+    
     % Create plot color if color is not random
     if ~dispersion_iteration_random_color
         switch dispersion_iteration_color
             case 'r'
-                plt_color = [1 0 0];
+                plt_color = [1, 0, 0];
             case 'g'
-                plt_color = [0 1 0];
+                plt_color = [0, 1, 0];
             case 'b'
-                plt_color = [0 0 1];
+                plt_color = [0, 0, 1];
             case 'k'
-                plt_color = [1 1 1];
+                plt_color = [1, 1, 1];
             otherwise
-                plt_color = [1 1 1];
+                plt_color = [1, 1, 1];
         end
     end
- 
+    
     try
         h3 = figure('Name', lang{102}, 'NumberTitle', 'off'); %#ok<*NASGU>
         hold on;
@@ -173,10 +173,10 @@ if show_dispersion_iterations
         for i = 1:niter
             if dispersion_iteration_random_color
                 plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
-                [rand() rand() rand()], 'Linewidth', dispersion_iteration_linewidth);
+                    [rand(), rand(), rand()], 'Linewidth', dispersion_iteration_linewidth);
             else
                 plot(freq, vr_iter(:, i), dispersion_iteration_style, 'Color', ...
-                plt_color .* (i / niter), 'Linewidth', dispersion_iteration_linewidth);
+                    plt_color.*(i / niter), 'Linewidth', dispersion_iteration_linewidth);
             end
         end
         xlabel(lang{37}, 'Interpreter', 'latex', 'FontSize', dispersion_iteration_fontsize);
@@ -184,13 +184,13 @@ if show_dispersion_iterations
             'FontSize', dispersion_iteration_fontsize);
         hold off;
         if dispersion_iteration_show_legend
-            legnd = cell(niter + 1, 1);
+            legnd = cell(niter+1, 1);
             legnd{1} = lang{67};
             for i = 1:niter
                 legnd{i + 1} = sprintf(lang{104}, i);
             end
             legend(legnd, 'Location', 'Best');
-        end   
+        end
     catch
         close(h3);
         disp_error(handles, lang, 103);
@@ -202,27 +202,27 @@ if show_shear_velocity_plot
     try
         vsfinal = vs_iter(:, niter)';
         thk2 = thk';
-        if ~ isempty(vsfinal)
-            cumthk = [0 cumsum(thk2)];
+        if ~isempty(vsfinal)
+            cumthk = [0, cumsum(thk2)];
             depth = 0;
             velocity = vsfinal(1);
             for j = 1:length(thk2)
-                depth = [depth cumthk(j + 1) cumthk(j + 1)]; %#ok<*AGROW>
-                velocity = [velocity vsfinal(j) vsfinal(j + 1)];
+                depth = [depth, cumthk(j + 1), cumthk(j + 1)]; %#ok<*AGROW>
+                velocity = [velocity, vsfinal(j), vsfinal(j + 1)];
             end
-            depth = [depth sum(thk2) + thk2(length(thk2))];
-            velocity = [velocity vsfinal(length(vsfinal))];
-         
+            depth = [depth, sum(thk2) + thk2(length(thk2))];
+            velocity = [velocity, vsfinal(length(vsfinal))];
+            
             h2 = figure('Name', lang{69}, 'NumberTitle', 'off'); % #ok<*NASGU>
             plot(velocity, depth, solution_plt_shear_curve_style, ...
                 'Linewidth', solution_plot_shear_linewidth);
             set(gca, 'YDir', 'reverse', 'XAxisLocation', 'top');
-            set(gca, 'Position', [0.13 0.05 0.775 0.815], 'PlotBoxAspectRatio', [0.75 1 1]);
+            set(gca, 'Position', [0.13, 0.05, 0.775, 0.815], 'PlotBoxAspectRatio', [0.75, 1, 1]);
             xlabel(sprintf(lang{70}, unit_vs), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
-            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);       
+            ylabel(sprintf(lang{71}, unit_h), 'Interpreter', 'latex', 'FontSize', shear_fontsize);
             if showlegend_shear
                 legend(lang{143}, 'Location', 'southwest');
-            end            
+            end
         end
     catch
         close(h2);

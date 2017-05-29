@@ -27,7 +27,7 @@ solution_status = getappdata(handles.root, 'solution_ok');
 set_status(handles, lang{105});
 
 % Check if solution is ok
-if ~ solution_status
+if ~solution_status
     disp_error(handles, lang, 65);
     return
 end
@@ -60,15 +60,15 @@ end
 
 % Export data
 try
- 
+    
     % Set status
     pause(0.1);
     set(handles.root, 'pointer', 'watch');
     guidata(hObject, handles);
- 
+    
     % Create export filename
     filename = strcat(path, file);
- 
+    
     % Get solution from app
     niter = getappdata(handles.root, 'n_iter');
     vr_iter = getappdata(handles.root, 'vr_iter');
@@ -77,23 +77,23 @@ try
     dns_iter = getappdata(handles.root, 'dns_iter');
     freq_iter = getappdata(handles.root, 'disp_freq');
     thk_sol = getappdata(handles.root, 'thk_sol');
- 
+    
     % Get data length
     n = size(vs_iter, 1);
     m = size(vs_iter, 2);
     nfreq = length(freq_iter);
     nthk = length(thk_sol);
- 
+    
     % Create cell structure
-    thk = cell(nthk + 1, 1);
-    vs = cell(n + 1, 1);
-    vp = cell(n + 1, 1);
-    rho = cell(n + 1, 1);
-    freq = cell(nfreq + 1, 1);
-    vr = cell(nfreq + 1, 1);
-    vs_i = cell(n + 1, m + 1);
+    thk = cell(nthk+1, 1);
+    vs = cell(n+1, 1);
+    vp = cell(n+1, 1);
+    rho = cell(n+1, 1);
+    freq = cell(nfreq+1, 1);
+    vr = cell(nfreq+1, 1);
+    vs_i = cell(n+1, m+1);
     itert = cell(1, 1);
- 
+    
     % Set head of cells
     thk{1} = lang{110};
     vr{1} = lang{111};
@@ -102,7 +102,7 @@ try
     freq{1} = lang{114};
     rho{1} = lang{115};
     itert{1} = lang{116};
- 
+    
     % Store data on cell structure
     for i = 1:nthk
         thk{i + 1} = thk_sol(i);
@@ -124,11 +124,11 @@ try
             vs_i{i + 1, j} = vs_iter(i, j);
         end
     end
- 
+    
     % Save data - sheet 2 (fr / vr)
     xlswrite(filename, vr, 2, 'B');
     xlswrite(filename, freq, 2, 'A');
- 
+    
     % Save data - sheed 3 (vs / iteration)
     xlswrite(filename, vs_i, 3, 'B');
     xlswrite(filename, itert, 3, 'A');
@@ -138,26 +138,26 @@ try
     xlswrite(filename, vp, 1, 'C');
     xlswrite(filename, rho, 1, 'D');
     xlswrite(filename, thk, 1, 'A');
- 
+    
     % Set status
     set(handles.root, 'pointer', 'arrow');
     set_status(handles, lang{117});
     disp_info(handles, lang, lang{63}, {lang{117}});
- 
+    
 catch Exception
- 
+    
     % Get Exception report
     msg_error = getReport(Exception, 'basic', 'hyperlinks', 'off');
     if getappdata(handles.root, 'gui_sound')
         beep();
     end
- 
+    
     % Display errors / set statuses
     set_status(handles, lang{109}, 'r');
     errordlg(msg_error, lang{61});
     set(handles.root, 'pointer', 'arrow');
     return
- 
+    
 end
 
 end

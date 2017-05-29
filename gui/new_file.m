@@ -25,8 +25,8 @@ if doask
     end
     choice = questdlg(lang{73}, lang{76}, lang{74}, lang{75}, lang{74});
     switch choice
-        case lang{74}   
-        case lang{75} 
+        case lang{74}
+        case lang{75}
             return
     end
 end
@@ -61,7 +61,7 @@ set(handles.param_maxiter, 'string', getappdata(handles.root, 'cgf_maxiter'));
 set(handles.param_tolvs, 'string', getappdata(handles.root, 'cgf_tolvs'));
 
 % Set first units
-set(handles.unit_vr, 'Value', 1);  
+set(handles.unit_vr, 'Value', 1);
 set(handles.unit_vsvp, 'Value', 1);
 set(handles.unit_h, 'Value', 1);
 set(handles.unit_rho, 'Value', 1);

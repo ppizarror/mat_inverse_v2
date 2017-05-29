@@ -20,8 +20,8 @@ function disp_info(handles, lang, title, message)
 
 % Removes info from message
 n = length(message);
-for i=1:n
-    message{i}=strrep(message{i}, lang{54}, '');
+for i = 1:n
+    message{i} = strrep(message{i}, lang{54}, '');
 end
 
 % Trigger error sound if enabled by app configuration

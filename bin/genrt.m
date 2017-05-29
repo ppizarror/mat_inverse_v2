@@ -24,13 +24,13 @@ Td = zeros(2, 2, N);
 Rd = zeros(2, 2, N);
 
 % Calculate the Td and Rd matrices for the Nth layer
-Td(:, :, N) = td(:, :, N);
-Rd(:, :, N) = rd(:, :, N);
+Td(:,:, N) = td(:,:, N);
+Rd(:,:, N) = rd(:,:, N);
 
 % Loop through the first N-1 layers in reverse order
-for j = N - 1: - 1:1
-    Td(:, :, j) = (eye(2) - ru(:, :, j) * Rd(:, :, j + 1)) \ td(:, :, j);
-    Rd(:, :, j) = rd(:, :, j) + tu(:, :, j) * Rd(:, :, j + 1) * Td(:, :, j);
+for j = N - 1:-1:1
+    Td(:,:, j) = (eye(2) - ru(:,:, j) * Rd(:,:, j+1)) \ td(:,:, j);
+    Rd(:,:, j) = rd(:,:, j) + tu(:,:, j) * Rd(:,:, j+1) * Td(:,:, j);
 end
 
 end

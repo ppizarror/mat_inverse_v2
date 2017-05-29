@@ -70,7 +70,6 @@ solution_shear_comparision_iguess_curve_linewidth = 1.0;
 % --------------------------------------------------------------------
 
 
-
 % --------------------------------------------------------------------
 % PLOT LABEL FONTSIZE
 
@@ -89,7 +88,6 @@ dispersion_iteration_fontsize = 10;
 % Solution shear comparision plot fontsize
 solution_shear_comparision_fontsize = 10;
 % --------------------------------------------------------------------
-
 
 
 % --------------------------------------------------------------------

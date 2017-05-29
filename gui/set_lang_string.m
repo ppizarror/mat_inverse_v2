@@ -19,10 +19,10 @@ function set_lang_string(object, string, param)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Get param of object
-if ~ exist('param', 'var')
+if ~exist('param', 'var')
     param = 'label';
 end
-    
+
 set(object, param, string);
 
 end

@@ -1,4 +1,4 @@
-function cvr = homogeneous(cvp,cvs)
+function cvr = homogeneous(cvp, cvs)
 % This function calculates the Rayleigh phase velocity in a homogeneous half space
 %
 % Copyright 1999 by Glenn J. Rix and Carlo G. Lai
@@ -17,26 +17,26 @@ function cvr = homogeneous(cvp,cvs)
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-% Define Poisson's Ratio  
-nu = 0.5*((cvp*cvp-2*cvs*cvs)/(cvp*cvp-cvs*cvs));
+% Define Poisson's Ratio
+nu = 0.5 * ((cvp * cvp - 2 * cvs * cvs) / (cvp * cvp - cvs * cvs));
 
 % Define Coefficients of Rayleigh's Equation
-a =  1;
+a = 1;
 b = -8;
-c =  8*(3-2*(cvs*cvs)/(cvp*cvp));
-d = 16*((cvs*cvs)/(cvp*cvp)-1);
+c = 8 * (3 - 2 * (cvs * cvs) / (cvp * cvp));
+d = 16 * ((cvs * cvs) / (cvp * cvp) - 1);
 
 % Solution of Rayleigh Equation
-p   = [a b c d];
-x   = roots(p);
-cr  = cvs*sqrt(x);
+p = [a, b, c, d];
+x = roots(p);
+cr = cvs * sqrt(x);
 
 % Determine which of the roots is correct using the estimated velocity (Achenbach, 1973)
-crest = cvs*((0.862+1.14*nu)/(1+nu));
+crest = cvs * ((0.862 + 1.14 * nu) / (1 + nu));
 index = find(abs(cr-crest) == min(abs(cr-crest)));
 cvr = cr(index); %#ok<*FNDSB>
 if isempty(cvr)
-   error('No root found for homogeneous half space')
+    error('No root found for homogeneous half space')
 end
 
 end

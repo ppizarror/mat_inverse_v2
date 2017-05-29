@@ -26,12 +26,12 @@ function varargout = view_disp_table(varargin)
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
-gui_State = struct('gui_Name',       mfilename, ...
-                   'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @view_dispersion_table_OpeningFcn, ...
-                   'gui_OutputFcn',  @view_dispersion_table_OutputFcn, ...
-                   'gui_LayoutFcn',  [] , ...
-                   'gui_Callback',   []);
+gui_State = struct('gui_Name', mfilename, ...
+    'gui_Singleton', gui_Singleton, ...
+    'gui_OpeningFcn', @view_dispersion_table_OpeningFcn, ...
+    'gui_OutputFcn', @view_dispersion_table_OutputFcn, ...
+    'gui_LayoutFcn', [], ...
+    'gui_Callback', []);
 if nargin && ischar(varargin{1})
     gui_State.gui_Callback = str2func(varargin{1});
 end
@@ -56,7 +56,7 @@ function view_dispersion_table_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 
 % Check if application is opened from main
-if ~ (length(varargin)==3 && strcmp(varargin{2}, 'main'))
+if ~(length(varargin) == 3 && strcmp(varargin{2}, 'main'))
     close;
 end
 
@@ -78,14 +78,14 @@ if nCols ~= 0
     % Create new cell structure
     tabl = cell(nCols, 2);
     tabl_nom = cell(nCols, 1);
-
+    
     % Copy data to new cell structures
-    for i=1:nCols
-        tabl{i, 1}=freq(i);
-        tabl{i, 2}=vrexp(i);
-        tabl_nom{i}=strcat('f', num2str(i));
+    for i = 1:nCols
+        tabl{i, 1} = freq(i);
+        tabl{i, 2} = vrexp(i);
+        tabl_nom{i} = strcat('f', num2str(i));
     end
-
+    
     % Store data to table object
     set(handles.table, 'Data', tabl);
     set(handles.table, 'RowName', tabl_nom);
@@ -104,7 +104,7 @@ guidata(hObject, handles);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = view_dispersion_table_OutputFcn(hObject, eventdata, handles)  %#ok<*INUSL>
+function varargout = view_dispersion_table_OutputFcn(hObject, eventdata, handles) %#ok<*INUSL>
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB

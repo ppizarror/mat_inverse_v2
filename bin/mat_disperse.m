@@ -142,7 +142,7 @@ vr = modal(freq, thk, dns, cvp, cvs, vrmin, vrmax);
 % Determine the displacement-stress vectors and their derivatives with respect to depth
 if (nargout >= 2)
     [z, r, dr] = disp_stress(freq, vr, thk, dns, cvs, cvp, Fz);
- 
+    
     % Determine the energy integrals, group velocities, and the partial derivatives of the
     % modal phase velocites with respect to the shear and compression wave velocities both
     % at individual depths and for each layer

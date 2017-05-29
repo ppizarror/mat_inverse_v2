@@ -30,23 +30,23 @@ lamu = zeros(2, 2);
 k2 = k ^ 2; om2 = om ^ 2;
 
 ks2 = om2 / cvs2;
-nus = sqrt(k2 - ks2);
-if imag(- 1i * nus) > 0 % #ok<*IJCL>
-    nus = - nus;
+nus = sqrt(k2-ks2);
+if imag(-1i*nus) > 0 % #ok<*IJCL>
+    nus = -nus;
 end
 
 kp2 = om2 / cvp2;
-nup = sqrt(k2 - kp2);
-if imag(- 1i * nup) > 0
-    nup = - nup;
+nup = sqrt(k2-kp2);
+if imag(-1i*nup) > 0
+    nup = -nup;
 end
 
-lamd(1, 1) = exp(- nup * (z - depth(layer)));
-lamd(2, 2) = exp(- nus * (z - depth(layer)));
+lamd(1, 1) = exp(-nup*(z - depth(layer)));
+lamd(2, 2) = exp(-nus*(z - depth(layer)));
 
 if layer <= length(thk)
-    lamu(1, 1) = exp(- nup * (depth(layer + 1) - z));
-    lamu(2, 2) = exp(- nus * (depth(layer + 1) - z));
+    lamu(1, 1) = exp(-nup*(depth(layer+1) - z));
+    lamu(2, 2) = exp(-nus*(depth(layer+1) - z));
 end
 
 end

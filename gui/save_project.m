@@ -27,15 +27,15 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     
     set_status(handles, lang{80}, 'k');
     if strcmp(getappdata(handles.root, 'project_savefile'), '')
-        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
+        [file, path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
             lang{91});
     else
-        [file,path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
+        [file, path] = uiputfile({savefile_extension, lang{78}}, lang{77}, ...
             getappdata(handles.root, 'project_savefile'));
     end
     
     % Check if filename is valid
-    if length(file)==1 && length(path)==1
+    if length(file) == 1 && length(path) == 1
         disp_error(handles, lang, 79);
         return
     end
@@ -47,13 +47,13 @@ if saveas || strcmp(getappdata(handles.root, 'project_savefile'), '')
     setappdata(handles.root, 'project_savefile_short', file);
     setappdata(handles.root, 'last_opened_folder', path);
     
-% If not then load savefile from GUI
+    % If not then load savefile from GUI
 else
     savefile = getappdata(handles.root, 'project_savefile');
 end
 
 try
-
+    
     % Set waiting pointer
     set(handles.root, 'pointer', 'watch');
     
@@ -61,7 +61,7 @@ try
     % Save table
     state.initial_table = get(handles.initial_solution, 'Data');
     state.initial_table_rowname = get(handles.initial_solution, 'RowName');
-
+    
     % Save main variables - same order as new_file.m
     state.disp_freq = getappdata(handles.root, 'disp_freq');
     state.disp_vrexp = getappdata(handles.root, 'disp_vrexp');
@@ -92,7 +92,7 @@ try
     
     % Save units
     state.vr_units = get(handles.unit_vr, 'String');
-    state.unit_vr = get(handles.unit_vr, 'Value'); 
+    state.unit_vr = get(handles.unit_vr, 'Value');
     state.vsvp_units = get(handles.unit_vsvp, 'String');
     state.unit_vsvp = get(handles.unit_vsvp, 'Value');
     state.h_units = get(handles.unit_h, 'String');
@@ -107,7 +107,7 @@ catch Exception
     if getappdata(handles.root, 'gui_sound')
         beep();
     end
-
+    
     % Display errors / set statuses
     set_status(handles, lang{88}, 'r');
     errordlg(msg_error, lang{61});

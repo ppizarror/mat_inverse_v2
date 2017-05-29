@@ -68,10 +68,10 @@ try
     
     tic;
     [niter, vr_iter, vp_iter, vs_iter, dns_iter] = mat_inverse(freq, vr_exp, sigma, thk, ...
-        vp, vs, dns, maxiter, mu, tol_vs, true, handles.status_iteration, lang{58}); %#ok<*ASGLU>
+        vp, vs, dns, maxiter, mu, tol_vs, true, handles.status_iteration, lang{58});%#ok<*ASGLU>
     exec_time = toc;
     
-% Some error has occurred
+    % Some error has occurred
 catch Exception
     
     % Get Exception message
@@ -96,7 +96,7 @@ catch Exception
     setappdata(handles.root, 'solution_ok', false);
     return
     
-end 
+end
 % --------------------------------------------------------------------
 
 % Set completed status

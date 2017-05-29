@@ -32,10 +32,10 @@ inv_tol_vs = get(handles.param_tolvs, 'string');
 del_invalid = getappdata(handles.root, 'delete_entry_if_invalid');
 
 % Check sigma
-if isempty(inv_sigma) && ~ edition
+if isempty(inv_sigma) && ~edition
     disp_error(handles, lang, 46, 'sigma');
 end
-if ~ all(ismember(inv_sigma, '0123456789+-.eE'))
+if ~all(ismember(inv_sigma, '0123456789+-.eE'))
     disp_error(handles, lang, 47, 'sigma');
     
     % Set sigma to empty
@@ -46,10 +46,10 @@ if ~ all(ismember(inv_sigma, '0123456789+-.eE'))
 end
 
 % Check mu
-if isempty(inv_mu) && ~ edition
+if isempty(inv_mu) && ~edition
     disp_error(handles, lang, 46, 'mu');
 end
-if ~ all(ismember(inv_mu, '0123456789+-.eE'))
+if ~all(ismember(inv_mu, '0123456789+-.eE'))
     disp_error(handles, lang, 47, 'mu');
     
     % Set mu to empty
@@ -60,10 +60,10 @@ if ~ all(ismember(inv_mu, '0123456789+-.eE'))
 end
 
 % Check max_iter
-if isempty(inv_maxiter) && ~ edition
+if isempty(inv_maxiter) && ~edition
     disp_error(handles, lang, 46, 'max_iter');
 end
-if ~ all(ismember(inv_maxiter, '0123456789+-.eE'))
+if ~all(ismember(inv_maxiter, '0123456789+-.eE'))
     disp_error(handles, lang, 47, 'max_iter');
     
     % Set max_iter to empty
@@ -74,10 +74,10 @@ if ~ all(ismember(inv_maxiter, '0123456789+-.eE'))
 end
 
 % Check tol_vs
-if isempty(inv_tol_vs) && ~ edition
+if isempty(inv_tol_vs) && ~edition
     disp_error(handles, lang, 46, 'tol_vs');
 end
-if ~ all(ismember(inv_tol_vs, '0123456789+-.eE'))
+if ~all(ismember(inv_tol_vs, '0123456789+-.eE'))
     disp_error(handles, lang, 47, 'tol_vs');
     
     % Set tol_vs to empty

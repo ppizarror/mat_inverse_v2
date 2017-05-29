@@ -29,7 +29,7 @@ choice = questdlg(lang{95}, lang{22}, lang{74}, lang{75}, lang{74});
 switch choice
     case lang{74}
         status = true;
-    case lang{75} 
+    case lang{75}
         status = false;
 end
 
