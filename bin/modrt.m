@@ -17,7 +17,7 @@ function [td, tu, rd, ru] = modrt(e11, e12, e21, e22, du)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 % Determine the number of layers, N, not including the half space
-[~ ~, N] = size(du); % #ok<*ASGLU>
+[~, ~, N] = size(du); % #ok<*ASGLU>
 
 % Initialize a 4x4xN matrix
 X = zeros(4, 4, N);

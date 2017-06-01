@@ -22,6 +22,7 @@ function example3
 % Set cosntants
 [ST, ~] = dbstack;
 VERBOSE = true;
+SAVE_DATA = true;
 SHOW_PLOTS = false;
 
 % Initialize path and variables
@@ -42,9 +43,11 @@ nfreq = length(freq);
 status(VERBOSE, 1);
 [vr, ~, ~, ~, ~, ~] = mat_disperse(thk, dns, vp, vs, freq);
 
-% Store data on file
-status(VERBOSE, 2);
-save_data(ST.name, vr, freq, thk, vp, vs, dns, VERBOSE);
+% Store data to file
+if SAVE_DATA
+    status(VERBOSE, 2);
+    save_data(ST.name, vr, freq, thk, vp, vs, dns, VERBOSE);
+end
 
 % Show plots
 if SHOW_PLOTS
