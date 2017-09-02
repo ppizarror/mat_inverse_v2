@@ -1,6 +1,6 @@
 # Mat inverse v2
 [![@ppizarror](http://ppizarror.com/resources/images/author.svg)](http://ppizarror.com)
-[![Licencia GPL](http://ppizarror.com/resources/images/licensegpl2.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![GPL License](http://ppizarror.com/resources/images/licensegpl2.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 Matlab code for inversion of Rayleigh phase velocity, with GUI and new options.
 
