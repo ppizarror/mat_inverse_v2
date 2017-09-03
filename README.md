@@ -5,7 +5,7 @@
 Matlab code for inversion of Rayleigh phase velocity, with a GUI and new options.
 
 <p align="center">
-<img src="http://ppizarror.com/mat_inverse_v2/image/screen.PNG" width="70%" >
+<img src="https://raw.githubusercontent.com/ppizarror/mat_inverse_v2/gh-pages/image/screen.PNG" width="70%" >
 </p>
 
 Initially built from <a href="https://github.com/yiran06/mat_inverse">mat_inverse</a> and <a href="https://github.com/yiran06/mat_disperse">mat_disperse</a> matlab libraries, in this new version a GUI is added, and some minimal changes to perform just the invertion of Raylegh phase velocity.
