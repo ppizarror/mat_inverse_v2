@@ -1,0 +1,37 @@
+{
+    "PROJECT": {
+        "NAME": "mat-inverse v2",
+        "ICON": {
+            "IMAGE": "http://ppizarror.com/resources/other/matlab.png",
+            "ALT": "mat-inverse v2",
+            "WIDTH": 200,
+            "HEIGHT": 200
+        },
+        "URL": "http://ppizarror.com/mat_inverse_v2/",
+        "URL_TITLE": "mat-inverse v2"
+    },
+    "AUTHOR": {
+        "NAME": "Pablo Pizarro R.",
+        "URL": "http://ppizarror.com",
+        "ALT": "ppizarror",
+        "DATE": "2016 - 2017",
+        "SECTION": {
+            "TITLE": "Autor",
+            "SHOW": true
+        }
+    },
+    "DESCRIPTION": "Matlab code for inversion of Rayleigh phase velocity, with a GUI and new options",
+    "BADGES": {
+        "0": {
+            "IMAGE": "http://ppizarror.com/badges/author.svg",
+            "HREF": "http://ppizarror.com",
+            "ALT": "@ppizarror"
+        },
+        "1": {
+            "IMAGE": "http://ppizarror.com/badges/licensegpl2.svg",
+            "HREF": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+            "ALT": "GPL V2.0"
+        }
+    },
+    "CONTENT": "readme.content.md"
+}
