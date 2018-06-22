@@ -6,6 +6,3 @@ Initially built from <a href="https://github.com/yiran06/mat_inverse">mat_invers
 
 ## License
 This project is licensed under GPLv2 [https://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
-
-## Author
-<a href="http://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2017 - 2018
