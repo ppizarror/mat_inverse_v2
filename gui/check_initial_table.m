@@ -3,7 +3,7 @@ function status = check_initial_table(handles, lang)
 % This function checks that initial guess table to solve inverse problem
 % is valid.
 %
-% Author: Pablo Pizarro @ppizarror.com, 2017.
+% Author: Pablo Pizarro @ppizarror.com, 2017-2018.
 %
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License

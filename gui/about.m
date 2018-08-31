@@ -2,7 +2,7 @@ function about(lang)
 % ABOUT
 % Show an about popup.
 %
-% Author: Pablo Pizarro @ppizarror.com, 2017.
+% Author: Pablo Pizarro @ppizarror.com, 2017-2018.
 %
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
