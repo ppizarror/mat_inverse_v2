@@ -1,7 +1,5 @@
 <h1 align="center">
-  <a href="https://github.ppizarror.com/mat_inverse_v2/" title="mat-inverse v2">
-    <img alt="mat-inverse v2" src="https://res.ppizarror.com/other/matlab.png" width="200px" height="200px" />
-  </a>
+  <img alt="mat-inverse v2" src="https://res.ppizarror.com/other/matlab.png" width="200px" height="200px" />
   <br /><br />
   mat-inverse v2</h1>
 <p align="center">Matlab code for inversion of Rayleigh phase velocity, with a GUI and new options</p>
